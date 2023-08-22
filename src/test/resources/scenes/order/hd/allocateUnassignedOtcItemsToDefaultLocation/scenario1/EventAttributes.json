@@ -1,0 +1,50 @@
+{
+  "otcOrderItemsAllocation": [
+    {
+      "defaultLocationSelected": false,
+      "orderItemId": "4848",
+      "productRef": "186126",
+      "requestedQuantity": 5,
+      "kitProduct": false
+    },
+    {
+      "defaultLocationSelected": false,
+      "orderItemId": "4847",
+      "productRef": "186128",
+      "requestedQuantity": 5,
+      "kitProduct": false
+    }
+  ],
+  "virtualPositions": [
+    {
+      "ref": "186128:PHOENIX:BASE",
+      "groupRef": "PHOENIX",
+      "quantity": 4,
+      "productRef": "186128"
+    },
+    {
+      "ref": "186128:PTL:BASE",
+      "groupRef": "PTL",
+      "quantity": 177,
+      "productRef": "186128"
+    },
+    {
+      "ref": "186126:CPS_4803:BASE",
+      "groupRef": "CPS_4803",
+      "quantity": 889,
+      "productRef": "186126"
+    },
+    {
+      "ref": "186126:PHOENIX:BASE",
+      "groupRef": "PHOENIX",
+      "quantity": 47,
+      "productRef": "186126"
+    },
+    {
+      "ref": "186128:CPS_4803:BASE",
+      "groupRef": "CPS_4803",
+      "quantity": 2,
+      "productRef": "186128"
+    }
+  ]
+}

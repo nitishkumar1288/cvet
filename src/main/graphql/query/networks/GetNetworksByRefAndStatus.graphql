@@ -1,0 +1,29 @@
+query GetNetworksByRefAndStatus($networkCount: Int,$locationsCount: Int, $ref: [String], $status: [String], $locationStatus: [String]) {
+  networks(first: $networkCount, ref: $ref, status: $status) {
+    edges {
+      node {
+        id
+        createdOn
+        updatedOn
+        ref
+        type
+        status
+        attributes {
+          name
+          type
+          value
+        }
+        locations(first: $locationsCount, status: $locationStatus) {
+          edges {
+            node {
+              id
+              ref
+              type
+              status
+            }
+          }
+        }
+      }
+    }
+  }
+}

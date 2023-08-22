@@ -1,0 +1,22 @@
+{
+  "retailer_id": "1",
+  "account_id" : "0",
+  "entity_id": "2320",
+  "entity_ref": "NKS_HD_ORD_38",
+  "root_entity_id": "285",
+  "root_entity_ref": "NKS_HD_ORD_38",
+  "attributes": {
+    "transactionKey":"da73592f-7104-44ac-b281-2a0f6f77a59a",
+    "transactionType": "CAPTURE",
+    "status": "SUCCESSFUL",
+    "paymentMethod":"CREDIT_CARD",
+    "amount":"60.15",
+    "createdDate":"2021-06-15T20:20:39Z",
+    "paymentToken":"K912345678",
+    "fulfilmentRef":"FF_3137",
+    "authNumber":"H124531",
+    "processorId":"Z912141241249432",
+    "errorCode":"",
+    "cardType": ""
+  }
+}

@@ -1,0 +1,421 @@
+{
+  "settings": {},
+  "rulesets": [
+    {
+      "userActions": [],
+      "subtype": "ATS",
+      "name": "CREATE",
+      "description": "Activate the newly created Control Group",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.v2.prefix}}.ChangeStateGQL",
+          "props": {
+            "status": "ACTIVE"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "CONTROL_GROUP",
+      "triggers": [
+        {
+          "status": "CREATED"
+        }
+      ]
+    },
+    {
+      "userActions": [
+        {
+          "context": [
+            {
+              "confirm": true,
+              "label": "Activate",
+              "type": "PRIMARY",
+              "modules": [
+                "adminconsole"
+              ]
+            }
+          ],
+          "attributes": []
+        }
+      ],
+      "subtype": "QUANTITY_BUFFER",
+      "name": "CREATE",
+      "description": "Activate the newly created QUANTITY_BUFFER Control",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.v2.prefix}}.ChangeStateGQL",
+          "props": {
+            "status": "ACTIVE"
+          }
+        },
+        {
+          "name": "{{fluent.account.plugin.v2.prefix}}.SendEventGQL",
+          "props": {
+            "eventName": "CheckControlChange"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "CONTROL",
+      "triggers": [
+        {
+          "status": "CREATED"
+        }
+      ]
+    },
+    {
+      "userActions": [
+        {
+          "context": [
+            {
+              "confirm": true,
+              "label": "Activate",
+              "type": "PRIMARY",
+              "modules": [
+                "adminconsole"
+              ]
+            }
+          ],
+          "attributes": []
+        }
+      ],
+      "subtype": "EXCLUSION",
+      "name": "CREATE",
+      "description": "Activate the newly created EXCLUSION Control",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.v2.prefix}}.ChangeStateGQL",
+          "props": {
+            "status": "ACTIVE"
+          }
+        },
+        {
+          "name": "{{fluent.account.plugin.v2.prefix}}.SendEventGQL",
+          "props": {
+            "eventName": "CheckControlChange"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "CONTROL",
+      "triggers": [
+        {
+          "status": "CREATED"
+        }
+      ]
+    },
+    {
+      "userActions": [
+        {
+          "context": [
+            {
+              "confirm": true,
+              "label": "Deactivate",
+              "type": "PRIMARY",
+              "modules": [
+                "adminconsole"
+              ]
+            }
+          ],
+          "attributes": []
+        }
+      ],
+      "subtype": "QUANTITY_BUFFER",
+      "name": "DeactivateControl",
+      "description": "Deactivate the QUANTITY_BUFFER Control",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.v2.prefix}}.ChangeStateGQL",
+          "props": {
+            "status": "INACTIVE"
+          }
+        },
+        {
+          "name": "{{fluent.account.plugin.v2.prefix}}.SendEventGQL",
+          "props": {
+            "eventName": "CheckControlChange"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "CONTROL",
+      "triggers": [
+        {
+          "status": "ACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [
+        {
+          "context": [
+            {
+              "confirm": true,
+              "label": "Deactivate",
+              "type": "PRIMARY",
+              "modules": [
+                "adminconsole"
+              ]
+            }
+          ],
+          "attributes": []
+        }
+      ],
+      "subtype": "EXCLUSION",
+      "name": "DeactivateControl",
+      "description": "Deactivate the EXCLUSION Control",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.v2.prefix}}.ChangeStateGQL",
+          "props": {
+            "status": "INACTIVE"
+          }
+        },
+        {
+          "name": "{{fluent.account.plugin.v2.prefix}}.SendEventGQL",
+          "props": {
+            "eventName": "CheckControlChange"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "CONTROL",
+      "triggers": [
+        {
+          "status": "ACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [
+        {
+          "context": [
+            {
+              "confirm": true,
+              "label": "Activate",
+              "type": "PRIMARY",
+              "modules": [
+                "adminconsole"
+              ]
+            }
+          ],
+          "attributes": []
+        }
+      ],
+      "subtype": "QUANTITY_BUFFER",
+      "name": "ActivateControl",
+      "description": "Reactivate the QUANTITY_BUFFER Control",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.v2.prefix}}.ChangeStateGQL",
+          "props": {
+            "status": "ACTIVE"
+          }
+        },
+        {
+          "name": "{{fluent.account.plugin.v2.prefix}}.SendEventGQL",
+          "props": {
+            "eventName": "CheckControlChange"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "CONTROL",
+      "triggers": [
+        {
+          "status": "INACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [
+        {
+          "context": [
+            {
+              "confirm": true,
+              "label": "Activate",
+              "type": "PRIMARY",
+              "modules": [
+                "adminconsole"
+              ]
+            }
+          ],
+          "attributes": []
+        }
+      ],
+      "subtype": "EXCLUSION",
+      "name": "ActivateControl",
+      "description": "Reactivate the EXCLUSION Control",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.v2.prefix}}.ChangeStateGQL",
+          "props": {
+            "status": "ACTIVE"
+          }
+        },
+        {
+          "name": "{{fluent.account.plugin.v2.prefix}}.SendEventGQL",
+          "props": {
+            "eventName": "CheckControlChange"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "CONTROL",
+      "triggers": [
+        {
+          "status": "INACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [
+        {
+          "context": [
+            {
+              "confirm": true,
+              "label": "UpdateControl",
+              "type": "PRIMARY",
+              "modules": [
+                "adminconsole"
+              ]
+            }
+          ],
+          "attributes": [
+            {
+              "defaultValue": "",
+              "name": "controlValue",
+              "label": "Control Value",
+              "source": "",
+              "type": "INTEGER",
+              "mandatory": true
+            },
+            {
+              "defaultValue": "",
+              "name": "executionOrder",
+              "label": "Execution Order",
+              "source": "",
+              "type": "INTEGER",
+              "mandatory": true
+            }
+          ]
+        }
+      ],
+      "subtype": "QUANTITY_BUFFER",
+      "name": "UpdateControl",
+      "description": "Update the QUANTITY_BUFFER Control",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.UpdateControlValue",
+          "props": null
+        },
+        {
+          "name": "{{fluent.account.plugin.v2.prefix}}.SendEventGQL",
+          "props": {
+            "eventName": "CheckControlChange"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "CONTROL",
+      "triggers": [
+        {
+          "status": "ACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "subtype": "QUANTITY_BUFFER",
+      "name": "CheckControlChange",
+      "description": "Verifies the control change",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.ProduceVirtualPositionEventsForControlUpdate",
+          "props": {
+            "virtualCatalogueRef": "{{fluent.ats.virtual.catalogue.ref}}",
+            "eventName": "VirtualCatalogueEvent"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "CONTROL",
+      "triggers": [
+        {
+          "status": "CREATED"
+        },
+        {
+          "status": "ACTIVE"
+        },
+        {
+          "status": "INACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "subtype": "EXCLUSION",
+      "name": "CheckControlChange",
+      "description": "Verifies the control change",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.ProduceVirtualPositionEventsForControlUpdate",
+          "props": {
+            "virtualCatalogueRef": "{{fluent.ats.virtual.catalogue.ref}}",
+            "eventName": "VirtualCatalogueEvent"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "CONTROL",
+      "triggers": [
+        {
+          "status": "CREATED"
+        },
+        {
+          "status": "ACTIVE"
+        },
+        {
+          "status": "INACTIVE"
+        }
+      ]
+    }
+  ],
+  "entityType": "CONTROL_GROUP",
+  "entitySubtype": "ATS",
+  "versionComment": null,
+  "description": "ATS Control Group Workflow",
+  "retailerId": "{{retailer_id}}",
+  "version": "1.4",
+  "createdOn": "2023-06-12T06:02:00.783+00:00",
+  "createdBy": "covetrus_na_rx_management ",
+  "name": "CONTROL_GROUP::ATS",
+  "statuses": [
+    {
+      "entityType": "CONTROL_GROUP",
+      "name": "CREATED",
+      "category": "BOOKING"
+    },
+    {
+      "entityType": "CONTROL_GROUP",
+      "name": "ACTIVE",
+      "category": "FULFILMENT"
+    },
+    {
+      "entityType": "CONTROL",
+      "name": "CREATED",
+      "category": "BOOKING"
+    },
+    {
+      "entityType": "CONTROL",
+      "name": "ACTIVE",
+      "category": "FULFILMENT"
+    },
+    {
+      "entityType": "CONTROL",
+      "name": "INACTIVE",
+      "category": "DONE"
+    }
+  ],
+  "id": null
+}

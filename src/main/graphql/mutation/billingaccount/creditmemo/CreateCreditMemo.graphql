@@ -1,0 +1,5 @@
+mutation CreateCreditMemo($input: CreateCreditMemoInput){
+    createCreditMemo(input:$input) {
+        ref
+    }
+}

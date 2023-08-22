@@ -1,0 +1,686 @@
+{
+  "data": {
+    "orderById": {
+      "id": "2411",
+      "ref": "HD_1_TEST_20_321",
+      "type": "HD",
+      "status": "FRAUD_REVIEW",
+      "createdOn": "2022-11-04T05:34:36.481Z",
+      "updatedOn": "2022-11-04T05:34:37.563Z",
+      "totalPrice": 94.0,
+      "totalTaxPrice": 4.0,
+      "orderItems": {
+        "orderItemEdge": [
+          {
+            "orderItemNode": {
+              "id": "4848",
+              "ref": "1",
+              "quantity": 5,
+              "paidPrice": 5.0,
+              "currency": "USD",
+              "price": 10.0,
+              "taxType": "GST",
+              "taxPrice": null,
+              "totalPrice": 50.0,
+              "totalTaxPrice": 1.0,
+              "status": "CREATED",
+              "orderItemAttributes": [
+                {
+                  "name": "packageDosage",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "pharmacyFee",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "autoshipFrequency",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "proratedOrderDiscount",
+                  "type": "FLOAT",
+                  "value": 2.0
+                },
+                {
+                  "name": "totalPaidPrice",
+                  "type": "FLOAT",
+                  "value": 25.0
+                },
+                {
+                  "name": "productKey",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "pharmacyFeeTax",
+                  "type": "FLOAT",
+                  "value": ""
+                },
+                {
+                  "name": "url",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "productName",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "prescriptionKey",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "lineStatus",
+                  "type": "STRING",
+                  "value": "Rx_ACTIVE"
+                },
+                {
+                  "name": "packageFlavor",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "autoshipNextDate",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "imageUrl",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "autoshipId",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "patientKey",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "packageQuantity",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "totalProratedOrderDiscount",
+                  "type": "FLOAT",
+                  "value": 10
+                }
+              ],
+              "product": {
+                "id": "7a745b1c-43c1-4761-aa3d-b784e3815c88",
+                "ref": "186126",
+                "type": "VARIANT",
+                "status": "ACTIVE",
+                "variantProductAttributes": [
+                  {
+                    "name": "tempSensitive",
+                    "type": "STRING",
+                    "value": "N"
+                  },
+                  {
+                    "name": "fulfilmentVendorShortName",
+                    "type": "STRING",
+                    "value": ""
+                  },
+                  {
+                    "name": "Fulfillment_vendor.short_name",
+                    "type": "STRING",
+                    "value": ""
+                  },
+                  {
+                    "name": "approvalType",
+                    "type": "STRING",
+                    "value": ""
+                  },
+                  {
+                    "name": "isCommercial",
+                    "type": "STRING",
+                    "value": "Y"
+                  },
+                  {
+                    "name": "isDeaProduct",
+                    "type": "STRING",
+                    "value": "N"
+                  },
+                  {
+                    "name": "productPod",
+                    "type": "CUSTOM",
+                    "value": {
+                      "podList": [
+                        {
+                          "name": 1,
+                          "facilityId": "VFC_WAREHOUSE",
+                          "combineScriptproOrders": "true"
+                        },
+                        {
+                          "name": 50,
+                          "facilityId": "VPA_NORTH",
+                          "combineScriptproOrders": "true"
+                        },
+                        {
+                          "name": 110,
+                          "facilityId": "PHOENIX",
+                          "combineScriptproOrders": "false"
+                        },
+                        {
+                          "name": 20,
+                          "facilityId": "PTL",
+                          "combineScriptproOrders": "false"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "name": "isCompound",
+                    "type": "STRING",
+                    "value": "N"
+                  },
+                  {
+                    "name": "productName",
+                    "type": "STRING",
+                    "value": " "
+                  },
+                  {
+                    "name": "isKit",
+                    "type": "STRING",
+                    "value": "N"
+                  },
+                  {
+                    "name": "isControlled",
+                    "type": "STRING",
+                    "value": "N"
+                  },
+                  {
+                    "name": "productSummary",
+                    "type": "STRING",
+                    "value": "<p><b>Some preventatives require a veterinary visit</b><br>\r\nYour dog must have an annual heartworm test to be prescribed this medication.<br>\r\nNeed a test? Contact your veterinarian – they may be able to approve your prescription online.</p>\r\nPrevent canine heartworm disease in your dog or puppy with a monthly Heartgard Plus (ivermectin/pyrantel) chewable dewormer. Heartgard Plus kills any immature heartworms introduced to your dog in the last 30 days, plus it treats and controls roundworms and hookworms. Most dogs love the taste of Heartgard Plus chewable because it’s made with real beef."
+                  },
+                  {
+                    "name": "productKit",
+                    "type": "CUSTOM",
+                    "value": {
+                      "childItemList": [
+                        {
+                          "sku": " ",
+                          "quantity": 0
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "name": "dropShip",
+                    "type": "STRING",
+                    "value": "N"
+                  },
+                  {
+                    "name": "groundShipOnly",
+                    "type": "STRING",
+                    "value": "N"
+                  },
+                  {
+                    "name": "isDiet",
+                    "type": "STRING",
+                    "value": "N"
+                  }
+                ],
+                "gtin": "186126",
+                "name": "Heartgard® Plus Dog Chews Brown 51-100 lbs 6pk EDIT",
+                "summary": "<p><b>Some preventatives require a veterinary visit</b><br>\r\nYour dog must have an annual heartworm test to be prescribed this medication.<br>\r\nNeed a test? Contact your veterinarian – they may be able to approve your prescription online.</p>\r\nPrevent ca",
+                "prices": [],
+                "tax": null,
+                "catalogue": {
+                  "ref": "PC:MASTER:1"
+                }
+              }
+            },
+            "cursor": "Y3Vyc29yOi0tLTQ4NDhfXzE2Njc1NDAwNzY0ODU="
+          },
+          {
+            "orderItemNode": {
+              "id": "4847",
+              "ref": "2",
+              "quantity": 5,
+              "paidPrice": 5.0,
+              "currency": "USD",
+              "price": 15.0,
+              "taxType": "GST",
+              "taxPrice": null,
+              "totalPrice": 75.0,
+              "totalTaxPrice": 2.0,
+              "status": "CREATED",
+              "orderItemAttributes": [
+                {
+                  "name": "packageDosage",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "pharmacyFee",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "autoshipFrequency",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "proratedOrderDiscount",
+                  "type": "FLOAT",
+                  "value": 0
+                },
+                {
+                  "name": "totalPaidPrice",
+                  "type": "FLOAT",
+                  "value": 25
+                },
+                {
+                  "name": "productKey",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "pharmacyFeeTax",
+                  "type": "FLOAT",
+                  "value": ""
+                },
+                {
+                  "name": "url",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "productName",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "prescriptionKey",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "lineStatus",
+                  "type": "STRING",
+                  "value": "Rx_ACTIVE"
+                },
+                {
+                  "name": "packageFlavor",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "autoshipNextDate",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "imageUrl",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "autoshipId",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "patientKey",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "packageQuantity",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "totalProratedOrderDiscount",
+                  "type": "FLOAT",
+                  "value": 15
+                }
+              ],
+              "product": {
+                "id": "61e1696e-c177-4362-a3b7-23ae7bf56654",
+                "ref": "186128",
+                "type": "VARIANT",
+                "status": "ACTIVE",
+                "variantProductAttributes": [
+                  {
+                    "name": "tempSensitive",
+                    "type": "STRING",
+                    "value": "N"
+                  },
+                  {
+                    "name": "fulfilmentVendorShortName",
+                    "type": "STRING",
+                    "value": ""
+                  },
+                  {
+                    "name": "Fulfillment_vendor.short_name",
+                    "type": "STRING",
+                    "value": ""
+                  },
+                  {
+                    "name": "approvalType",
+                    "type": "STRING",
+                    "value": ""
+                  },
+                  {
+                    "name": "isCommercial",
+                    "type": "STRING",
+                    "value": "Y"
+                  },
+                  {
+                    "name": "isDeaProduct",
+                    "type": "STRING",
+                    "value": "N"
+                  },
+                  {
+                    "name": "productPod",
+                    "type": "CUSTOM",
+                    "value": {
+                      "podList": [
+                        {
+                          "name": 1,
+                          "facilityId": "VFC_WAREHOUSE",
+                          "combineScriptproOrders": "true"
+                        },
+                        {
+                          "name": 50,
+                          "facilityId": "VPA_NORTH",
+                          "combineScriptproOrders": "true"
+                        },
+                        {
+                          "name": 110,
+                          "facilityId": "PHOENIX",
+                          "combineScriptproOrders": "false"
+                        },
+                        {
+                          "name": 20,
+                          "facilityId": "PTL",
+                          "combineScriptproOrders": "false"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "name": "isCompound",
+                    "type": "STRING",
+                    "value": "N"
+                  },
+                  {
+                    "name": "productName",
+                    "type": "STRING",
+                    "value": " "
+                  },
+                  {
+                    "name": "isKit",
+                    "type": "STRING",
+                    "value": "N"
+                  },
+                  {
+                    "name": "isControlled",
+                    "type": "STRING",
+                    "value": "N"
+                  },
+                  {
+                    "name": "productSummary",
+                    "type": "STRING",
+                    "value": "<p><b>Some preventatives require a veterinary visit</b><br>\r\nYour dog must have an annual heartworm test to be prescribed this medication.<br>\r\nNeed a test? Contact your veterinarian – they may be able to approve your prescription online.</p>\r\nPrevent canine heartworm disease in your dog or puppy with a monthly Heartgard Plus (ivermectin/pyrantel) chewable dewormer. Heartgard Plus kills any immature heartworms introduced to your dog in the last 30 days, plus it treats and controls roundworms and hookworms. Most dogs love the taste of Heartgard Plus chewable because it’s made with real beef."
+                  },
+                  {
+                    "name": "productKit",
+                    "type": "CUSTOM",
+                    "value": {
+                      "childItemList": [
+                        {
+                          "sku": " ",
+                          "quantity": 0
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "name": "dropShip",
+                    "type": "STRING",
+                    "value": "N"
+                  },
+                  {
+                    "name": "groundShipOnly",
+                    "type": "STRING",
+                    "value": "N"
+                  },
+                  {
+                    "name": "isDiet",
+                    "type": "STRING",
+                    "value": "N"
+                  }
+                ],
+                "gtin": "186128",
+                "name": "Heartgard® Plus Dog Chews Green 26-50 lbs 6pk",
+                "summary": "<p><b>Some preventatives require a veterinary visit</b><br>\r\nYour dog must have an annual heartworm test to be prescribed this medication.<br>\r\nNeed a test? Contact your veterinarian – they may be able to approve your prescription online.</p>\r\nPrevent ca",
+                "prices": [],
+                "tax": null,
+                "catalogue": {
+                  "ref": "PC:MASTER:1"
+                }
+              }
+            },
+            "cursor": "Y3Vyc29yOi0tLTQ4NDdfXzE2Njc1NDAwNzY0ODM="
+          }
+        ],
+        "pageInfo": {
+          "hasNextPage": false
+        }
+      },
+      "fulfilments": {
+        "fulfilmentsEdges": [],
+        "pageInfo": {
+          "hasNextPage": false
+        }
+      },
+      "customer": {
+        "id": "24",
+        "ref": "nandhakumar_ret1:1",
+        "title": "Mr",
+        "country": null,
+        "firstName": "nandhakumar",
+        "lastName": "",
+        "username": "nandhakumar_ret1:1",
+        "primaryEmail": "nandhakumar@test.com",
+        "primaryPhone": "+61404827772"
+      },
+      "attributes": [
+        {
+          "name": "orderKey",
+          "value": 1234599,
+          "type": "String"
+        },
+        {
+          "name": "animalCareBusiness",
+          "value": "",
+          "type": "STRING"
+        },
+        {
+          "name": "appliedProductPromotions",
+          "value": "",
+          "type": "STRING"
+        },
+        {
+          "name": "productDiscounts",
+          "value": 50,
+          "type": "FLOAT"
+        },
+        {
+          "name": "isReship",
+          "value": "",
+          "type": "STRING"
+        },
+        {
+          "name": "pharmacyFee",
+          "value": "",
+          "type": "FLOAT"
+        },
+        {
+          "name": "handlingFee",
+          "value": "",
+          "type": "FLOAT"
+        },
+        {
+          "name": "appliedOrderPromotions",
+          "value": "",
+          "type": "STRING"
+        },
+        {
+          "name": "totalDiscounts",
+          "value": 85,
+          "type": "FLOAT"
+        },
+        {
+          "name": "orderOriginType",
+          "value": "",
+          "type": "STRING"
+        },
+        {
+          "name": "deliveryDiscountWaived",
+          "value": "",
+          "type": "BOOLEAN"
+        },
+        {
+          "name": "originalOrderCode",
+          "value": "",
+          "type": "STRING"
+        },
+        {
+          "name": "kountTransactionId",
+          "value": "",
+          "type": "STRING"
+        },
+        {
+          "name": "orderDiscounts",
+          "value": 35,
+          "type": "FLOAT"
+        },
+        {
+          "name": "orderStatusActivity",
+          "value": [
+            {
+              "status": "FRAUD_REVIEW",
+              "message": "Order status moved from CREATED to FRAUD_REVIEW .",
+              "updatedTime": "2022-11-04T05:34:37.459Z"
+            }
+          ],
+          "type": "OBJECT"
+        },
+        {
+          "name": "deliveryDiscount",
+          "value": "",
+          "type": "FLOAT"
+        },
+        {
+          "name": "orderMethodType",
+          "value": "",
+          "type": "STRING"
+        },
+        {
+          "name": "appliedVouchers",
+          "value": "",
+          "type": "STRING"
+        },
+        {
+          "name": "deliveryAddress",
+          "value": {
+            "ref": "",
+            "town": "",
+            "phone1": "",
+            "region": "",
+            "country": "",
+            "lastName": "",
+            "firstName": "",
+            "postalCode": "",
+            "companyName": "",
+            "addressLine1": "",
+            "addressLine2": ""
+          },
+          "type": "JSON"
+        },
+        {
+          "name": "orderNotes",
+          "value": "",
+          "type": "STRING"
+        },
+        {
+          "name": "cosmeticOrderSubtotal",
+          "value": 175,
+          "type": "FLOAT"
+        },
+        {
+          "name": "paymentInfo",
+          "value": {
+            "amount": "",
+            "cardType": {
+              "code": ""
+            },
+            "cardNumberLastFour": "",
+            "expiryYear": "",
+            "expiryMonth": "",
+            "paymentType": "",
+            "billingAddress": {
+              "town": "",
+              "region": "",
+              "country": "",
+              "lastName": "",
+              "firstName": "",
+              "postalCode": "",
+              "addressLine1": "",
+              "addressLine2": ""
+            },
+            "paymentSequence": "",
+            "accountHolderName": ""
+          },
+          "type": "JSON"
+        }
+      ],
+      "fulfilmentChoice": {
+        "id": "2396",
+        "createdOn": "2022-11-04T05:34:36.487Z",
+        "updatedOn": "2022-11-04T05:34:36.487Z",
+        "currency": "USD",
+        "deliveryInstruction": "",
+        "fulfilmentPrice": 20.0,
+        "deliveryType": "STANDARD",
+        "fulfilmentType": null,
+        "fulfilmentTaxPrice": 0.0,
+        "pickupLocationRef": null,
+        "deliveryAddress": {
+          "id": "2430",
+          "type": "ORDER",
+          "companyName": "",
+          "name": "",
+          "street": "",
+          "city": "",
+          "state": "WY",
+          "postcode": "",
+          "region": null,
+          "country": "",
+          "ref": "",
+          "latitude": 23532.12,
+          "longitude": 33125.12,
+          "createdOn": "2022-11-04T05:34:36.489Z",
+          "updatedOn": "2022-11-04T05:34:36.489Z"
+        }
+      }
+    }
+  }
+}

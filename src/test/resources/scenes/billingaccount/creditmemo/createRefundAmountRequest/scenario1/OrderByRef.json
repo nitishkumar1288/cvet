@@ -1,0 +1,837 @@
+{
+  "data": {
+    "orders": {
+      "edges": [
+        {
+          "node": {
+            "id": "3870",
+            "ref": "NKS_HD_ORD_296",
+            "type": "HD",
+            "status": "COMPLETED",
+            "createdOn": "2023-02-06T13:37:32.003Z",
+            "updatedOn": "2023-02-08T11:18:14.622Z",
+            "totalPrice": 44,
+            "totalTaxPrice": 14,
+            "attributes": [
+              {
+                "name": "appliedProductPromotions",
+                "type": "STRING",
+                "value": ""
+              },
+              {
+                "name": "isReship",
+                "type": "STRING",
+                "value": ""
+              },
+              {
+                "name": "pharmacyFee",
+                "type": "FLOAT",
+                "value": ""
+              },
+              {
+                "name": "handlingFee",
+                "type": "FLOAT",
+                "value": 4
+              },
+              {
+                "name": "handlingFeeTax",
+                "type": "FLOAT",
+                "value": 4
+              },
+              {
+                "name": "totalDiscounts",
+                "type": "FLOAT",
+                "value": ""
+              },
+              {
+                "name": "deliveryDiscountWaived",
+                "type": "BOOLEAN",
+                "value": false
+              },
+              {
+                "name": "subTotal",
+                "type": "FLOAT",
+                "value": 50
+              },
+              {
+                "name": "deliveryCostTax",
+                "type": "FLOAT",
+                "value": 6
+              },
+              {
+                "name": "orderMethodType",
+                "type": "STRING",
+                "value": ""
+              },
+              {
+                "name": "appliedVouchers",
+                "type": "STRING",
+                "value": ""
+              },
+              {
+                "name": "deliveryAddress",
+                "type": "JSON",
+                "value": {
+                  "ref": "",
+                  "town": "",
+                  "phone1": "2343232424",
+                  "region": "LA",
+                  "country": "US",
+                  "lastName": "kumar",
+                  "firstName": "nitish",
+                  "postalCode": "12345",
+                  "companyName": "",
+                  "addressLine1": "Add1",
+                  "addressLine2": "Add2"
+                }
+              },
+              {
+                "name": "subtype",
+                "type": "STRING",
+                "value": "KOUNT_REVIEWED"
+              },
+              {
+                "name": "cosmeticOrderSubtotal",
+                "type": "FLOAT",
+                "value": 110
+              },
+              {
+                "name": "availableAmountToRefund",
+                "type": "FLOAT",
+                "value": 10
+              },
+              {
+                "name": "orderKey",
+                "type": "String",
+                "value": 1234599
+              },
+              {
+                "name": "animalCareBusiness",
+                "type": "STRING",
+                "value": ""
+              },
+              {
+                "name": "productDiscounts",
+                "type": "FLOAT",
+                "value": 60
+              },
+              {
+                "name": "appliedOrderPromotions",
+                "type": "STRING",
+                "value": ""
+              },
+              {
+                "name": "orderOriginType",
+                "type": "STRING",
+                "value": ""
+              },
+              {
+                "name": "originalOrderCode",
+                "type": "STRING",
+                "value": ""
+              },
+              {
+                "name": "kountTransactionId",
+                "type": "STRING",
+                "value": ""
+              },
+              {
+                "name": "orderDiscounts",
+                "type": "FLOAT",
+                "value": 20
+              },
+              {
+                "name": "orderStatusActivity",
+                "type": "JSON",
+                "value": [
+                  {
+                    "status": "FRAUD_REVIEW",
+                    "message": "Order status moved from CREATED to FRAUD_REVIEW .",
+                    "updatedTime": "2023-02-06T13:37:33.228Z"
+                  },
+                  {
+                    "status": "Rx_MATCH_REQUESTED",
+                    "message": "Order status moved from FRAUD_REVIEW to Rx_MATCH_REQUESTED .",
+                    "updatedTime": "2023-02-06T13:37:44.784Z"
+                  },
+                  {
+                    "status": "Rx_MATCH_COMPLETED",
+                    "message": "Order status moved from Rx_MATCH_REQUESTED to Rx_MATCH_COMPLETED .",
+                    "updatedTime": "2023-02-06T13:37:49.956Z"
+                  },
+                  {
+                    "status": "PHARMACY_ALLOCATED",
+                    "message": "Order status moved from Rx_MATCH_COMPLETED to PHARMACY_ALLOCATED .",
+                    "updatedTime": "2023-02-06T13:37:54.644Z"
+                  },
+                  {
+                    "status": "PV1_REQUESTED",
+                    "message": "Order status moved from PHARMACY_ALLOCATED to PV1_REQUESTED .",
+                    "updatedTime": "2023-02-06T13:37:56.676Z"
+                  },
+                  {
+                    "status": "PV1_REQUESTED",
+                    "message": "Order status moved from PHARMACY_ALLOCATED to PV1_REQUESTED .",
+                    "updatedTime": "2023-02-06T13:37:56.947Z"
+                  },
+                  {
+                    "status": "PV1_VERIFIED",
+                    "message": "Order status moved from PV1_REQUESTED to PV1_VERIFIED .",
+                    "updatedTime": "2023-02-06T13:38:05.213Z"
+                  },
+                  {
+                    "status": "FULFILMENT_PROCESSING",
+                    "message": "Order status moved from PV1_VERIFIED to FULFILMENT_PROCESSING .",
+                    "updatedTime": "2023-02-06T13:38:27.130Z"
+                  },
+                  {
+                    "status": "SHIPPED",
+                    "message": "Order status moved from FULFILMENT_PROCESSING to SHIPPED .",
+                    "updatedTime": "2023-02-06T13:39:05.521Z"
+                  },
+                  {
+                    "status": "COMPLETED",
+                    "message": "Order status moved from SHIPPED to COMPLETED .",
+                    "updatedTime": "2023-02-06T13:39:16.146Z"
+                  }
+                ]
+              },
+              {
+                "name": "deliveryDiscount",
+                "type": "FLOAT",
+                "value": ""
+              },
+              {
+                "name": "orderNotes",
+                "type": "String",
+                "value": ""
+              },
+              {
+                "name": "returnOrderDetails",
+                "type": "JSON",
+                "value": [
+                  {
+                    "amount": 2,
+                    "status": "INITIATED",
+                    "refundKey": "7c875149-414e-40c7-83ec-868baad470f8"
+                  },
+                  {
+                    "amount": 22,
+                    "status": "INITIATED",
+                    "userId": "niti",
+                    "refundKey": "efbb52f5-9c95-42ce-89ba-6ac01dee8e2e",
+                    "refundedItems": [
+                      {
+                        "quantity": 5,
+                        "productRef": "COMPXX01",
+                        "orderItemKey": "1"
+                      }
+                    ],
+                    "returnOrderRef": "NKS_HD_ORD_296-R133956",
+                    "reasonForReturn": "Wrong Size"
+                  },
+                  {
+                    "amount": 10,
+                    "status": "INITIATED",
+                    "refundKey": "e4b85116-1c62-4cf1-8f29-e06d9bafa560"
+                  }
+                ]
+              },
+              {
+                "name": "paymentInfo",
+                "type": "JSON",
+                "value": {
+                  "amount": "0",
+                  "cardType": "visa",
+                  "expiryYear": "2025",
+                  "expiryMonth": "03",
+                  "paymentType": "CARD",
+                  "paymentToken": "6801221309996017703007",
+                  "billingAddress": {
+                    "town": "Boston",
+                    "phone1": "18777337699",
+                    "region": "MA",
+                    "country": "US",
+                    "lastName": "Red Sox",
+                    "firstName": "Let's go",
+                    "postalCode": "02215-4148",
+                    "addressLine1": "4 Jersey St"
+                  },
+                  "accountHolderName": "Let's go Red Sox",
+                  "cardNumberFirstSix": "411111",
+                  "cardNumberLastFour": "1111"
+
+                }
+              },
+              {
+                "name": "PV1SchedulerWindow",
+                "type": "JSON",
+                "value": {
+                  "to": "2023-02-06T13:41:16.693Z",
+                  "from": "2023-02-06T13:37:56.693Z"
+                }
+              },
+              {
+                "name": "deliveryCost",
+                "type": "FLOAT",
+                "value": 6
+              }
+            ],
+            "items": {
+              "itemEdges": [
+                {
+                  "itemNode": {
+                    "id": "8350",
+                    "ref": "1",
+                    "quantity": 5,
+                    "paidPrice": 10,
+                    "currency": "USD",
+                    "price": 10,
+                    "taxPrice": 1,
+                    "totalTaxPrice": 2,
+                    "totalPrice": 50,
+                    "attributes": [
+                      {
+                        "name": "prescriptionId",
+                        "value": 12,
+                        "type": "STRING"
+                      },
+                      {
+                        "name": "handlingFee",
+                        "value": 1,
+                        "type": "FLOAT"
+                      },
+                      {
+                        "name": "handlingFeeTax",
+                        "value": 2,
+                        "type": "float"
+                      },
+                      {
+                        "name": "proratedOrderDiscount",
+                        "value": 2,
+                        "type": "FLOAT"
+                      },
+                      {
+                        "name": "productKey",
+                        "value": "",
+                        "type": "STRING"
+                      },
+                      {
+                        "name": "productName",
+                        "value": "",
+                        "type": "STRING"
+                      },
+                      {
+                        "name": "lineStatus",
+                        "value": "SHIPPED",
+                        "type": "STRING"
+                      },
+                      {
+                        "name": "autoshipNextDate",
+                        "value": "",
+                        "type": "STRING"
+                      },
+                      {
+                        "name": "imageUrl",
+                        "value": "",
+                        "type": "STRING"
+                      },
+                      {
+                        "name": "selectedDefaultLocation",
+                        "value": "VFC_WAREHOUSE",
+                        "type": "STRING"
+                      },
+                      {
+                        "name": "packageQuantity",
+                        "value": "",
+                        "type": "STRING"
+                      },
+                      {
+                        "name": "isPrescriptionRequired",
+                        "value": false,
+                        "type": "STRING"
+                      },
+                      {
+                        "name": "packageDosage",
+                        "value": "",
+                        "type": "STRING"
+                      },
+                      {
+                        "name": "facilityId",
+                        "value": 3,
+                        "type": "STRING"
+                      },
+                      {
+                        "name": "proratedDeliveryCost",
+                        "value": 2,
+                        "type": "FLOAT"
+                      },
+                      {
+                        "name": "selectedNetwork",
+                        "value": "COMPOUND_RX_HD",
+                        "type": "STRING"
+                      },
+                      {
+                        "name": "autoshipFrequency",
+                        "value": "",
+                        "type": "STRING"
+                      },
+                      {
+                        "name": "proratedDeliveryCostTax",
+                        "value": 3,
+                        "type": "float"
+                      },
+                      {
+                        "name": "totalPaidPrice",
+                        "value": 25,
+                        "type": "FLOAT"
+                      },
+                      {
+                        "name": "url",
+                        "value": "",
+                        "type": "STRING"
+                      },
+                      {
+                        "name": "refillsRemaining",
+                        "value": 122,
+                        "type": "STRING"
+                      },
+                      {
+                        "name": "prescriptionKey",
+                        "value": "",
+                        "type": "STRING"
+                      },
+                      {
+                        "name": "packageFlavor",
+                        "value": "",
+                        "type": "STRING"
+                      },
+                      {
+                        "name": "oldLineStatus",
+                        "value": "FULFILMENT_ASSIGNED",
+                        "type": "STRING"
+                      },
+                      {
+                        "name": "autoshipId",
+                        "value": "",
+                        "type": "STRING"
+                      },
+                      {
+                        "name": "patientKey",
+                        "value": "",
+                        "type": "STRING"
+                      },
+                      {
+                        "name": "isPV1VerifiedAndRequested",
+                        "value": true,
+                        "type": "STRING"
+                      },
+                      {
+                        "name": "totalProratedOrderDiscount",
+                        "value": 10,
+                        "type": "FLOAT"
+                      },
+                      {
+                        "name": "returnableQty",
+                        "value": 0,
+                        "type": "INTEGER"
+                      },
+                      {
+                        "name": "dispenseRequestId",
+                        "value": 1,
+                        "type": "STRING"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "itemNode": {
+                    "id": "8351",
+                    "ref": "2",
+                    "quantity": 5,
+                    "paidPrice": 12,
+                    "currency": "USD",
+                    "price": 12,
+                    "taxPrice": 1,
+                    "totalTaxPrice": 2,
+                    "totalPrice": 60,
+                    "attributes": [
+                      {
+                        "name": "prescriptionId",
+                        "value": 12,
+                        "type": "STRING"
+                      },
+                      {
+                        "name": "handlingFee",
+                        "value": 3,
+                        "type": "FLOAT"
+                      },
+                      {
+                        "name": "handlingFeeTax",
+                        "value": 2,
+                        "type": "float"
+                      },
+                      {
+                        "name": "proratedOrderDiscount",
+                        "value": 2,
+                        "type": "FLOAT"
+                      },
+                      {
+                        "name": "productKey",
+                        "value": "",
+                        "type": "STRING"
+                      },
+                      {
+                        "name": "productName",
+                        "value": "",
+                        "type": "STRING"
+                      },
+                      {
+                        "name": "lineStatus",
+                        "value": "SHIPPED",
+                        "type": "STRING"
+                      },
+                      {
+                        "name": "autoshipNextDate",
+                        "value": "",
+                        "type": "STRING"
+                      },
+                      {
+                        "name": "imageUrl",
+                        "value": "",
+                        "type": "STRING"
+                      },
+                      {
+                        "name": "selectedDefaultLocation",
+                        "value": "VFC_WAREHOUSE",
+                        "type": "STRING"
+                      },
+                      {
+                        "name": "packageQuantity",
+                        "value": "",
+                        "type": "STRING"
+                      },
+                      {
+                        "name": "isPrescriptionRequired",
+                        "value": false,
+                        "type": "STRING"
+                      },
+                      {
+                        "name": "packageDosage",
+                        "value": "",
+                        "type": "STRING"
+                      },
+                      {
+                        "name": "facilityId",
+                        "value": 3,
+                        "type": "STRING"
+                      },
+                      {
+                        "name": "proratedDeliveryCost",
+                        "value": 4,
+                        "type": "FLOAT"
+                      },
+                      {
+                        "name": "selectedNetwork",
+                        "value": "COMPOUND_RX_HD",
+                        "type": "STRING"
+                      },
+                      {
+                        "name": "autoshipFrequency",
+                        "value": "",
+                        "type": "STRING"
+                      },
+                      {
+                        "name": "proratedDeliveryCostTax",
+                        "value": 3,
+                        "type": "float"
+                      },
+                      {
+                        "name": "totalPaidPrice",
+                        "value": 25,
+                        "type": "FLOAT"
+                      },
+                      {
+                        "name": "url",
+                        "value": "",
+                        "type": "STRING"
+                      },
+                      {
+                        "name": "refillsRemaining",
+                        "value": 122,
+                        "type": "STRING"
+                      },
+                      {
+                        "name": "prescriptionKey",
+                        "value": "",
+                        "type": "STRING"
+                      },
+                      {
+                        "name": "packageFlavor",
+                        "value": "",
+                        "type": "STRING"
+                      },
+                      {
+                        "name": "oldLineStatus",
+                        "value": "FULFILMENT_ASSIGNED",
+                        "type": "STRING"
+                      },
+                      {
+                        "name": "autoshipId",
+                        "value": "",
+                        "type": "STRING"
+                      },
+                      {
+                        "name": "patientKey",
+                        "value": "",
+                        "type": "STRING"
+                      },
+                      {
+                        "name": "isPV1VerifiedAndRequested",
+                        "value": true,
+                        "type": "STRING"
+                      },
+                      {
+                        "name": "totalProratedOrderDiscount",
+                        "value": 10,
+                        "type": "FLOAT"
+                      },
+                      {
+                        "name": "returnableQty",
+                        "value": 5,
+                        "type": "FLOAT"
+                      },
+                      {
+                        "name": "dispenseRequestId",
+                        "value": 1,
+                        "type": "STRING"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "customer": {
+              "id": "34",
+              "ref": "nitishkumarSri123",
+              "title": null,
+              "country": null,
+              "firstName": "Nitish",
+              "lastName": null,
+              "username": "nitishkumarSri123",
+              "primaryEmail": "nikumar123@update.com",
+              "primaryPhone": null
+            },
+            "financialTransactions": {
+              "edges": [
+                {
+                  "node": {
+                    "id": "635",
+                    "ref": "FF_3870",
+                    "type": "PAYMENT",
+                    "status": "CREATED",
+                    "createdOn": "2023-02-06T13:39:15.217Z",
+                    "updatedOn": "2023-02-06T13:39:15.217Z",
+                    "total": 60.15,
+                    "currency": "USD",
+                    "externalTransactionCode": "CAPTURE",
+                    "externalTransactionId": "da73592f-7104-44ac-b281-2a0f6f77a59a",
+                    "cardType": "VISA",
+                    "paymentMethod": "CREDIT_CARD",
+                    "paymentProviderName": "SETTLED"
+                  }
+                },
+                {
+                  "node": {
+                    "id": "634",
+                    "ref": "FF_3870",
+                    "type": "PAYMENT",
+                    "status": "CREATED",
+                    "createdOn": "2023-02-06T13:38:53.778Z",
+                    "updatedOn": "2023-02-06T13:38:53.778Z",
+                    "total": 60.15,
+                    "currency": "USD",
+                    "externalTransactionCode": "AUTH",
+                    "externalTransactionId": "da73592f-7104-44ac-b281-2a0f6f77a59a",
+                    "cardType": "VISA",
+                    "paymentMethod": "CREDIT_CARD",
+                    "paymentProviderName": "AUTHORIZED"
+                  }
+                }
+              ]
+            },
+            "fulfilments": {
+              "fulfilmentEdges": [
+                {
+                  "fulfilmentNode": {
+                    "id": "813",
+                    "ref": "FF_3870",
+                    "type": "HD_PFDC",
+                    "status": "FULFILLED",
+                    "createdOn": "2023-02-06T13:38:26.321Z",
+                    "updatedOn": "2023-02-06T13:39:15.609Z",
+                    "fromAddress": {
+                      "ref": "VFC_WAREHOUSE",
+                      "id": "19",
+                      "type": "AGENT",
+                      "name": "null",
+                      "street": "5013 S 110th St",
+                      "city": "Omaha",
+                      "state": "NE",
+                      "postcode": "68137",
+                      "country": "US",
+                      "latitude": 41.20826553,
+                      "longitude": -96.08393093
+                    },
+                    "toAddress": {
+                      "ref": "addressRef",
+                      "type": "ORDER",
+                      "id": "3887",
+                      "name": "addressName",
+                      "street": "street1",
+                      "city": "city1",
+                      "state": "NY",
+                      "postcode": "",
+                      "country": "US",
+                      "latitude": 23532.12,
+                      "longitude": 33125.12
+                    },
+                    "attributes": [
+                      {
+                        "name": "productDiscounts",
+                        "type": "float",
+                        "value": 60
+                      },
+                      {
+                        "name": "handlingFee",
+                        "type": "float",
+                        "value": 4
+                      },
+                      {
+                        "name": "totalPrice",
+                        "type": "float",
+                        "value": 44
+                      },
+                      {
+                        "name": "trackingURL",
+                        "type": "STRING",
+                        "value": "www.url.com"
+                      },
+                      {
+                        "name": "handlingFeeTax",
+                        "type": "float",
+                        "value": 4
+                      },
+                      {
+                        "name": "totalDiscounts",
+                        "type": "float",
+                        "value": 80
+                      },
+                      {
+                        "name": "shippingMethod",
+                        "type": "STRING",
+                        "value": "ground"
+                      },
+                      {
+                        "name": "subTotal",
+                        "type": "float",
+                        "value": 110
+                      },
+                      {
+                        "name": "orderDiscounts",
+                        "type": "float",
+                        "value": 20
+                      },
+                      {
+                        "name": "IsFulfilmentPaymentAuthSuccess",
+                        "type": "STRING",
+                        "value": true
+                      },
+                      {
+                        "name": "FulfilmentType",
+                        "type": "STRING",
+                        "value": "HD_PFDC"
+                      },
+                      {
+                        "name": "totalTax",
+                        "type": "float",
+                        "value": 14
+                      },
+                      {
+                        "name": "deliveryCostTax",
+                        "type": "float",
+                        "value": 6
+                      },
+                      {
+                        "name": "initialFulfillmentStatus",
+                        "type": "STRING",
+                        "value": "WAITING_FULFILMENT"
+                      },
+                      {
+                        "name": "carrierCode",
+                        "type": "STRING",
+                        "value": "carrier data"
+                      },
+                      {
+                        "name": "paymentTransaction",
+                        "type": "JSON",
+                        "value": [
+                          {
+                            "amount": 60.15,
+                            "status": "AUTHORIZED",
+                            "cardType": "VISA",
+                            "errorCode": "",
+                            "authNumber": "H124531",
+                            "createdDate": "2021-06-15T20:20:39Z",
+                            "processorId": "Z912141241249432",
+                            "paymentToken": "K912345678",
+                            "paymentMethod": "CREDIT_CARD",
+                            "transactionKey": "da73592f-7104-44ac-b281-2a0f6f77a59a",
+                            "transactionType": "AUTH"
+                          },
+                          {
+                            "amount": 60.15,
+                            "status": "SETTLED",
+                            "cardType": "VISA",
+                            "errorCode": "",
+                            "authNumber": "H124531",
+                            "createdDate": "2021-06-15T20:20:39Z",
+                            "processorId": "Z912141241249432",
+                            "paymentToken": "K912345678",
+                            "paymentMethod": "CREDIT_CARD",
+                            "transactionKey": "da73592f-7104-44ac-b281-2a0f6f77a59a",
+                            "transactionType": "CAPTURE"
+                          }
+                        ]
+                      },
+                      {
+                        "name": "trackingNumber",
+                        "type": "STRING",
+                        "value": 534534
+                      },
+                      {
+                        "name": "shippedDate",
+                        "type": "STRING",
+                        "value": "2022-10-19T15:07:05.955Z"
+                      },
+                      {
+                        "name": "isSyncModeEnabledForFulfilment",
+                        "type": "STRING",
+                        "value": false
+                      },
+                      {
+                        "name": "deliveryCost",
+                        "type": "float",
+                        "value": 6
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  }
+}

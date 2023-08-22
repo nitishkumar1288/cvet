@@ -1,0 +1,654 @@
+{
+  "settings": {},
+  "rulesets": [
+    {
+      "userActions": [],
+      "subtype": "CUSTOMER",
+      "name": "CREATE",
+      "description": "CREATE THE BILLING_ACCOUNT",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.retail.base.prefix}}.ChangeStateGQL",
+          "props": {
+            "status": "ACTIVE"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "BILLING_ACCOUNT",
+      "triggers": [
+        {
+          "status": "CREATED"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "subtype": "CUSTOMER",
+      "name": "ProcessCreditForAppeasement",
+      "description": "Process credit for appeasement",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.base.prefix}}.CreateCreditMemoFromAppeasement",
+          "props": {
+            "creditMemoType": "CREDIT_MEMO",
+            "creditMemoItemType": "CREDIT_MEMO_ITEM"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "BILLING_ACCOUNT",
+      "triggers": [
+        {
+          "status": "ACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "subtype": "CUSTOMER",
+      "name": "ProcessCreditForReturn",
+      "description": "Process credit For Return order",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.retail.base.prefix}}.CreateCreditMemoFromReturnOrder",
+          "props": {
+            "creditMemoType": "RETURN",
+            "creditMemoItemType": "RETURN_ITEM"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "BILLING_ACCOUNT",
+      "triggers": [
+        {
+          "status": "ACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "name": "CREATE",
+      "description": "CREATE CREDIT MEMO",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.retail.base.prefix}}.ChangeStateGQL",
+          "props": {
+            "status": "PENDING_REFUND"
+          }
+        },
+        {
+          "name": "{{fluent.account.plugin.v2.prefix}}.SendEventGQL",
+          "props": {
+            "eventName": "SendEventBasedOnEntityType"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "CREDIT_MEMO",
+      "triggers": [
+        {
+          "status": "CREATED"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "name": "SendEventBasedOnEntityType",
+      "description": "Send event based on enitity type",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.base.prefix}}.SendEventBasedOnEntityType",
+          "props": {
+            "noMatchEventName": "CalculateAppeasementAmount",
+            "eventName": "TaxRecalculationForReturnOrderItems"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "CREDIT_MEMO",
+      "triggers": [
+        {
+          "status": "PENDING_REFUND"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "name": "TaxRecalculationForReturnOrderItems",
+      "description": "Tax recalculation for return order items",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.base.prefix}}.TaxRecalculationForReturnOrder",
+          "props": {
+            "eventName": "CalculatedTotalAmountToBeRefund"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "CREDIT_MEMO",
+      "triggers": [
+        {
+          "status": "PENDING_REFUND"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "name": "CalculatedTotalAmountToBeRefund",
+      "description": "Calculate total amount for refund",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.base.prefix}}.CalculateRefundAmount",
+          "props": {
+            "eventName": "UpdatePaymentAndReturnOrderAttribute"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "CREDIT_MEMO",
+      "triggers": [
+        {
+          "status": "PENDING_REFUND"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "name": "UpdatePaymentAndReturnOrderAttribute",
+      "description": "update return order attribute",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.base.prefix}}.UpdateOrderAttributeAfterReturnOrderCreated",
+          "props": null
+        },
+        {
+          "name": "{{fluent.account.plugin.base.prefix}}.UpdateReturnOrderAttribute",
+          "props": null
+        },
+        {
+          "name": "{{fluent.account.plugin.base.prefix}}.UpdateCreditMemoAttribute",
+          "props": null
+        },
+        {
+          "name": "{{fluent.account.plugin.v2.prefix}}.SendEventGQL",
+          "props": {
+            "eventName": "CreateRefundAmountRequest"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "CREDIT_MEMO",
+      "triggers": [
+        {
+          "status": "PENDING_REFUND"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "name": "CreateRefundAmountRequest",
+      "description": "Create refund amount request ",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.base.prefix}}.UpdateCreditMemoForRequestedRefundAmount",
+          "props": null
+        },
+        {
+          "name": "{{fluent.account.plugin.base.prefix}}.CreateRefundAmountRequest",
+          "props": {
+            "eventName": "SendRefundCreditRequest"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "CREDIT_MEMO",
+      "triggers": [
+        {
+          "status": "PENDING_REFUND"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "name": "SendRefundCreditRequest",
+      "description": "Send refund credit request webhook",
+      "rules": [
+        {
+          "name": "CVETQA.INTEXP_21875.SendRefundCreditRequestWebhook",
+          "props": {
+            "webhookSettingName": "RefundCreditRequestWebhookEndPointURL"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "CREDIT_MEMO",
+      "triggers": [
+        {
+          "status": "PENDING_REFUND"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "name": "CalculateAppeasementAmount",
+      "description": "Calculate appeasement amount and update order attribute",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.base.prefix}}.UpdateCreditMemoAttribute",
+          "props": null
+        },
+        {
+          "name": "{{fluent.account.plugin.base.prefix}}.UpdateOrderAttributeAfterAppeasementCreated",
+          "props": {
+            "eventName": "CreateRefundAmountRequest"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "CREDIT_MEMO",
+      "triggers": [
+        {
+          "status": "PENDING_REFUND"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "name": "RefundCreditResponse",
+      "description": "Update the return order based on refund credit response ",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.base.prefix}}.UpdateOrderBasedOnRefundResponse",
+          "props": {
+            "noMatchEventName": "DO_NOTHING",
+            "eventName": "CreateFiancialTransaction"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "CREDIT_MEMO",
+      "triggers": [
+        {
+          "status": "PENDING_REFUND"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "name": "CreateFiancialTransaction",
+      "description": "Create financial transaction ",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.base.prefix}}.CreateFinancialTransactionAfterRefundResponse",
+          "props": {
+            "eventName": "UpdateCreditMemoStatus",
+            "currency": "USD",
+            "type": "REFUND"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "CREDIT_MEMO",
+      "triggers": [
+        {
+          "status": "PENDING_REFUND"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "name": "UpdateCreditMemoStatus",
+      "description": "Update the return order status based on refund type",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.base.prefix}}.SendEventBasedOnRefundType",
+          "props": {
+            "noMatchEventName": "UpdateStatusForAppeasement",
+            "eventName": "UpdateStatusForReturnOrder"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "CREDIT_MEMO",
+      "triggers": [
+        {
+          "status": "PENDING_REFUND"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "name": "UpdateStatusForReturnOrder",
+      "description": "Update the return order status based on refund credit response ",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.base.prefix}}.SendEventOnVerifyingRefundResponseStatus",
+          "props": {
+            "noMatchEventName": "ChangeCreditMemoStatusToFailedForReturnOrder",
+            "eventName": "ChangeCreditMemoStatusToCompleteForReturnOrder",
+            "responseStatus": "SUCCESSFUL"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "CREDIT_MEMO",
+      "triggers": [
+        {
+          "status": "PENDING_REFUND"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "name": "ChangeCreditMemoStatusToCompleteForReturnOrder",
+      "description": "Update the credit memo status to complete ",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.retail.base.prefix}}.ChangeStateGQL",
+          "props": {
+            "status": "REFUND_COMPLETE"
+          }
+        },
+        {
+          "name": "{{fluent.account.plugin.base.prefix}}.CreateRefundIssuedData",
+          "props": {
+            "eventName": "SendRefundIssuedEvent"
+          }
+        },
+        {
+          "name": "{{fluent.account.plugin.retail.base.prefix}}.SendEventForCreditMemoToReturn",
+          "props": {
+            "eventName": "RefundComplete"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "CREDIT_MEMO",
+      "triggers": [
+        {
+          "status": "PENDING_REFUND"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "name": "ChangeCreditMemoStatusToFailedForReturnOrder",
+      "description": "Update the credit memo status to failed ",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.retail.base.prefix}}.ChangeStateGQL",
+          "props": {
+            "status": "REFUND_FAILED"
+          }
+        },
+        {
+          "name": "{{fluent.account.plugin.base.prefix}}.CreateRefundIssuedData",
+          "props": {
+            "eventName": "SendRefundIssuedEvent"
+          }
+        },
+        {
+          "name": "{{fluent.account.plugin.retail.base.prefix}}.SendEventForCreditMemoToReturn",
+          "props": {
+            "eventName": "RefundRejected"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "CREDIT_MEMO",
+      "triggers": [
+        {
+          "status": "PENDING_REFUND"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "name": "UpdateStatusForAppeasement",
+      "description": "Update the return orderstatus based on refund credit response ",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.base.prefix}}.SendEventOnVerifyingRefundResponseStatus",
+          "props": {
+            "noMatchEventName": "ChangeCreditMemoStatusToFailedForAppeasement",
+            "eventName": "ChangeCreditMemoStatusToCompleteForAppeasement",
+            "responseStatus": "SUCCESSFUL"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "CREDIT_MEMO",
+      "triggers": [
+        {
+          "status": "PENDING_REFUND"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "name": "ChangeCreditMemoStatusToCompleteForAppeasement",
+      "description": "Update the credit memo status to complete ",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.retail.base.prefix}}.ChangeStateGQL",
+          "props": {
+            "status": "REFUND_COMPLETE"
+          }
+        },
+        {
+          "name": "{{fluent.account.plugin.base.prefix}}.CreateRefundIssuedData",
+          "props": {
+            "eventName": "SendRefundIssuedEvent"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "CREDIT_MEMO",
+      "triggers": [
+        {
+          "status": "PENDING_REFUND"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "name": "SendRefundIssuedEvent",
+      "description": "Send the refund issued data ",
+      "rules": [
+        {
+          "name": "CVETQA.INTEXP_21875.SendRefundIssuedWebhook",
+          "props": {
+            "webhookSettingName": "RefundIssuedWebhookEndPointURL"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "CREDIT_MEMO",
+      "triggers": [
+        {
+          "status": "REFUND_COMPLETE"
+        },
+        {
+          "status": "REFUND_FAILED"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "name": "ChangeCreditMemoStatusToFailedForAppeasement",
+      "description": "Update the credit memo status to failed ",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.retail.base.prefix}}.ChangeStateGQL",
+          "props": {
+            "status": "REFUND_FAILED"
+          }
+        },
+        {
+          "name": "{{fluent.account.plugin.base.prefix}}.CreateRefundIssuedData",
+          "props": {
+            "eventName": "SendRefundIssuedEvent"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "CREDIT_MEMO",
+      "triggers": [
+        {
+          "status": "PENDING_REFUND"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "subtype": "RETURN",
+      "name": "RefundComplete",
+      "description": "Update the status to Refund Complete",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.retail.base.prefix}}.ChangeStateGQL",
+          "props": {
+            "status": "REFUND_COMPLETE"
+          }
+        },
+        {
+          "name": "{{fluent.account.plugin.retail.base.prefix}}.SendEventForCreditMemoToReturn",
+          "props": {
+            "eventName": "RefundComplete"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "CREDIT_MEMO",
+      "triggers": [
+        {
+          "status": "PENDING_REFUND"
+        },
+        {
+          "status": "CREATED"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "subtype": "RETURN",
+      "name": "RefundFailed",
+      "description": "Update the status to REFUND_FAILED",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.retail.base.prefix}}.ChangeStateGQL",
+          "props": {
+            "status": "REFUND_FAILED"
+          }
+        },
+        {
+          "name": "{{fluent.account.plugin.retail.base.prefix}}.SendEventForCreditMemoToReturn",
+          "props": {
+            "eventName": "RefundRejected"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "CREDIT_MEMO",
+      "triggers": [
+        {
+          "status": "PENDING_REFUND"
+        },
+        {
+          "status": "CREATED"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "subtype": "CREDIT_MEMO",
+      "name": "RefundComplete",
+      "description": "Update the status to REFUND_COMPLETE",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.retail.base.prefix}}.ChangeStateGQL",
+          "props": {
+            "status": "REFUND_COMPLETE"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "CREDIT_MEMO",
+      "triggers": [
+        {
+          "status": "PENDING_REFUND"
+        },
+        {
+          "status": "CREATED"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "subtype": "CREDIT_MEMO",
+      "name": "RefundFailed",
+      "description": "Update the status to REFUND_FAILED",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.retail.base.prefix}}.ChangeStateGQL",
+          "props": {
+            "status": "REFUND_FAILED"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "CREDIT_MEMO",
+      "triggers": [
+        {
+          "status": "PENDING_REFUND"
+        },
+        {
+          "status": "CREATED"
+        }
+      ]
+    }
+  ],
+  "entityType": "BILLING_ACCOUNT",
+  "entitySubtype": "CUSTOMER",
+  "versionComment": null,
+  "description": "Default Billing Account workflow",
+  "retailerId": "{{retailer_id}}",
+  "version": "1.47",
+  "createdOn": "2023-06-01T07:13:15.151+00:00",
+  "createdBy": "covetrus_na_rx_management ",
+  "name": "BILLING_ACCOUNT::CUSTOMER",
+  "statuses": [
+    {
+      "entityType": "BILLING_ACCOUNT",
+      "name": "CREATED",
+      "category": "BOOKING"
+    },
+    {
+      "entityType": "BILLING_ACCOUNT",
+      "name": "ACTIVE",
+      "category": "BOOKING"
+    },
+    {
+      "entityType": "CREDIT_MEMO",
+      "name": "REFUND_COMPLETE",
+      "category": "BOOKING"
+    },
+    {
+      "entityType": "CREDIT_MEMO",
+      "name": "REFUND_FAILED",
+      "category": "BOOKING"
+    },
+    {
+      "entityType": "CREDIT_MEMO",
+      "name": "CREATED",
+      "category": ""
+    },
+    {
+      "entityType": "CREDIT_MEMO",
+      "name": "PENDING_REFUND",
+      "category": "BOOKING"
+    }
+  ],
+  "id": null
+}

@@ -1,0 +1,249 @@
+{
+  "settings": {},
+  "rulesets": [
+    {
+      "userActions": [
+        {
+          "context": [
+            {
+              "confirm": true,
+              "label": "Activate",
+              "type": "PRIMARY",
+              "modules": [
+                "adminconsole"
+              ]
+            }
+          ],
+          "eventName": "ActivateLocation",
+          "attributes": []
+        }
+      ],
+      "subtype": "WAREHOUSE",
+      "name": "ActivateLocation",
+      "description": "Notification for a location status change",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.v2.prefix}}.ChangeStateGQL",
+          "props": {
+            "status": "ACTIVE"
+          }
+        },
+        {
+          "name": "{{fluent.account.plugin.v2.prefix}}.SendEventGQL",
+          "props": {
+            "eventName": "UpdateLocationStatus"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "LOCATION",
+      "triggers": [
+        {
+          "status": "INACTIVE"
+        },
+        {
+          "status": "CREATED"
+        }
+      ]
+    },
+    {
+      "userActions": [
+        {
+          "context": [
+            {
+              "confirm": true,
+              "label": "Deactivate",
+              "type": "PRIMARY",
+              "modules": [
+                "adminconsole"
+              ]
+            }
+          ],
+          "eventName": "DeactivateLocation",
+          "attributes": []
+        }
+      ],
+      "subtype": "WAREHOUSE",
+      "name": "DeactivateLocation",
+      "description": "Notification for a location status change",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.v2.prefix}}.ChangeStateGQL",
+          "props": {
+            "status": "INACTIVE"
+          }
+        },
+        {
+          "name": "{{fluent.account.plugin.v2.prefix}}.SendEventGQL",
+          "props": {
+            "eventName": "UpdateLocationStatus"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "LOCATION",
+      "triggers": [
+        {
+          "status": "ACTIVE"
+        },
+        {
+          "status": "CREATED"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "subtype": "WAREHOUSE",
+      "name": "UpdateLocationStatus",
+      "description": "Notification for a location status change",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.base.prefix}}.NotifyInventoryCatalogueForLocation",
+          "props": {
+            "eventName": "LocationStatusChanged",
+            "retailerId": "1",
+            "inventoryCatalogueRef": "{{fluent.inventory.catalogue.ref}}"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "LOCATION",
+      "triggers": [
+        {
+          "status": "ACTIVE"
+        },
+        {
+          "status": "INACTIVE"
+        },
+        {
+          "status": "CREATED"
+        }
+      ]
+    },
+    {
+      "userActions": [
+        {
+          "context": [
+            {
+              "confirm": true,
+              "label": "Add Network",
+              "type": "SECONDARY",
+              "modules": [
+                "adminconsole"
+              ]
+            }
+          ],
+          "eventName": "AddNetworkToLocation",
+          "attributes": [
+            {
+              "defaultValue": "",
+              "name": "ref",
+              "label": "Network Ref",
+              "source": "",
+              "type": "STRING",
+              "mandatory": true
+            }
+          ]
+        }
+      ],
+      "subtype": "WAREHOUSE",
+      "name": "AddNetworkToLocation",
+      "description": "ADd network to a location",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.location.prefix}}.AddNetworkToLocation",
+          "props": null
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "LOCATION",
+      "triggers": [
+        {
+          "status": "ACTIVE"
+        },
+        {
+          "status": "INACTIVE"
+        },
+        {
+          "status": "CREATED"
+        }
+      ]
+    },
+    {
+      "userActions": [
+        {
+          "context": [
+            {
+              "confirm": true,
+              "label": "Remove Network",
+              "type": "SECONDARY",
+              "modules": [
+                "adminconsole"
+              ]
+            }
+          ],
+          "eventName": "RemoveNetworkFromLocation",
+          "attributes": [
+            {
+              "defaultValue": "",
+              "name": "ref",
+              "label": "Network Ref",
+              "source": "",
+              "type": "STRING",
+              "mandatory": true
+            }
+          ]
+        }
+      ],
+      "subtype": "WAREHOUSE",
+      "name": "RemoveNetworkFromLocation",
+      "description": "Notification for a location status change",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.location.prefix}}.RemoveNetworkFromLocation",
+          "props": null
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "LOCATION",
+      "triggers": [
+        {
+          "status": "ACTIVE"
+        },
+        {
+          "status": "INACTIVE"
+        },
+        {
+          "status": "CREATED"
+        }
+      ]
+    }
+  ],
+  "entityType": "LOCATION",
+  "entitySubtype": "WAREHOUSE",
+  "versionComment": "Updated Warehouse Location Workflow",
+  "description": "WAREHOUSE Location Workflow",
+  "retailerId": "{{retailer_id}}",
+  "version": "1.2",
+  "createdOn": "2023-03-29T11:02:49.163+00:00",
+  "createdBy": "covetrus_na_rx_management ",
+  "name": "LOCATION::WAREHOUSE",
+  "statuses": [
+    {
+      "entityType": "LOCATION",
+      "name": "CREATED",
+      "category": "BOOKING"
+    },
+    {
+      "entityType": "LOCATION",
+      "name": "ACTIVE",
+      "category": "BOOKING"
+    },
+    {
+      "entityType": "LOCATION",
+      "name": "INACTIVE",
+      "category": "DONE"
+    }
+  ],
+  "id": null
+}

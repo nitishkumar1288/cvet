@@ -1,0 +1,23 @@
+{
+  "data": {
+    "virtualPositions": {
+      "virtualPositionEdge": [
+        {
+          "virtualPosition": {
+            "id": "66d50198-cb59-44d1-894d-990a494e6915",
+            "ref": "186126:PHOENIX:BASE",
+            "type": "BASE",
+            "status": "ACTIVE",
+            "productRef": "186126",
+            "groupRef": "PHOENIX",
+            "quantity": 47
+          },
+          "cursor": "Y3Vyc29yOi0tLTY2ZDUwMTk4LWNiNTktNDRkMS04OTRkLTk5MGE0OTRlNjkxNV9fMTY1ODMxMTgyMDc5OA=="
+        }
+      ],
+      "pageInfo": {
+        "hasNextPage": false
+      }
+    }
+  }
+}

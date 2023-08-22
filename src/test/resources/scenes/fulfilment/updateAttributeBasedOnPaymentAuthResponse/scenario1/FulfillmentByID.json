@@ -1,0 +1,1019 @@
+{
+  "data": {
+    "fulfilmentById": {
+      "id": "433",
+      "ref": "FF_3137",
+      "status": "REJECTED",
+      "type": "HD_PFDC",
+      "deliveryType": "STANDARD",
+      "createdOn": "2022-12-16T12:17:59.342Z",
+      "updatedOn": "2022-12-16T12:20:34.577Z",
+      "eta": null,
+      "expiryTime": null,
+      "order": {
+        "id": "3137",
+        "ref": "NKS_HD_ORD_183",
+        "type": "HD",
+        "status": "CANCELLED",
+        "items": {
+          "edges": [
+            {
+              "node": {
+                "ref": "1",
+                "status": "CREATED",
+                "quantity": 0,
+                "attributes": [
+                  {
+                    "name": "prescriptionId",
+                    "value": 12
+                  },
+                  {
+                    "name": "pharmacyFee",
+                    "value": ""
+                  },
+                  {
+                    "name": "proratedOrderDiscount",
+                    "value": 2
+                  },
+                  {
+                    "name": "productKey",
+                    "value": ""
+                  },
+                  {
+                    "name": "productName",
+                    "value": ""
+                  },
+                  {
+                    "name": "lineStatus",
+                    "value": "CANCELLED"
+                  },
+                  {
+                    "name": "shippingTax",
+                    "value": 44
+                  },
+                  {
+                    "name": "autoshipNextDate",
+                    "value": ""
+                  },
+                  {
+                    "name": "imageUrl",
+                    "value": ""
+                  },
+                  {
+                    "name": "selectedDefaultLocation",
+                    "value": "VPA_NORTH"
+                  },
+                  {
+                    "name": "packageQuantity",
+                    "value": ""
+                  },
+                  {
+                    "name": "isPrescriptionRequired",
+                    "value": false
+                  },
+                  {
+                    "name": "packageDosage",
+                    "value": ""
+                  },
+                  {
+                    "name": "facilityId",
+                    "value": 7
+                  },
+                  {
+                    "name": "handlingTax",
+                    "value": 33
+                  },
+                  {
+                    "name": "selectedNetwork",
+                    "value": "COMPOUND_RX_HD"
+                  },
+                  {
+                    "name": "autoshipFrequency",
+                    "value": ""
+                  },
+                  {
+                    "name": "reasonForCancellation",
+                    "value": "item rejected by 3PL"
+                  },
+                  {
+                    "name": "totalPaidPrice",
+                    "value": 25
+                  },
+                  {
+                    "name": "pharmacyFeeTax",
+                    "value": ""
+                  },
+                  {
+                    "name": "url",
+                    "value": ""
+                  },
+                  {
+                    "name": "refillsRemaining",
+                    "value": 122
+                  },
+                  {
+                    "name": "prescriptionKey",
+                    "value": ""
+                  },
+                  {
+                    "name": "packageFlavor",
+                    "value": ""
+                  },
+                  {
+                    "name": "oldLineStatus",
+                    "value": "FULFILMENT_REQUESTED"
+                  },
+                  {
+                    "name": "autoshipId",
+                    "value": ""
+                  },
+                  {
+                    "name": "patientKey",
+                    "value": ""
+                  },
+                  {
+                    "name": "isPV1VerifiedAndRequested",
+                    "value": true
+                  },
+                  {
+                    "name": "totalProratedOrderDiscount",
+                    "value": 10
+                  },
+                  {
+                    "name": "dispenseRequestId",
+                    "value": 1
+                  }
+                ]
+              }
+            },
+            {
+              "node": {
+                "ref": "2",
+                "status": "CREATED",
+                "quantity": 0,
+                "attributes": [
+                  {
+                    "name": "prescriptionId",
+                    "value": 12
+                  },
+                  {
+                    "name": "pharmacyFee",
+                    "value": ""
+                  },
+                  {
+                    "name": "proratedOrderDiscount",
+                    "value": 2
+                  },
+                  {
+                    "name": "productKey",
+                    "value": ""
+                  },
+                  {
+                    "name": "productName",
+                    "value": ""
+                  },
+                  {
+                    "name": "lineStatus",
+                    "value": "CANCELLED"
+                  },
+                  {
+                    "name": "shippingTax",
+                    "value": 44
+                  },
+                  {
+                    "name": "autoshipNextDate",
+                    "value": ""
+                  },
+                  {
+                    "name": "imageUrl",
+                    "value": ""
+                  },
+                  {
+                    "name": "selectedDefaultLocation",
+                    "value": "VPA_NORTH"
+                  },
+                  {
+                    "name": "packageQuantity",
+                    "value": ""
+                  },
+                  {
+                    "name": "isPrescriptionRequired",
+                    "value": false
+                  },
+                  {
+                    "name": "packageDosage",
+                    "value": ""
+                  },
+                  {
+                    "name": "facilityId",
+                    "value": 7
+                  },
+                  {
+                    "name": "handlingTax",
+                    "value": 33
+                  },
+                  {
+                    "name": "selectedNetwork",
+                    "value": "COMPOUND_RX_HD"
+                  },
+                  {
+                    "name": "autoshipFrequency",
+                    "value": ""
+                  },
+                  {
+                    "name": "reasonForCancellation",
+                    "value": "item rejected by 3PL"
+                  },
+                  {
+                    "name": "totalPaidPrice",
+                    "value": 25
+                  },
+                  {
+                    "name": "pharmacyFeeTax",
+                    "value": ""
+                  },
+                  {
+                    "name": "url",
+                    "value": ""
+                  },
+                  {
+                    "name": "refillsRemaining",
+                    "value": 122
+                  },
+                  {
+                    "name": "prescriptionKey",
+                    "value": ""
+                  },
+                  {
+                    "name": "packageFlavor",
+                    "value": ""
+                  },
+                  {
+                    "name": "oldLineStatus",
+                    "value": "FULFILMENT_REQUESTED"
+                  },
+                  {
+                    "name": "autoshipId",
+                    "value": ""
+                  },
+                  {
+                    "name": "patientKey",
+                    "value": ""
+                  },
+                  {
+                    "name": "isPV1VerifiedAndRequested",
+                    "value": true
+                  },
+                  {
+                    "name": "totalProratedOrderDiscount",
+                    "value": 10
+                  },
+                  {
+                    "name": "dispenseRequestId",
+                    "value": 1
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "attributes": [
+          {
+            "name": "appliedProductPromotions",
+            "type": "STRING",
+            "value": ""
+          },
+          {
+            "name": "isReship",
+            "type": "STRING",
+            "value": ""
+          },
+          {
+            "name": "pharmacyFee",
+            "type": "FLOAT",
+            "value": ""
+          },
+          {
+            "name": "handlingFee",
+            "type": "FLOAT",
+            "value": ""
+          },
+          {
+            "name": "totalDiscounts",
+            "type": "FLOAT",
+            "value": 0
+          },
+          {
+            "name": "deliveryDiscountWaived",
+            "type": "BOOLEAN",
+            "value": false
+          },
+          {
+            "name": "orderMethodType",
+            "type": "STRING",
+            "value": ""
+          },
+          {
+            "name": "appliedVouchers",
+            "type": "STRING",
+            "value": ""
+          },
+          {
+            "name": "deliveryAddress",
+            "type": "JSON",
+            "value": {
+              "ref": "",
+              "town": "",
+              "phone1": "2343232424",
+              "region": "LA",
+              "country": "US",
+              "lastName": "kumar",
+              "firstName": "nitish",
+              "postalCode": "12345",
+              "companyName": "",
+              "addressLine1": "Add1",
+              "addressLine2": "Add2"
+            }
+          },
+          {
+            "name": "subtype",
+            "type": "STRING",
+            "value": "KOUNT_REVIEWED"
+          },
+          {
+            "name": "cosmeticOrderSubtotal",
+            "type": "FLOAT",
+            "value": 0
+          },
+          {
+            "name": "orderKey",
+            "type": "String",
+            "value": 1234599
+          },
+          {
+            "name": "animalCareBusiness",
+            "type": "STRING",
+            "value": ""
+          },
+          {
+            "name": "productDiscounts",
+            "type": "FLOAT",
+            "value": 0
+          },
+          {
+            "name": "appliedOrderPromotions",
+            "type": "STRING",
+            "value": ""
+          },
+          {
+            "name": "orderOriginType",
+            "type": "STRING",
+            "value": ""
+          },
+          {
+            "name": "originalOrderCode",
+            "type": "STRING",
+            "value": ""
+          },
+          {
+            "name": "kountTransactionId",
+            "type": "STRING",
+            "value": ""
+          },
+          {
+            "name": "orderDiscounts",
+            "type": "FLOAT",
+            "value": 0
+          },
+          {
+            "name": "orderStatusActivity",
+            "type": "JSON",
+            "value": [
+              {
+                "status": "FRAUD_REVIEW",
+                "message": "Order status moved from CREATED to FRAUD_REVIEW .",
+                "updatedTime": "2022-12-16T12:17:24.294Z"
+              },
+              {
+                "status": "Rx_MATCH_REQUESTED",
+                "message": "Order status moved from FRAUD_REVIEW to Rx_MATCH_REQUESTED .",
+                "updatedTime": "2022-12-16T12:17:27.130Z"
+              },
+              {
+                "status": "Rx_MATCH_COMPLETED",
+                "message": "Order status moved from Rx_MATCH_REQUESTED to Rx_MATCH_COMPLETED .",
+                "updatedTime": "2022-12-16T12:17:32.351Z"
+              },
+              {
+                "status": "PHARMACY_ALLOCATED",
+                "message": "Order status moved from Rx_MATCH_COMPLETED to PHARMACY_ALLOCATED .",
+                "updatedTime": "2022-12-16T12:17:36.747Z"
+              },
+              {
+                "status": "PV1_REQUESTED",
+                "message": "Order status moved from PHARMACY_ALLOCATED to PV1_REQUESTED .",
+                "updatedTime": "2022-12-16T12:17:38.675Z"
+              },
+              {
+                "status": "PV1_VERIFIED",
+                "message": "Order status moved from PV1_REQUESTED to PV1_VERIFIED .",
+                "updatedTime": "2022-12-16T12:17:50.751Z"
+              },
+              {
+                "status": "FULFILMENT_PROCESSING",
+                "message": "Order status moved from PV1_VERIFIED to FULFILMENT_PROCESSING .",
+                "updatedTime": "2022-12-16T12:18:00.357Z"
+              },
+              {
+                "status": "CANCELLED",
+                "message": "Order status moved from FULFILMENT_PROCESSING to CANCELLED .",
+                "updatedTime": "2022-12-16T12:20:24.167Z"
+              }
+            ]
+          },
+          {
+            "name": "deliveryDiscount",
+            "type": "FLOAT",
+            "value": ""
+          },
+          {
+            "name": "orderNotes",
+            "type": "String",
+            "value": ""
+          },
+          {
+            "name": "orderNotesAudit",
+            "type": "JSON",
+            "value": [
+              {
+                "note": "item rejected by 3PL",
+                "noteKey": "d466af97-3f99-4741-b810-326a24da243f",
+                "createdDate": "2022-12-16T12:20:25.161Z",
+                "noteContext": "NONE",
+                "noteUserKey": ""
+              }
+            ]
+          },
+          {
+            "name": "paymentInfo",
+            "type": "JSON",
+            "value": {
+              "amount": "",
+              "cardType": {
+                "code": "VISA"
+              },
+              "cardNumber": "",
+              "expiryYear": "",
+              "expiryMonth": "",
+              "paymentType": "creditCard",
+              "paymentToken": "6hgg75k12",
+              "billingAddress": {
+                "town": "",
+                "region": "AL",
+                "country": "US",
+                "lastName": "",
+                "firstName": "nitish",
+                "postalCode": "",
+                "addressLine1": "",
+                "addressLine2": ""
+              },
+              "paymentSequence": "",
+              "accountHolderName": ""
+            }
+          },
+          {
+            "name": "PV1SchedulerWindow",
+            "type": "JSON",
+            "value": {
+              "to": "2022-12-16T13:24:18.780Z",
+              "from": "2022-12-16T12:17:38.780Z"
+            }
+          }
+        ]
+      },
+      "user": {
+        "__typename": "Customer",
+        "firstName": "Nitish",
+        "lastName": null,
+        "username": "nitishkumarSri123",
+        "primaryEmail": "nikumar123@update.com",
+        "primaryPhone": null,
+        "title": null,
+        "ref": "nitishkumarSri123"
+      },
+      "attributes": [
+        {
+          "name": "carrierInformation",
+          "type": "STRING",
+          "value": "carrier data"
+        },
+        {
+          "name": "handlingTax",
+          "type": "float",
+          "value": 36
+        },
+        {
+          "name": "grandTotal",
+          "type": "float",
+          "value": 24
+        },
+        {
+          "name": "shippingMethod",
+          "type": "STRING",
+          "value": "ground"
+        },
+        {
+          "name": "discount",
+          "type": "float",
+          "value": 0
+        },
+        {
+          "name": "tax",
+          "type": "float",
+          "value": 24
+        },
+        {
+          "name": "subTotal",
+          "type": "float",
+          "value": 0
+        },
+        {
+          "name": "taxDate",
+          "type": "STRING",
+          "value": "2022-10-19T15:07:05.955Z"
+        },
+        {
+          "name": "FulfilmentType",
+          "type": "STRING",
+          "value": "HD_PFDC"
+        },
+        {
+          "name": "taxStatus",
+          "type": "STRING",
+          "value": "tax status"
+        },
+        {
+          "name": "totalTax",
+          "type": "float",
+          "value": 24
+        },
+        {
+          "name": "shippingTax",
+          "type": "float",
+          "value": 48
+        },
+        {
+          "name": "initialFulfillmentStatus",
+          "type": "STRING",
+          "value": "WAITING_FULFILMENT"
+        },
+        {
+          "name": "paymentTransaction",
+          "type": "JSON",
+          "value": [
+            {
+              "amount": 60.15,
+              "status": "AUTHORIZED",
+              "authNumber": "H124531",
+              "processorId": "Z912141241249432",
+              "paymentToken": "K912345678",
+              "paymentMethod": "CREDIT_CARD",
+              "transactionKey": "da73592f-7104-44ac-b281-2a0f6f77a59a",
+              "transactionType": "CAPTURE"
+            },
+            {
+              "amount": 60.15,
+              "status": "PAYMENT_AUTH_REVISED",
+              "createdOn": "2021-06-15T20:20:39Z",
+              "authNumber": "H124531",
+              "processorId": "Z912141241249432",
+              "paymentToken": "K912345678",
+              "paymentMethod": "CREDIT_CARD",
+              "transactionKey": "da73592f-7104-44ac-b281-2a0f6f77a59a",
+              "transactionType": "CAPTURE"
+            }
+          ]
+        },
+        {
+          "name": "trackingNumber",
+          "type": "STRING",
+          "value": 534534
+        }
+      ],
+      "items": {
+        "edges": [
+          {
+            "item": {
+              "id": "731",
+              "ref": "2",
+              "status": "DELETED",
+              "requestedQuantity": 5,
+              "filledQuantity": 0,
+              "rejectedQuantity": 0,
+              "orderItem": {
+                "__typename": "OrderItem",
+                "id": "6636",
+                "createdOn": "2022-12-16T12:17:23.311Z",
+                "updatedOn": "2022-12-16T12:20:23.799Z",
+                "ref": "2",
+                "quantity": 0,
+                "paidPrice": 5,
+                "currency": "USD",
+                "totalPrice": 50,
+                "totalTaxPrice": 22,
+                "price": 10,
+                "taxPrice": 1,
+                "attributes": [
+                  {
+                    "name": "prescriptionId",
+                    "type": "STRING",
+                    "value": 12
+                  },
+                  {
+                    "name": "pharmacyFee",
+                    "type": "STRING",
+                    "value": ""
+                  },
+                  {
+                    "name": "proratedOrderDiscount",
+                    "type": "FLOAT",
+                    "value": 2
+                  },
+                  {
+                    "name": "productKey",
+                    "type": "STRING",
+                    "value": ""
+                  },
+                  {
+                    "name": "productName",
+                    "type": "STRING",
+                    "value": ""
+                  },
+                  {
+                    "name": "lineStatus",
+                    "type": "STRING",
+                    "value": "CANCELLED"
+                  },
+                  {
+                    "name": "shippingTax",
+                    "type": "float",
+                    "value": 44
+                  },
+                  {
+                    "name": "autoshipNextDate",
+                    "type": "STRING",
+                    "value": ""
+                  },
+                  {
+                    "name": "imageUrl",
+                    "type": "STRING",
+                    "value": ""
+                  },
+                  {
+                    "name": "selectedDefaultLocation",
+                    "type": "STRING",
+                    "value": "VPA_NORTH"
+                  },
+                  {
+                    "name": "packageQuantity",
+                    "type": "STRING",
+                    "value": ""
+                  },
+                  {
+                    "name": "isPrescriptionRequired",
+                    "type": "STRING",
+                    "value": false
+                  },
+                  {
+                    "name": "packageDosage",
+                    "type": "STRING",
+                    "value": ""
+                  },
+                  {
+                    "name": "facilityId",
+                    "type": "STRING",
+                    "value": 7
+                  },
+                  {
+                    "name": "handlingTax",
+                    "type": "float",
+                    "value": 33
+                  },
+                  {
+                    "name": "selectedNetwork",
+                    "type": "STRING",
+                    "value": "COMPOUND_RX_HD"
+                  },
+                  {
+                    "name": "autoshipFrequency",
+                    "type": "STRING",
+                    "value": ""
+                  },
+                  {
+                    "name": "reasonForCancellation",
+                    "type": "STRING",
+                    "value": "item rejected by 3PL"
+                  },
+                  {
+                    "name": "totalPaidPrice",
+                    "type": "FLOAT",
+                    "value": 25
+                  },
+                  {
+                    "name": "pharmacyFeeTax",
+                    "type": "FLOAT",
+                    "value": ""
+                  },
+                  {
+                    "name": "url",
+                    "type": "STRING",
+                    "value": ""
+                  },
+                  {
+                    "name": "refillsRemaining",
+                    "type": "STRING",
+                    "value": 122
+                  },
+                  {
+                    "name": "prescriptionKey",
+                    "type": "STRING",
+                    "value": ""
+                  },
+                  {
+                    "name": "packageFlavor",
+                    "type": "STRING",
+                    "value": ""
+                  },
+                  {
+                    "name": "oldLineStatus",
+                    "type": "STRING",
+                    "value": "FULFILMENT_REQUESTED"
+                  },
+                  {
+                    "name": "autoshipId",
+                    "type": "STRING",
+                    "value": ""
+                  },
+                  {
+                    "name": "patientKey",
+                    "type": "STRING",
+                    "value": ""
+                  },
+                  {
+                    "name": "isPV1VerifiedAndRequested",
+                    "type": "STRING",
+                    "value": true
+                  },
+                  {
+                    "name": "totalProratedOrderDiscount",
+                    "type": "FLOAT",
+                    "value": 10
+                  },
+                  {
+                    "name": "dispenseRequestId",
+                    "type": "STRING",
+                    "value": 1
+                  }
+                ],
+                "product": {
+                  "name": "COMPXX02",
+                  "ref": "COMPXX02"
+                }
+              }
+            },
+            "cursor": "Y3Vyc29yOi0tLTczMQ=="
+          },
+          {
+            "item": {
+              "id": "730",
+              "ref": "1",
+              "status": "DELETED",
+              "requestedQuantity": 5,
+              "filledQuantity": 0,
+              "rejectedQuantity": 0,
+              "orderItem": {
+                "__typename": "OrderItem",
+                "id": "6637",
+                "createdOn": "2022-12-16T12:17:23.312Z",
+                "updatedOn": "2022-12-16T12:20:23.801Z",
+                "ref": "1",
+                "quantity": 0,
+                "paidPrice": 5,
+                "currency": "USD",
+                "totalPrice": 50,
+                "totalTaxPrice": 22,
+                "price": 10,
+                "taxPrice": 1,
+                "attributes": [
+                  {
+                    "name": "prescriptionId",
+                    "type": "STRING",
+                    "value": 12
+                  },
+                  {
+                    "name": "pharmacyFee",
+                    "type": "STRING",
+                    "value": ""
+                  },
+                  {
+                    "name": "proratedOrderDiscount",
+                    "type": "FLOAT",
+                    "value": 2
+                  },
+                  {
+                    "name": "productKey",
+                    "type": "STRING",
+                    "value": ""
+                  },
+                  {
+                    "name": "productName",
+                    "type": "STRING",
+                    "value": ""
+                  },
+                  {
+                    "name": "lineStatus",
+                    "type": "STRING",
+                    "value": "CANCELLED"
+                  },
+                  {
+                    "name": "shippingTax",
+                    "type": "float",
+                    "value": 44
+                  },
+                  {
+                    "name": "autoshipNextDate",
+                    "type": "STRING",
+                    "value": ""
+                  },
+                  {
+                    "name": "imageUrl",
+                    "type": "STRING",
+                    "value": ""
+                  },
+                  {
+                    "name": "selectedDefaultLocation",
+                    "type": "STRING",
+                    "value": "VPA_NORTH"
+                  },
+                  {
+                    "name": "packageQuantity",
+                    "type": "STRING",
+                    "value": ""
+                  },
+                  {
+                    "name": "isPrescriptionRequired",
+                    "type": "STRING",
+                    "value": false
+                  },
+                  {
+                    "name": "packageDosage",
+                    "type": "STRING",
+                    "value": ""
+                  },
+                  {
+                    "name": "facilityId",
+                    "type": "STRING",
+                    "value": 7
+                  },
+                  {
+                    "name": "handlingTax",
+                    "type": "float",
+                    "value": 33
+                  },
+                  {
+                    "name": "selectedNetwork",
+                    "type": "STRING",
+                    "value": "COMPOUND_RX_HD"
+                  },
+                  {
+                    "name": "autoshipFrequency",
+                    "type": "STRING",
+                    "value": ""
+                  },
+                  {
+                    "name": "reasonForCancellation",
+                    "type": "STRING",
+                    "value": "item rejected by 3PL"
+                  },
+                  {
+                    "name": "totalPaidPrice",
+                    "type": "FLOAT",
+                    "value": 25
+                  },
+                  {
+                    "name": "pharmacyFeeTax",
+                    "type": "FLOAT",
+                    "value": ""
+                  },
+                  {
+                    "name": "url",
+                    "type": "STRING",
+                    "value": ""
+                  },
+                  {
+                    "name": "refillsRemaining",
+                    "type": "STRING",
+                    "value": 122
+                  },
+                  {
+                    "name": "prescriptionKey",
+                    "type": "STRING",
+                    "value": ""
+                  },
+                  {
+                    "name": "packageFlavor",
+                    "type": "STRING",
+                    "value": ""
+                  },
+                  {
+                    "name": "oldLineStatus",
+                    "type": "STRING",
+                    "value": "FULFILMENT_REQUESTED"
+                  },
+                  {
+                    "name": "autoshipId",
+                    "type": "STRING",
+                    "value": ""
+                  },
+                  {
+                    "name": "patientKey",
+                    "type": "STRING",
+                    "value": ""
+                  },
+                  {
+                    "name": "isPV1VerifiedAndRequested",
+                    "type": "STRING",
+                    "value": true
+                  },
+                  {
+                    "name": "totalProratedOrderDiscount",
+                    "type": "FLOAT",
+                    "value": 10
+                  },
+                  {
+                    "name": "dispenseRequestId",
+                    "type": "STRING",
+                    "value": 1
+                  }
+                ],
+                "product": {
+                  "name": "COMPXX01",
+                  "ref": "COMPXX01"
+                }
+              }
+            },
+            "cursor": "Y3Vyc29yOi0tLTczMA=="
+          }
+        ],
+        "pageInfo": {
+          "hasNextPage": false
+        }
+      },
+      "articles": {
+        "edges": [],
+        "pageInfo": {
+          "hasNextPage": false
+        }
+      },
+      "fromLocation": {
+        "ref": "VPA_NORTH"
+      },
+      "fromAddress": {
+        "id": "23",
+        "ref": "VPA_NORTH",
+        "type": "AGENT",
+        "companyName": null,
+        "name": null,
+        "street": "4802 North Sam Houston Pkwy W, Suite 100",
+        "city": "Houston",
+        "country": "US",
+        "state": "TX",
+        "postcode": "77086",
+        "region": null,
+        "latitude": 29.93863551,
+        "longitude": -95.49620548,
+        "timeZone": "CST",
+        "createdOn": "2022-05-26T09:34:55.942Z",
+        "updatedOn": "2022-05-26T09:34:55.942Z"
+      },
+      "toAddress": {
+        "id": "3153",
+        "ref": "addressRef",
+        "type": "ORDER",
+        "companyName": "pivotree",
+        "name": "addressName",
+        "street": "street1",
+        "city": "city1",
+        "country": "US",
+        "state": "NY",
+        "postcode": "",
+        "region": "",
+        "latitude": 23532.12,
+        "longitude": 33125.12,
+        "timeZone": "",
+        "createdOn": "2022-12-16T12:17:23.315Z",
+        "updatedOn": "2022-12-16T12:17:23.315Z"
+      }
+    }
+  }
+}

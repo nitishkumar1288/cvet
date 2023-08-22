@@ -1,0 +1,16 @@
+{
+  "retailer_id": "1",
+  "account_id" : "0",
+  "entity_id": "108",
+  "entity_ref": "x68kqfh",
+  "root_entity_id": "285",
+  "root_entity_ref": "NKS_HD_ORD_38",
+  "attributes": {
+    "paymentSettlementRequest": {
+      "fulfillmentRef": "FF_1233",
+      "paymentToken": "123213123",
+      "paymentType": "CC",
+      "grandTotal": 23
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "retailer_id": "1",
+  "account_id" : "0",
+  "entity_id": "469",
+  "entity_ref": "Ord_NK16",
+  "root_entity_id": "469",
+  "root_entity_ref": "Ord_NK16",
+  "attributes":
+      {
+        "cancelReason":"fraud system",
+        "cancelledBy": "nitish"
+      }
+
+}

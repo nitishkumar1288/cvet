@@ -1,0 +1,18 @@
+{
+  "hillOrderItemsAllocation": [
+    {
+      "defaultLocationSelected": false,
+      "orderItemId": "2425",
+      "productRef": "186126",
+      "requestedQuantity": 1,
+      "kitProduct": false
+    },
+    {
+      "defaultLocationSelected": false,
+      "orderItemId": "5198",
+      "productRef": "186128",
+      "requestedQuantity": 1,
+      "kitProduct": false
+    }
+  ]
+}

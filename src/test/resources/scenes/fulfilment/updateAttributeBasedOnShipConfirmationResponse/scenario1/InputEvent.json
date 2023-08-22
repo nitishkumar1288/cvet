@@ -1,0 +1,30 @@
+{
+  "retailer_id": "1",
+  "account_id" : "0",
+  "entity_id": "213",
+  "entity_ref": "q7uu6",
+  "root_entity_id": "2578",
+  "root_entity_ref": "NKS_HD_ORD_110",
+  "attributes":{
+    "ref":"q7uu6",
+    "shipConfirmation":
+    {
+      "orderRef":"NKS_HD_ORD_110",
+      "orderKey":"1234599",
+      "shippingOrderKey":"q7uu6",
+      "fulfilmentId":"213",
+      "lines":[
+        {
+          "ref":"1",
+          "filledQuantity":5,
+          "rejectedQuantity":0
+        }
+      ],
+      "carrierCode":"na",
+      "trackingNumber":"534534",
+      "shippingMethod": "one day",
+      "trackingURL": "www.url.com",
+      "shippedDate": "20-12-22"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "retailers": [
+    {
+      "retailer": {
+        "retailer_id": 1,
+        "replace_values": {
+          "retailer_id": 1,
+
+          "fluent.product.catalogue.ref": "PC:MASTER:1",
+          "fluent.inventory.catalogue.ref": "DEFAULT:1",
+          "fluent.base.virtual.catalogue.ref": "BASE:1",
+          "fluent.ats.virtual.catalogue.ref": "ATS:1",
+
+          "fluent.account.plugin.v2.prefix": "CVETDEV.commonv2",
+          "fluent.account.plugin.retail.base.prefix": "FLUENTRETAIL.base",
+          "fluent.account.plugin.gi.prefix": "CVETDEV.commongi",
+          "fluent.account.plugin.base.prefix": "CVETDEV.base",
+          "fluent.account.plugin.location.prefix": "CVETDEV.location"
+        }
+      }
+    }
+  ]
+}

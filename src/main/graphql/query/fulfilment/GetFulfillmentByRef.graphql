@@ -1,0 +1,110 @@
+query GetFulfillmentByRef($ref: [String!], $fulfilmentCount: Int, $fulfilmentCursor: String, $includeAttributes: Boolean!, $includeItems: Boolean!, $includefromAddress: Boolean!, $includeOrder: Boolean!, $includeToAddress: Boolean!, $fulfilmentItemsCount: Int, $fulfilmentItemsCursor: String,  $withOrderItem: Boolean!){
+    fulfilments(ref: $ref,first: $fulfilmentCount, after: $fulfilmentCursor){
+        edges{
+            node{
+                id
+                ref
+                status
+                createdOn
+                updatedOn
+                deliveryType
+                type
+                eta
+                expiryTime
+                order @include(if: $includeOrder) {
+                    id
+                    ref
+                    type
+                    status
+                }
+                user {
+                    __typename
+                    firstName
+                    lastName
+                    username
+                    primaryEmail
+                    primaryPhone
+                    title
+                    ref
+                }
+                attributes @include(if: $includeAttributes) {
+                    name
+                    type
+                    value
+                }
+                fromAddress @include(if: $includefromAddress){
+                    id
+                    type
+                    createdOn
+                    name
+                    street
+                    city
+                    state
+                    postcode
+                    region
+                    country
+                    latitude
+                    longitude
+                }
+                toAddress @include(if: $includeToAddress){
+                    id
+                    type
+                    createdOn
+                    companyName
+                    name
+                    street
+                    city
+                    state
+                    postcode
+                    region
+                    country
+                    latitude
+                    longitude
+                    ref
+                }
+                items(first: $fulfilmentItemsCount, after: $fulfilmentItemsCursor) @include(if: $includeItems) {
+                    edges {
+                        item: node {
+                            id
+                            ref
+                            status
+                            requestedQuantity
+                            filledQuantity
+                            rejectedQuantity
+                            orderItem @include(if: $withOrderItem) {
+                                __typename
+                                id
+                                createdOn
+                                updatedOn
+                                ref
+                                quantity
+                                paidPrice
+                                currency
+                                totalPrice
+                                totalTaxPrice
+                                price
+                                taxPrice
+                                attributes {
+                                    name
+                                    type
+                                    value
+                                }
+                                product{
+                                    name
+                                    ... on VariantProduct{
+                                        ref
+                                    }
+
+                                }
+                            }
+                        }
+                        cursor
+                    }
+                    pageInfo {
+                        hasNextPage
+                    }
+                }
+            }
+        }
+    }
+}

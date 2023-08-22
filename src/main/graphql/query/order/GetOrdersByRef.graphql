@@ -1,0 +1,155 @@
+query GetOrdersByRef($ref: [String]
+    $orderItemCount: Int
+    $orderItemCursor: String
+    $includeOrderItems: Boolean!
+    $includeFulfilmentChoice: Boolean!
+    $includeCustomer: Boolean!
+    $includeFulfilments: Boolean!
+    $fulfilmentRef: [String]
+    $fulfilmentCount: Int
+    $fulfilmentCursor: String) {
+    orders(ref: $ref) {
+        edges {
+            node {
+                id
+                ref
+                type
+                status
+                createdOn
+                updatedOn
+                totalPrice
+                totalTaxPrice
+                attributes {
+                    name
+                    type
+                    value
+                }
+
+                items(first: $orderItemCount, after: $orderItemCursor) @include(if: $includeOrderItems) {
+                    itemEdges: edges {
+                        itemNode: node {
+                            id
+                            ref
+                            quantity
+                            paidPrice
+                            currency
+                            price
+                            taxPrice
+                            totalTaxPrice
+                            totalPrice
+                            attributes {
+                                name
+                                value
+                                type
+                            }
+                        }
+                    }
+                }
+
+                fulfilmentChoice @include(if: $includeFulfilmentChoice) {
+                    id
+                    createdOn
+                    updatedOn
+                    currency
+                    deliveryInstruction
+                    deliveryType
+                    fulfilmentPrice
+                    fulfilmentTaxPrice
+                    fulfilmentTaxPrice
+                    fulfilmentType
+                    pickupLocationRef
+                    deliveryAddress {
+                        id
+                        type
+                        companyName
+                        name
+                        street
+                        city
+                        state
+                        postcode
+                        region
+                        country
+                        region
+                        ref
+                        latitude
+                        longitude
+                    }
+                }
+                customer @include(if: $includeCustomer) {
+                    id
+                    ref
+                    title
+                    country
+                    firstName
+                    lastName
+                    username
+                    primaryEmail
+                    primaryPhone
+                }
+                financialTransactions {
+                    edges {
+                        node {
+                            id
+                            ref
+                            type
+                            status
+                            createdOn
+                            updatedOn
+                            total
+                            currency
+                            externalTransactionCode
+                            externalTransactionId
+                            cardType
+                            paymentMethod
+                            paymentProviderName
+                        }
+                    }
+                }
+                fulfilments (first: $fulfilmentCount, after: $fulfilmentCursor, ref:$fulfilmentRef) @include(if: $includeFulfilments){
+                    fulfilmentEdges: edges {
+                        fulfilmentNode: node {
+                            id
+                            ref
+                            type
+                            status
+                            type
+                            createdOn
+                            updatedOn
+                            fromAddress {
+                                ref
+                                id
+                                type
+                                name
+                                street
+                                city
+                                state
+                                postcode
+                                country
+                                latitude
+                                longitude
+                            }
+                            toAddress {
+                                ref
+                                type
+                                id
+                                name
+                                street
+                                city
+                                state
+                                postcode
+                                country
+                                latitude
+                                longitude
+                            }
+                            attributes {
+                                name
+                                type
+                                value
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

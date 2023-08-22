@@ -1,0 +1,26 @@
+query GetSettingsByName($name: [String],
+    $context: [String!],
+    $contextId: [Int!],
+    $settingCount: Int
+    $settingCursor: String
+    $includeSettigns: Boolean!){
+    settings(name:$name,context:$context,contextId:$contextId,first:$settingCount,after:$settingCursor)
+    @include(if:$includeSettigns){
+        pageInfo {
+            hasNextPage
+        }
+        edges{
+            cursor
+            node{
+                id
+                name
+                valueType
+                value
+                context
+                contextId
+                lobValue
+            }
+        }
+    }
+
+}

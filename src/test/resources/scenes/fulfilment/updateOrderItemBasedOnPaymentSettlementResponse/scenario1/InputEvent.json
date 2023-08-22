@@ -1,0 +1,24 @@
+{
+  "retailer_id": "1",
+  "account_id" : "0",
+  "entity_id": "3136",
+  "entity_ref": "FF_3136",
+  "root_entity_id": "432",
+  "root_entity_ref": "NKS_HD_ORD_182",
+  "entityStatus": "CREATED",
+  "attributes": {
+    "orderRef": "HDORDFC017",
+    "fulfilmentRef": "FF_HDORDFC017",
+    "status": "SUCCESSFUL",
+    "processorId": "Z912141241249432",
+    "createdDate": "2022-10-19T15:07:05.955Z",
+    "amount": "60.15",
+    "errorCode": "",
+    "transactionType": "AUTH",
+    "authNumber": "H124531",
+    "transactionKey": "da73592f-7104-44ac-b281-2a0f6f77a59a",
+    "paymentToken": "K912345678",
+    "paymentMethod": "CREDIT_CARD",
+    "cardType": "VISA"
+  }
+}

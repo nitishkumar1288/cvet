@@ -1,0 +1,31 @@
+{
+  "retailer_id": "1",
+  "account_id" : "0",
+  "entity_id": "3136",
+  "entity_ref": "FF_3136",
+  "root_entity_id": "432",
+  "root_entity_ref": "NKS_HD_ORD_182",
+  "attributes": {
+    "fulfilment": {
+      "ref": "x68kqfh",
+      "id": "123",
+      "status": "tax status",
+      "exceptionReason": "abc",
+      "exceptionResolutionType": "na",
+      "exceptionResolutionCode": "22",
+      "facilityId": "VFC",
+      "items": [
+        {
+          "ref": "1",
+          "status": "REJECTED",
+          "cancelReason": "na"
+        },
+        {
+          "ref": "1",
+          "status": "REJECTED",
+          "cancelReason": "na"
+        }
+      ]
+    }
+  }
+}

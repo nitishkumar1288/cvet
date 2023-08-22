@@ -1,0 +1,18 @@
+{
+  "retailer_id": "1",
+  "account_id" : "0",
+  "entity_id": "346",
+  "entity_ref": "1_YK_HD_ORD_38",
+  "root_entity_id": "2320",
+  "root_entity_ref": "YK_HD_ORD_38",
+  "attributes": {
+    "ref": "YK_HD_ORD_38",
+    "updatedOn": "2022-10-27T09:06:26.203Z",
+    "fulfilment": {
+      "ref": "1_YK_HD_ORD_38",
+      "id": "346",
+      "status": "EXCEPTION",
+      "exceptionReason": "abc reason at pick pack"
+    }
+  }
+}

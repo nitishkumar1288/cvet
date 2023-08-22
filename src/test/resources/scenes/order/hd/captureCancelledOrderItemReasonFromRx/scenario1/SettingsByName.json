@@ -1,0 +1,27 @@
+{
+  "data": {
+    "settings": {
+      "pageInfo": {
+        "hasNextPage": true
+      },
+      "edges": [
+        {
+          "cursor": "Y3Vyc29yOi0tLTgz",
+          "node": {
+            "id": "83",
+            "name": "OrderItemDeclinedReasonMap",
+            "valueType": "JSON",
+            "value": "",
+            "context": "RETAILER",
+            "contextId": 1,
+            "lobValue": {
+              "declinedReasonCode": "declined from code",
+              "declinedReasonCode1": "declined from code 1",
+              "declinedReasonCode2": "declined from code 2"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,701 @@
+{
+  "settings": {},
+  "rulesets": [
+    {
+      "userActions": [],
+      "subtype": "MASTER",
+      "name": "CREATE",
+      "description": "Initial Event on PRODUCT_CATALOGUE Creation",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.v2.prefix}}.ChangeStateGQL",
+          "props": {
+            "status": "ACTIVE"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "PRODUCT_CATALOGUE",
+      "triggers": [
+        {
+          "status": "CREATED"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "subtype": "MASTER",
+      "name": "UPSERT_PRODUCT",
+      "description": "Upsert a Standard or Variant",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.ValidateIncomingProduct",
+          "props": null
+        },
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.ValidateProductCategoriesExist",
+          "props": null
+        },
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.ValidateStandardProduct",
+          "props": null
+        },
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.ValidateVariantProduct",
+          "props": null
+        },
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.Forward",
+          "props": {
+            "eventName": "CheckProductExists"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "PRODUCT_CATALOGUE",
+      "triggers": [
+        {
+          "status": "ACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "subtype": "MASTER",
+      "name": "CheckProductExists",
+      "description": "Check if the product exists to decide whether an update or create ",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.ForwardIfStandardProductExists",
+          "props": {
+            "eventName": "UpdateStandardProduct"
+          }
+        },
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.ForwardIfStandardProductNotExists",
+          "props": {
+            "eventName": "CreateStandardProduct"
+          }
+        },
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.ForwardIfVariantProductExists",
+          "props": {
+            "eventName": "UpdateVariantProduct"
+          }
+        },
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.ForwardIfVariantProductNotExists",
+          "props": {
+            "eventName": "CreateVariantProduct"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "PRODUCT_CATALOGUE",
+      "triggers": [
+        {
+          "status": "ACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "subtype": "MASTER",
+      "name": "CreateStandardProduct",
+      "description": "Upsert a Standard, Variant or Group Product",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.CreateStandardProduct",
+          "props": null
+        },
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.DownToProduct",
+          "props": {
+            "eventName": "CheckProductStatusChange"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "PRODUCT_CATALOGUE",
+      "triggers": [
+        {
+          "status": "ACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "name": "UpdateStandardProduct",
+      "description": "Upsert a Standard, Variant or Group Product",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.UpdateStandardProduct",
+          "props": null
+        },
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.AddCategoriesToStandardProduct",
+          "props": null
+        },
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.RemoveCategoriesFromStandardProduct",
+          "props": null
+        },
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.Forward",
+          "props": {
+            "eventName": "CheckProductStatusChange"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "PRODUCT",
+      "triggers": [
+        {
+          "status": "CREATED"
+        },
+        {
+          "status": "ACTIVE"
+        },
+        {
+          "status": "INACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "subtype": "MASTER",
+      "name": "CreateVariantProduct",
+      "description": "Upsert a Standard, Variant or Group Product",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.CreateVariantProduct",
+          "props": null
+        },
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.DownToProduct",
+          "props": {
+            "eventName": "CheckProductStatusChange"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "PRODUCT_CATALOGUE",
+      "triggers": [
+        {
+          "status": "ACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "name": "UpdateVariantProduct",
+      "description": "Upsert a Standard, Variant or Group Product",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.UpdateVariantProduct",
+          "props": null
+        },
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.RemoveCategoriesFromVariantProduct",
+          "props": null
+        },
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.Forward",
+          "props": {
+            "eventName": "CheckProductStatusChange"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "PRODUCT",
+      "triggers": [
+        {
+          "status": "CREATED"
+        },
+        {
+          "status": "ACTIVE"
+        },
+        {
+          "status": "INACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "name": "CheckProductStatusChange",
+      "description": "Upsert a Standard, Variant or Group Product",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.ForwardIfIncomingAttributeEquals",
+          "props": {
+            "attributeValue": "ACTIVE",
+            "eventName": "ActivateProduct",
+            "attributeKey": "status"
+          }
+        },
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.ForwardIfIncomingAttributeEquals",
+          "props": {
+            "attributeValue": "INACTIVE",
+            "eventName": "DeactivateProduct",
+            "attributeKey": "status"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "PRODUCT",
+      "triggers": [
+        {
+          "status": "CREATED"
+        },
+        {
+          "status": "ACTIVE"
+        },
+        {
+          "status": "INACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "name": "ActivateProduct",
+      "description": "Update Product Status",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.v2.prefix}}.ChangeStateGQL",
+          "props": {
+            "status": "ACTIVE"
+          }
+        },
+        {
+          "name": "{{fluent.account.plugin.v2.prefix}}.SendEventGQL",
+          "props": {
+            "eventName": "UpdateProductStatus"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "PRODUCT",
+      "triggers": [
+        {
+          "status": "CREATED"
+        },
+        {
+          "status": "ACTIVE"
+        },
+        {
+          "status": "INACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [
+        {
+          "context": [
+            {
+              "confirm": true,
+              "label": "Activate",
+              "type": "PRIMARY",
+              "modules": [
+                "adminconsole"
+              ]
+            }
+          ],
+          "eventName": "ActivateProductUserAction",
+          "attributes": []
+        }
+      ],
+      "subtype": "VARIANT",
+      "name": "ActivateProductUserAction",
+      "description": "Update Product Status",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.v2.prefix}}.SendEventGQL",
+          "props": {
+            "eventName": "ActivateProduct"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "PRODUCT",
+      "triggers": [
+        {
+          "status": "CREATED"
+        },
+        {
+          "status": "INACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "name": "DeactivateProduct",
+      "description": "Update Product Status",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.v2.prefix}}.ChangeStateGQL",
+          "props": {
+            "status": "INACTIVE"
+          }
+        },
+        {
+          "name": "{{fluent.account.plugin.v2.prefix}}.SendEventGQL",
+          "props": {
+            "eventName": "UpdateProductStatus"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "PRODUCT",
+      "triggers": [
+        {
+          "status": "CREATED"
+        },
+        {
+          "status": "ACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [
+        {
+          "context": [
+            {
+              "confirm": true,
+              "label": "Deactivate",
+              "type": "PRIMARY",
+              "modules": [
+                "adminconsole"
+              ]
+            }
+          ],
+          "eventName": "DeactivateProductUserAction",
+          "attributes": []
+        }
+      ],
+      "subtype": "VARIANT",
+      "name": "DeactivateProductUserAction",
+      "description": "Update Product Status",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.v2.prefix}}.SendEventGQL",
+          "props": {
+            "eventName": "DeactivateProduct"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "PRODUCT",
+      "triggers": [
+        {
+          "status": "ACTIVE"
+        },
+        {
+          "status": "CREATED"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "name": "UpdateProductStatus",
+      "description": "Update Product Status",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.NotifyInventoryCatalogueForProduct",
+          "props": {
+            "eventName": "VariantProductStatusChanged",
+            "retailerId": "1",
+            "inventoryCatalogueRef": "{{fluent.inventory.catalogue.ref}}"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "PRODUCT",
+      "triggers": [
+        {
+          "status": "CREATED"
+        },
+        {
+          "status": "ACTIVE"
+        },
+        {
+          "status": "INACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "subtype": "MASTER",
+      "name": "UPSERT_CATEGORY",
+      "description": "Upsert a Category",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.ValidateIncomingCategory",
+          "props": null
+        },
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.ValidateCategoriesExist",
+          "props": null
+        },
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.Forward",
+          "props": {
+            "eventName": "CheckCategoryExists"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "PRODUCT_CATALOGUE",
+      "triggers": [
+        {
+          "status": "ACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "subtype": "MASTER",
+      "name": "CheckCategoryExists",
+      "description": "Upsert a Standard, Variant or Group Product",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.ForwardIfCategoryExists",
+          "props": {
+            "eventName": "UpdateCategory"
+          }
+        },
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.ForwardIfCategoryNotExists",
+          "props": {
+            "eventName": "CreateCategory"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "PRODUCT_CATALOGUE",
+      "triggers": [
+        {
+          "status": "ACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "subtype": "MASTER",
+      "name": "CreateCategory",
+      "description": "Creates a new category",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.CreateCategory",
+          "props": null
+        },
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.DownToCategory",
+          "props": {
+            "eventName": "CheckCategoryStatusChange"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "PRODUCT_CATALOGUE",
+      "triggers": [
+        {
+          "status": "ACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "name": "UpdateCategory",
+      "description": "Upsert a Standard, Variant or Group Product",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.UpdateCategory",
+          "props": null
+        },
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.Forward",
+          "props": {
+            "eventName": "CheckCategoryStatusChange"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "CATEGORY",
+      "triggers": [
+        {
+          "status": "CREATED"
+        },
+        {
+          "status": "ACTIVE"
+        },
+        {
+          "status": "INACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "name": "CheckCategoryStatusChange",
+      "description": "Upsert a Standard, Variant or Group Product",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.ForwardIfIncomingAttributeEquals",
+          "props": {
+            "attributeValue": "ACTIVE",
+            "eventName": "ActivateCategory",
+            "attributeKey": "status"
+          }
+        },
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.ForwardIfIncomingAttributeEquals",
+          "props": {
+            "attributeValue": "INACTIVE",
+            "eventName": "DeactivateCategory",
+            "attributeKey": "status"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "CATEGORY",
+      "triggers": [
+        {
+          "status": "CREATED"
+        },
+        {
+          "status": "ACTIVE"
+        },
+        {
+          "status": "INACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "name": "ActivateCategory",
+      "description": "Update Product Status",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.v2.prefix}}.ChangeStateGQL",
+          "props": {
+            "status": "ACTIVE"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "CATEGORY",
+      "triggers": [
+        {
+          "status": "CREATED"
+        },
+        {
+          "status": "ACTIVE"
+        },
+        {
+          "status": "INACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "name": "DeactivateCategory",
+      "description": "Update Category Status",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.v2.prefix}}.ChangeStateGQL",
+          "props": {
+            "status": "INACTIVE"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "CATEGORY",
+      "triggers": [
+        {
+          "status": "CREATED"
+        },
+        {
+          "status": "ACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "subtype": "MASTER",
+      "name": "DeactivateProductCatalogue",
+      "description": "Change Product Catalogue State to Inactive",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.v2.prefix}}.ChangeStateGQL",
+          "props": {
+            "status": "INACTIVE"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "PRODUCT_CATALOGUE",
+      "triggers": [
+        {
+          "status": "ACTIVE"
+        }
+      ]
+    }
+  ],
+  "entityType": "PRODUCT_CATALOGUE",
+  "entitySubtype": "MASTER",
+  "versionComment": "Version created / updated via Postman",
+  "description": "Workflow for the MASTER Product Catalogue",
+  "retailerId": "{{retailer_id}}",
+  "version": "1.3",
+  "createdOn": "2023-03-29T11:05:04.285+00:00",
+  "createdBy": "covetrus_na_rx_management ",
+  "name": "PRODUCT_CATALOGUE::MASTER",
+  "statuses": [
+    {
+      "entityType": "PRODUCT_CATALOGUE",
+      "name": "CREATED",
+      "category": "BOOKING"
+    },
+    {
+      "entityType": "PRODUCT_CATALOGUE",
+      "name": "ACTIVE",
+      "category": "FULFILMENT"
+    },
+    {
+      "entityType": "PRODUCT_CATALOGUE",
+      "name": "INACTIVE",
+      "category": "DONE"
+    },
+    {
+      "entityType": "PRODUCT",
+      "name": "CREATED",
+      "category": "BOOKING"
+    },
+    {
+      "entityType": "PRODUCT",
+      "name": "ACTIVE",
+      "category": "FULFILMENT"
+    },
+    {
+      "entityType": "PRODUCT",
+      "name": "INACTIVE",
+      "category": "DONE"
+    },
+    {
+      "entityType": "CATEGORY",
+      "name": "CREATED",
+      "category": "BOOKING"
+    },
+    {
+      "entityType": "CATEGORY",
+      "name": "ACTIVE",
+      "category": "FULFILMENT"
+    },
+    {
+      "entityType": "CATEGORY",
+      "name": "INACTIVE",
+      "category": "DONE"
+    }
+  ],
+  "id": null
+}

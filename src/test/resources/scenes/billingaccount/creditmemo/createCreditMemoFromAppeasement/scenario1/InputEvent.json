@@ -1,0 +1,24 @@
+{
+  "retailer_id": "1",
+  "account_id" : "0",
+  "entity_id": "3870",
+  "entity_ref": "NKS_HD_ORD_296",
+  "entityType": "ORDER",
+  "root_entity_id": "3870",
+  "root_entity_ref": "NKS_HD_ORD_296",
+  "attributes": {
+    "appeasementInfo": {
+      "appeasementAmount": "10",
+      "appeasementReason": "test",
+      "comment": "checking",
+      "userId": "nitish"
+    },
+    "entityReference": {
+      "subType": "",
+      "type": "ORDER",
+      "ref": "NKS_HD_ORD_296",
+      "id": "3870"
+    }
+
+  }
+}

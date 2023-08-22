@@ -1,0 +1,23 @@
+{
+  "data": {
+    "settings": {
+      "pageInfo": {
+        "hasNextPage": false
+      },
+      "edges": [
+        {
+          "cursor": "Y3Vyc29yOi0tLTY3",
+          "node": {
+            "id": "67",
+            "name": "OrderRemorsePeriod",
+            "valueType": "STRING",
+            "value": "2",
+            "context": "RETAILER",
+            "contextId": 1,
+            "lobValue": {}
+          }
+        }
+      ]
+    }
+  }
+}

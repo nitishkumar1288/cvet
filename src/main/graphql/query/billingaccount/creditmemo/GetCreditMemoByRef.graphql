@@ -1,0 +1,107 @@
+query GetCreditMemoByRef($ref:String!
+    $includeItems:Boolean!,
+    $returnOrderItemCount: Int,
+    $returnOrderItemCursor: String){
+    creditMemo(ref: $ref){
+        ref
+        id
+        attributes {
+            name
+            value
+            type
+        }
+        totalAmount {
+            amount
+        }
+        subTotalAmount {
+            amount
+        }
+        totalBalance {
+            amount
+        }
+
+        defaultTaxType {
+            tariff
+            group
+            country
+        }
+        createdOn
+        status
+        currency {
+            alphabeticCode
+        }
+        type
+        returnOrder {
+            ref
+            retailer {
+                id
+            }
+        }
+        items (first:$returnOrderItemCount after:$returnOrderItemCursor) @include(if: $includeItems){
+            edges {
+                node {
+                    id
+                    ref
+                    type
+                    createdOn
+                    amount {
+                        amount
+                    }
+                    creditReasonCode {
+                        value
+                    }
+                    description
+                    orderItem {
+                        ref
+                        order {
+                            ref
+                            retailer {
+                                id
+                            }
+                        }
+                    }
+                    taxAmount {
+                        amount
+                    }
+                    product {
+                        ref
+                        catalogue {
+                            ref
+                        }
+                    }
+                    unitAmount {
+                        amount
+                    }
+                    unitCostAmount {
+                        amount
+                    }
+                    unitQuantity {
+                        quantity
+                    }
+                    unitTaxType {
+                        country
+                        group
+                        tariff
+                    }
+                }
+            }
+        }
+        returnOrder {
+            ref
+            retailer {
+                id
+            }
+        }
+        order {
+            ref
+            retailer {
+                id
+            }
+        }
+        billingAccount {
+            ref
+            id
+        }
+
+    }
+}

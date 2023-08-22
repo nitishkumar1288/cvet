@@ -1,0 +1,32 @@
+query GetNetworksByRefs($networkRef: [String]
+    $networkCount: Int
+    $networkCursor: String
+    $includeNetworks: Boolean!) {
+    networks(ref: $networkRef,first: $networkCount, after: $networkCursor) @include(if: $includeNetworks) {
+        pageInfo {
+            hasNextPage
+        }
+        edges{
+            cursor
+            node{
+                locations{
+                    edges{
+                        node{
+                            id
+                            ref
+                            type
+                            attributes {
+                                type
+                                name
+                                value
+                            }
+                            primaryAddress{
+                                timeZone
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

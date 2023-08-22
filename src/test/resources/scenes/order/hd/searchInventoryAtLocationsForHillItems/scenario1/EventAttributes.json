@@ -1,0 +1,44 @@
+{
+  "hillOrderItemsAllocation": [
+    {
+      "defaultLocationSelected": false,
+      "orderItemId": "5197",
+      "productRef": "186126",
+      "requestedQuantity": 1,
+      "kitProduct": false
+    },
+    {
+      "defaultLocationSelected": false,
+      "orderItemId": "5198",
+      "productRef": "186128",
+      "requestedQuantity": 1,
+      "kitProduct": false
+    }
+  ],
+  "locations": {
+    "HILLS_TX": {
+      "ref": "HILLS_TX",
+      "distance": 6521224.978930655,
+      "latitude": 32.80141464,
+      "id": "5",
+      "type": "WAREHOUSE",
+      "longitude": -97.01302101
+    },
+    "HILLS_NY": {
+      "ref": "HILLS_NY",
+      "distance": 7402991.118183327,
+      "latitude": 41.34617576,
+      "id": "4",
+      "type": "WAREHOUSE",
+      "longitude": -74.29641559
+    },
+    "HILLS_CA": {
+      "ref": "HILLS_CA",
+      "distance": 4931467.107947361,
+      "latitude": 34.04922888,
+      "id": "6",
+      "type": "WAREHOUSE",
+      "longitude": -117.5272033
+    }
+  }
+}

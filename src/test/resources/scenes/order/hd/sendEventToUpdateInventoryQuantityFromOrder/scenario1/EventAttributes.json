@@ -1,0 +1,32 @@
+{
+  "pharmacyAllocationForOrderItems": [
+    {
+      "orderItemDtoList": [
+        {
+          "productRef": "186126",
+          "requestedQuantity": 1,
+          "kitProduct": false,
+          "id": "2425",
+          "itemTypeMap": {
+            "isControlled": "N",
+            "isCommercial": "Y",
+            "isCompound": "N"
+          }
+        },
+        {
+          "productRef": "186128",
+          "requestedQuantity": 1,
+          "kitProduct": false,
+          "id": "2424",
+          "itemTypeMap": {
+            "isControlled": "N",
+            "isCommercial": "Y",
+            "isCompound": "N"
+          }
+        }
+      ],
+      "defaultLocationSelected": false,
+      "prescriptionId": "12"
+    }
+  ]
+}

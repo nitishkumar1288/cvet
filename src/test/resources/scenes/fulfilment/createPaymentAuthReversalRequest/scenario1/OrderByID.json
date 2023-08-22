@@ -1,0 +1,575 @@
+{
+  "data": {
+    "orderById": {
+      "id": "290",
+      "ref": "HDORDFC022",
+      "type": "HD",
+      "status": "Rx_READY_FOR_ALLOCATION",
+      "createdOn": "2022-07-14T06:25:26.242Z",
+      "updatedOn": "2022-07-14T06:26:47.069Z",
+      "totalPrice": 325.3,
+      "totalTaxPrice": 353.0,
+      "orderItems": {
+        "orderItemEdge": [
+          {
+            "orderItemNode": {
+              "id": "659",
+              "ref": "1",
+              "quantity": 10,
+              "paidPrice": 12.0,
+              "currency": "USD",
+              "price": 12.0,
+              "taxType": "GST",
+              "taxPrice": 12.0,
+              "totalPrice": 15.0,
+              "totalTaxPrice": 15.0,
+              "status": "CREATED",
+              "orderItemAttributes": [
+                {
+                  "name": "packageDosage",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "prescriptionId",
+                  "type": "STRING",
+                  "value": 1
+                },
+                {
+                  "name": "pharmacyFee",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "facilityId",
+                  "type": "STRING",
+                  "value": 7
+                },
+                {
+                  "name": "autoshipFrequency",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "proratedOrderDiscount",
+                  "type": "FLOAT",
+                  "value": 0
+                },
+                {
+                  "name": "productKey",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "pharmacyFeeTax",
+                  "type": "FLOAT",
+                  "value": ""
+                },
+                {
+                  "name": "url",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "productName",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "refillsRemaining",
+                  "type": "STRING",
+                  "value": 122
+                },
+                {
+                  "name": "prescriptionKey",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "lineStatus",
+                  "type": "STRING",
+                  "value": "Rx_ALLOCATION_INITIATED"
+                },
+                {
+                  "name": "packageFlavor",
+                  "type": "STRING",
+                  "value": "A"
+                },
+                {
+                  "name": "autoshipNextDate",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "imageUrl",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "autoshipId",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "patientKey",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "packageQuantity",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "isPrescriptionRequired",
+                  "type": "STRING",
+                  "value": false
+                },
+                {
+                  "name": "totalProratedOrderDiscount",
+                  "type": "FLOAT",
+                  "value": ""
+                }
+              ],
+              "product": {
+                "id": "b8699c93-3fe9-4651-9054-4aee9a2f2250",
+                "ref": "NK001",
+                "type": "VARIANT",
+                "status": "ACTIVE",
+                "attributes": [
+                  {
+                    "name": "exampleString",
+                    "type": "STRING",
+                    "value": "exampleValue"
+                  }
+                ],
+                "gtin": "123",
+                "name": "NK 001",
+                "summary": "NK001",
+                "prices": [],
+                "tax": null,
+                "catalogue": {
+                  "ref": "PC:MASTER:1"
+                }
+              }
+            },
+            "cursor": "Y3Vyc29yOi0tLTY1OV9fMTY1Nzc3OTkyNjI0Mg=="
+          },
+          {
+            "orderItemNode": {
+              "id": "658",
+              "ref": "2",
+              "quantity": 5,
+              "paidPrice": 12.0,
+              "currency": "USD",
+              "price": 12.0,
+              "taxType": "GST",
+              "taxPrice": 12.0,
+              "totalPrice": 15.0,
+              "totalTaxPrice": 15.0,
+              "status": "CREATED",
+              "orderItemAttributes": [
+                {
+                  "name": "packageDosage",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "prescriptionId",
+                  "type": "STRING",
+                  "value": 7
+                },
+                {
+                  "name": "pharmacyFee",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "facilityId",
+                  "type": "STRING",
+                  "value": 8
+                },
+                {
+                  "name": "autoshipFrequency",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "proratedOrderDiscount",
+                  "type": "FLOAT",
+                  "value": 0
+                },
+                {
+                  "name": "productKey",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "pharmacyFeeTax",
+                  "type": "FLOAT",
+                  "value": ""
+                },
+                {
+                  "name": "url",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "productName",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "refillsRemaining",
+                  "type": "STRING",
+                  "value": 122
+                },
+                {
+                  "name": "prescriptionKey",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "lineStatus",
+                  "type": "STRING",
+                  "value": "Rx_ALLOCATION_INITIATED"
+                },
+                {
+                  "name": "packageFlavor",
+                  "type": "STRING",
+                  "value": "B"
+                },
+                {
+                  "name": "autoshipNextDate",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "imageUrl",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "autoshipId",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "patientKey",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "packageQuantity",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "isPrescriptionRequired",
+                  "type": "STRING",
+                  "value": false
+                },
+                {
+                  "name": "totalProratedOrderDiscount",
+                  "type": "FLOAT",
+                  "value": ""
+                }
+              ],
+              "product": {
+                "id": "d8a9909b-4f50-47aa-a811-49179d259d61",
+                "ref": "NK002",
+                "type": "VARIANT",
+                "status": "ACTIVE",
+                "attributes": [
+                  {
+                    "name": "tempSensitive",
+                    "type": "STRING",
+                    "value": "Y"
+                  },
+                  {
+                    "name": "fulfilmentVendorShortName",
+                    "type": "STRING",
+                    "value": ""
+                  },
+                  {
+                    "name": "approvalType",
+                    "type": "STRING",
+                    "value": ""
+                  },
+                  {
+                    "name": "isDeaProduct",
+                    "type": "STRING",
+                    "value": "Y"
+                  },
+                  {
+                    "name": "productPod",
+                    "type": "CUSTOM",
+                    "value": [
+                      {
+                        "name": 4,
+                        "facilityId": "123",
+                        "combineScriptproOrders": "Y"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "isCompound",
+                    "type": "STRING",
+                    "value": "Y"
+                  },
+                  {
+                    "name": "productName",
+                    "type": "STRING",
+                    "value": ""
+                  },
+                  {
+                    "name": "isKit",
+                    "type": "STRING",
+                    "value": "Y"
+                  },
+                  {
+                    "name": "isControlled",
+                    "type": "STRING",
+                    "value": "Y"
+                  },
+                  {
+                    "name": "productSummary",
+                    "type": "STRING",
+                    "value": ""
+                  },
+                  {
+                    "name": "productKit",
+                    "type": "CUSTOM",
+                    "value": [
+                      {
+                        "sku": "nike1",
+                        "quantity": 4
+                      },
+                      {
+                        "sku": "nike2",
+                        "quantity": 6
+                      }
+                    ]
+                  },
+                  {
+                    "name": "dropShip",
+                    "type": "STRING",
+                    "value": "Y"
+                  },
+                  {
+                    "name": "groundShipOnly",
+                    "type": "STRING",
+                    "value": "Y"
+                  },
+                  {
+                    "name": "isDiet",
+                    "type": "STRING",
+                    "value": "Y"
+                  }
+                ],
+                "gtin": "123",
+                "name": "NK 002",
+                "summary": "NK002",
+                "prices": [],
+                "tax": null,
+                "catalogue": {
+                  "ref": "PC:MASTER:1"
+                }
+              }
+            },
+            "cursor": "Y3Vyc29yOi0tLTY1OF9fMTY1Nzc3OTkyNjI0Mg=="
+          }
+        ],
+        "pageInfo": {
+          "hasNextPage": false
+        }
+      },
+      "fulfilments": {
+        "edges": [],
+        "pageInfo": {
+          "hasNextPage": false
+        }
+      },
+      "customer": {
+        "id": "22",
+        "ref": "Naheeda",
+        "title": null,
+        "country": null,
+        "firstName": "Nahida",
+        "lastName": "S",
+        "username": "Naheeda",
+        "primaryEmail": "emailupdate@gmail.com",
+        "primaryPhone": "1111111111"
+      },
+      "attributes": [
+        {
+          "name": "animalCareBusiness",
+          "value": "",
+          "type": "STRING"
+        },
+        {
+          "name": "orderKey",
+          "type": "STRING",
+          "value": "1231231231"
+        },
+        {
+          "name": "appliedProductPromotions",
+          "value": "",
+          "type": "STRING"
+        },
+        {
+          "name": "isReship",
+          "value": "",
+          "type": "STRING"
+        },
+        {
+          "name": "pharmacyFee",
+          "value": "",
+          "type": "FLOAT"
+        },
+        {
+          "name": "productDiscounts",
+          "value": "",
+          "type": "FLOAT"
+        },
+        {
+          "name": "handlingFee",
+          "value": "",
+          "type": "FLOAT"
+        },
+        {
+          "name": "appliedOrderPromotions",
+          "value": "",
+          "type": "STRING"
+        },
+        {
+          "name": "totalDiscounts",
+          "value": "",
+          "type": "FLOAT"
+        },
+        {
+          "name": "orderOriginType",
+          "value": "",
+          "type": "STRING"
+        },
+        {
+          "name": "deliveryDiscountWaived",
+          "value": "",
+          "type": "BOOLEAN"
+        },
+        {
+          "name": "originalOrderCode",
+          "value": "",
+          "type": "STRING"
+        },
+        {
+          "name": "kountTransactionId",
+          "value": "",
+          "type": "STRING"
+        },
+        {
+          "name": "orderDiscounts",
+          "value": "",
+          "type": "FLOAT"
+        },
+        {
+          "name": "deliveryDiscount",
+          "value": "",
+          "type": "FLOAT"
+        },
+        {
+          "name": "orderMethodType",
+          "value": "",
+          "type": "STRING"
+        },
+        {
+          "name": "appliedVouchers",
+          "value": "",
+          "type": "STRING"
+        },
+        {
+          "name": "deliveryAddress",
+          "value": {
+            "ref": "",
+            "town": "",
+            "phone1": "3434343",
+            "region": "LA",
+            "country": "US",
+            "lastName": "Potter",
+            "firstName": "Harray",
+            "postalCode": "12345",
+            "companyName": "ABC",
+            "addressLine1": "add1",
+            "addressLine2": "add2"
+          },
+          "type": "JSON"
+        },
+        {
+          "name": "subtype",
+          "value": "SPECIALIST_REVIEWED",
+          "type": "STRING"
+        },
+        {
+          "name": "orderNotes",
+          "value": "",
+          "type": "STRING"
+        },
+        {
+          "name": "paymentInfo",
+          "value": {
+            "amount": "",
+            "cardType": {
+              "code": ""
+            },
+            "cardNumberLastFour": "",
+            "expiryYear": "",
+            "expiryMonth": "",
+            "paymentType": "",
+            "billingAddress": {
+              "town": "",
+              "region": "",
+              "country": "",
+              "lastName": "",
+              "firstName": "",
+              "postalCode": "",
+              "addressLine1": "",
+              "addressLine2": ""
+            },
+            "paymentSequence": "",
+            "accountHolderName": ""
+          },
+          "type": "JSON"
+        }
+      ],
+      "fulfilmentChoice": {
+        "id": "285",
+        "createdOn": "2022-07-14T06:25:26.244Z",
+        "updatedOn": "2022-07-14T06:25:26.244Z",
+        "currency": "USD",
+        "deliveryInstruction": "",
+        "fulfilmentPrice": 34.5,
+        "deliveryType": "",
+        "fulfilmentType": null,
+        "fulfilmentTaxPrice": 235.3,
+        "pickupLocationRef": "",
+        "deliveryAddress": {
+          "id": "301",
+          "type": "ORDER",
+          "companyName": "",
+          "name": "",
+          "street": "",
+          "city": "",
+          "state": "",
+          "postcode": "",
+          "region": "",
+          "country": "",
+          "ref": "",
+          "latitude": 23532.12,
+          "longitude": 33125.12,
+          "createdOn": "2022-07-14T06:25:26.245Z",
+          "updatedOn": "2022-07-14T06:25:26.245Z"
+        }
+      }
+    }
+  }
+}

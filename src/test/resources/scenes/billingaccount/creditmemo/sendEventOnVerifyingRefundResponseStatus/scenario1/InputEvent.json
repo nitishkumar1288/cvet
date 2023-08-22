@@ -1,0 +1,23 @@
+{
+  "retailer_id": "1",
+  "account_id" : "0",
+  "entity_id": "4ab0efc6-92ff-4620-a596-116ff088a059",
+  "entity_ref": "efbb52f5-9c95-42ce-89ba-6ac01dee8e2e",
+  "root_entity_id": null,
+  "root_entity_ref": "nitishkumarSri123:1_16877",
+  "attributes": {
+    "orderRef":"HD_T_06022301248",
+    "status": "SUCCESSFUL",
+    "processorId": "Z912141241249432",
+    "createdDate": "2021-06-15T20:20:39Z",
+    "amount": "8",
+    "errorCode":"",
+    "transactionType": "CREDIT",
+    "authNumber": "H124531",
+    "transactionKey": "da73592f-7104-44ac-b281-2a0f6f77a59a",
+    "paymentMethod": "CREDIT_CARD",
+    "paymentToken": "K912345678",
+    "refundKey": "232d35d9-e75f-4f01-80f6-76a5e82fd6ea",
+    "cardType":"VISA"
+  }
+}

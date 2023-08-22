@@ -1,0 +1,71 @@
+{
+  "data": {
+    "locationById": {
+      "id": "8",
+      "ref": "PHOENIX",
+      "status": "ACTIVE",
+      "type": "WAREHOUSE",
+      "primaryAddress": {
+        "id": "24",
+        "type": "AGENT",
+        "name": null
+      },
+      "networks": {
+        "edges": [
+          {
+            "node": {
+              "id": "43"
+            }
+          },
+          {
+            "node": {
+              "id": "42"
+            }
+          },
+          {
+            "node": {
+              "id": "40"
+            }
+          },
+          {
+            "node": {
+              "id": "39"
+            }
+          },
+          {
+            "node": {
+              "id": "38"
+            }
+          },
+          {
+            "node": {
+              "id": "37"
+            }
+          },
+          {
+            "node": {
+              "id": "36"
+            }
+          },
+          {
+            "node": {
+              "id": "35"
+            }
+          },
+          {
+            "node": {
+              "id": "34"
+            }
+          },
+          {
+            "node": {
+              "id": "3"
+            }
+          }
+        ]
+      },
+      "name": "Roadrunner Facility"
+
+    }
+  }
+}

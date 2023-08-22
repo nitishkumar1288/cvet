@@ -1,0 +1,6 @@
+mutation UpdateCreditMemo($input: UpdateCreditMemoInput) {
+    updateCreditMemo(input: $input) {
+        id
+        status
+    }
+}

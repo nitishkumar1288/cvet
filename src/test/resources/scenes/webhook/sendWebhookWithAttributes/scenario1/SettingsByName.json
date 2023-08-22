@@ -1,0 +1,108 @@
+{
+  "data": {
+    "settings": {
+      "edges": [
+        {
+          "node": {
+            "id": "996",
+            "name": "CapturedPaymentDataWebhookEndPointURL",
+            "value": "https://capturedpaymentdata.free.beeceptor.com",
+            "valueType": "STRING",
+            "context": "RETAILER",
+            "contextId": 1
+          }
+        },
+        {
+          "node": {
+            "id": "995",
+            "name": "FulfilmentInvoiceTaxUpdateWebhookEndPointURL",
+            "value": "https://fulfilmentinvoicetaxupdate.free.beeceptor.com",
+            "valueType": "STRING",
+            "context": "RETAILER",
+            "contextId": 1
+          }
+        },
+        {
+          "node": {
+            "id": "994",
+            "name": "FulfilmentSalesTaxUpdateWebhookEndPointURL",
+            "value": "https://fulfilmentsalestaxupdate.free.beeceptor.com",
+            "valueType": "STRING",
+            "context": "RETAILER",
+            "contextId": 1
+          }
+        },
+        {
+          "node": {
+            "id": "993",
+            "name": "FulfilmentShippedWebhookEndPointURL",
+            "value": "https://fulfilmentshipped.free.beeceptor.com",
+            "valueType": "STRING",
+            "context": "RETAILER",
+            "contextId": 1
+          }
+        },
+        {
+          "node": {
+            "id": "992",
+            "name": "FulfilmentStatusUpdateWebhookEndPointURL",
+            "value": "https://fulfilmentstatusupdate1.free.beeceptor.com",
+            "valueType": "STRING",
+            "context": "RETAILER",
+            "contextId": 1
+          }
+        },
+        {
+          "node": {
+            "id": "991",
+            "name": "FulfilmentSuccessPaymentWebhookEndPointURL",
+            "value": "https://fulfilmentsuccesspayment.free.beeceptor.com",
+            "valueType": "STRING",
+            "context": "RETAILER",
+            "contextId": 1
+          }
+        },
+        {
+          "node": {
+            "id": "990",
+            "name": "FulfilmentCreatedWebhookEndPointURL",
+            "value": "https://fulfilmentcreated.free.beeceptor.com",
+            "valueType": "STRING",
+            "context": "RETAILER",
+            "contextId": 1
+          }
+        },
+        {
+          "node": {
+            "id": "989",
+            "name": "PaymentAuthReversalRequestEndPointURL",
+            "value": "https://paymentauthreversal.free.beeceptor.com",
+            "valueType": "STRING",
+            "context": "RETAILER",
+            "contextId": 1
+          }
+        },
+        {
+          "node": {
+            "id": "988",
+            "name": "IsCapacityEnabledForHillItems",
+            "value": "TRUE",
+            "valueType": "BOOLEAN",
+            "context": "RETAILER",
+            "contextId": 1
+          }
+        },
+        {
+          "node": {
+            "id": "987",
+            "name": "IsCapacityEnabledForOtcItems",
+            "value": "FALSE",
+            "valueType": "BOOLEAN",
+            "context": "RETAILER",
+            "contextId": 1
+          }
+        }
+      ]
+    }
+  }
+}

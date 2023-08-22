@@ -1,0 +1,6 @@
+mutation CreateReturnOrder($input: CreateReturnOrderInput) {
+    createReturnOrder(input: $input) {
+        ref
+        status
+    }
+}

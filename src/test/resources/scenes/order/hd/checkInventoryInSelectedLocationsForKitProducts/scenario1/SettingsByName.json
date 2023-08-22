@@ -1,0 +1,36 @@
+{
+  "data": {
+    "settings": {
+      "pageInfo": {
+        "hasNextPage": false
+      },
+      "edges": [
+        {
+          "cursor": "Y3Vyc29yOi0tLTk1OA==",
+          "node": {
+            "id": "958",
+            "name": "NetworkInformationForOrderItem",
+            "valueType": "JSON",
+            "value": "",
+            "context": "RETAILER",
+            "contextId": 1,
+            "lobValue": [
+              {
+                "itemType": "isCompound",
+                "itemValue": "N",
+                "networkRef": "COMMERCIAL_RX_HD",
+                "defaultLocationInNetwork": "CPS_4803"
+              },
+              {
+                "itemType": "isCompound",
+                "itemValue": "Y",
+                "networkRef": "COMPOUND_RX_HD",
+                "defaultLocationInNetwork": "PTL"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

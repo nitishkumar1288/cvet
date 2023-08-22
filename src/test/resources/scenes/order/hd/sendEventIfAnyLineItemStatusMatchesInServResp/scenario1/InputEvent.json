@@ -1,0 +1,24 @@
+{
+  "retailer_id": "1",
+  "account_id" : "0",
+  "entity_id": "290",
+  "entity_ref": "HDORDFC022",
+  "root_entity_id": "290",
+  "root_entity_ref": "HDORDFC022",
+  "attributes": {
+    "items":[
+      {
+        "productKey":"1",
+        "productRef":"695",
+        "lineNumber":"1",
+        "prescriptionId":"1234",
+        "facilityId":"432",
+        "status":"ACTIVE",
+        "isPrescriptionRequired":"false",
+        "refillsRemaining":"122",
+        "declinedReasonCode": "na",
+        "rxStatus": "na"
+      }
+    ]
+  }
+}

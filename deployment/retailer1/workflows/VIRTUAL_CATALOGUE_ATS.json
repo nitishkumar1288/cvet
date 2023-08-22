@@ -1,0 +1,208 @@
+{
+  "settings": {},
+  "rulesets": [
+    {
+      "userActions": [],
+      "name": "CREATE",
+      "description": "Initial Event on Virtual Catalogue Creation",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.v2.prefix}}.ChangeStateGQL",
+          "props": {
+            "status": "ACTIVE"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "VIRTUAL_CATALOGUE",
+      "triggers": [
+        {
+          "status": "CREATED"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "name": "VirtualCatalogueEvent",
+      "description": "Validate a VC event",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.LoadVirtualPositionAndDetails",
+          "props": {
+            "eventName": "CheckVirtualPositionExists",
+            "virtualPositionType": "AGGREGATE"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "VIRTUAL_CATALOGUE",
+      "triggers": [
+        {
+          "status": "ACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "name": "CheckVirtualPositionExists",
+      "description": "Validate a VC event",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.ForwardIfVirtualPositionNotExists",
+          "props": {
+            "eventName": "CreateAggregateVirtualPosition"
+          }
+        },
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.DownToVirtualPositionIfExists",
+          "props": {
+            "eventName": "UpdateAggregateVirtualPosition"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "VIRTUAL_CATALOGUE",
+      "triggers": [
+        {
+          "status": "ACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "name": "CreateAggregateVirtualPosition",
+      "description": "Create or update a virtual position",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.CreateAggregateVirtualPosition",
+          "props": {
+            "statuses": [
+              "ACTIVE"
+            ],
+            "eventName": "CREATE"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "VIRTUAL_CATALOGUE",
+      "triggers": [
+        {
+          "status": "ACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "name": "CREATE",
+      "description": "Initial Event on Virtual Catalogue Creation",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.v2.prefix}}.ChangeStateGQL",
+          "props": {
+            "status": "ACTIVE"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "VIRTUAL_POSITION",
+      "triggers": [
+        {
+          "status": "CREATED"
+        },
+        {
+          "status": "ACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "name": "UpdateAggregateVirtualPosition",
+      "description": "Create or update a virtual position",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.UpdateAggregateVirtualPosition",
+          "props": {
+            "statuses": [
+              "ACTIVE"
+            ]
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "VIRTUAL_POSITION",
+      "triggers": [
+        {
+          "status": "CREATED"
+        },
+        {
+          "status": "ACTIVE"
+        },
+        {
+          "status": "INACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "name": "DeactivateVC",
+      "description": "Make VC Status Inactive",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.v2.prefix}}.ChangeStateGQL",
+          "props": {
+            "status": "INACTIVE"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "VIRTUAL_CATALOGUE",
+      "triggers": [
+        {
+          "status": "ACTIVE"
+        }
+      ]
+    }
+  ],
+  "entityType": "VIRTUAL_CATALOGUE",
+  "entitySubtype": "ATS",
+  "versionComment": "Fluent Expert Services SAMPLE workflow for Virtual Catalogue of type Aggregated",
+  "description": "ATS Virtual Catalogue Workflow",
+  "retailerId": "{{retailer_id}}",
+  "version": "1.1",
+  "createdOn": "2022-07-04T07:56:48.172+00:00",
+  "createdBy": "covetrus_na_rx_management ",
+  "name": "VIRTUAL_CATALOGUE::ATS",
+  "statuses": [
+    {
+      "entityType": "VIRTUAL_CATALOGUE",
+      "name": "CREATED",
+      "category": "BOOKING"
+    },
+    {
+      "entityType": "VIRTUAL_CATALOGUE",
+      "name": "ACTIVE",
+      "category": "FULFILMENT"
+    },
+    {
+      "entityType": "VIRTUAL_CATALOGUE",
+      "name": "INACTIVE",
+      "category": "DONE"
+    },
+    {
+      "entityType": "VIRTUAL_POSITION",
+      "name": "CREATED",
+      "category": "BOOKING"
+    },
+    {
+      "entityType": "VIRTUAL_POSITION",
+      "name": "ACTIVE",
+      "category": "FULFILMENT"
+    },
+    {
+      "entityType": "VIRTUAL_POSITION",
+      "name": "INACTIVE",
+      "category": "DONE"
+    }
+  ],
+  "id": null
+}

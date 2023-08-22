@@ -1,0 +1,14 @@
+{
+  "retailer_id": "1",
+  "account_id" : "0",
+  "entity_id": "285",
+  "entity_ref": "HDORDFC017",
+  "root_entity_id": "285",
+  "root_entity_ref": "HDORDFC017",
+  "entityStatus": "CREATED",
+  "attributes": {
+    "appeasementAmount": "test",
+    "appeasementReason": "shipping charges",
+    "comment": "shipping charges by abc"
+  }
+}

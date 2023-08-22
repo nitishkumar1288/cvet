@@ -1,0 +1,1044 @@
+{
+  "settings": {},
+  "rulesets": [
+    {
+      "userActions": [],
+      "subtype": "DEFAULT",
+      "name": "CREATE",
+      "description": "Initial Event on Inventory Catalogue Creation",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.v2.prefix}}.ChangeStateGQL",
+          "props": {
+            "status": "ACTIVE"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "INVENTORY_CATALOGUE",
+      "triggers": [
+        {
+          "status": "CREATED"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "name": "CREATE",
+      "description": "Initial Event on Inventory Quantity Creation",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.v2.prefix}}.ChangeStateGQL",
+          "props": {
+            "status": "ACTIVE"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "INVENTORY_QUANTITY",
+      "triggers": [
+        {
+          "status": "CREATED"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "subtype": "DEFAULT",
+      "name": "InventoryChanged",
+      "description": "Inventory Change occurred",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.LoadInventoryPosition",
+          "props": {
+            "productCatalogueRef": "{{fluent.product.catalogue.ref}}",
+            "eventName": "CheckInventoryPositionExists"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "INVENTORY_CATALOGUE",
+      "triggers": [
+        {
+          "status": "ACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "subtype": "DEFAULT",
+      "name": "CheckInventoryPositionExists",
+      "description": "Inventory Change occurred",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.ForwardIfInventoryPositionNotExists",
+          "props": {
+            "eventName": "BatchInventoryPositionCreate"
+          }
+        },
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.DownToInventoryPositionIfExists",
+          "props": {
+            "eventName": "BatchInventoryPositionUpdate"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "INVENTORY_CATALOGUE",
+      "triggers": [
+        {
+          "status": "ACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "subtype": "DEFAULT",
+      "name": "BatchInventoryPositionCreate",
+      "description": "Create Inventory Position",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.CreateInventoryPositionV2",
+          "props": {}
+        },
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.CreateInventoryQuantityV2",
+          "props": {
+            "type": "LAST_ON_HAND"
+          }
+        },
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.DownToInventoryPosition",
+          "props": {
+            "eventName": "CheckProductStatus"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "INVENTORY_CATALOGUE",
+      "triggers": [
+        {
+          "status": "ACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "subtype": "DEFAULT",
+      "name": "BatchInventoryPositionUpdate",
+      "description": "Update inventory position",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.UpdateInventoryQuantityV2",
+          "props": {
+            "type": "LAST_ON_HAND"
+          }
+        },
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.UpdateInventoryQuantitiesStatusV2",
+          "props": {
+            "filterTypes": [
+              "SALE",
+              "DELTA",
+              "CORRECTION"
+            ],
+            "filterStatuses": [
+              "ACTIVE",
+              "CREATED"
+            ],
+            "status": "INACTIVE"
+          }
+        },
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.Forward",
+          "props": {
+            "eventName": "CalculateOnHand"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "INVENTORY_POSITION",
+      "triggers": [
+        {
+          "status": "ACTIVE"
+        },
+        {
+          "status": "INACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "subtype": "DEFAULT",
+      "name": "INVENTORY_DELTA",
+      "description": "Inventory Delta event",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.SendEventOnDeltaInventoryUpdate",
+          "props": {
+            "createEventName": "DeltaInventoryPositionCreate",
+            "inventoryQuantityType": "DELTA",
+            "updateEventname": "DeltaInventoryPositionUpdate"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "INVENTORY_CATALOGUE",
+      "triggers": [
+        {
+          "status": "ACTIVE"
+        },
+        {
+          "status": "INACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "subtype": "DEFAULT",
+      "name": "DeltaInventoryPositionCreate",
+      "description": "Create delta inventory quantity and trigger calculate onHand",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.CreateInventoryQuantity",
+          "props": {
+            "defaultStorageAreaRef": " ",
+            "defaultCondition": "NEW",
+            "inventoryQuantityType": "DELTA",
+            "defaultType": "DEFAULT"
+          }
+        },
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.Forward",
+          "props": {
+            "eventName": "CalculateOnHand"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "INVENTORY_POSITION",
+      "triggers": [
+        {
+          "status": "CREATED"
+        },
+        {
+          "status": "ACTIVE"
+        },
+        {
+          "status": "INACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "subtype": "DEFAULT",
+      "name": "DeltaInventoryPositionUpdate",
+      "description": "Update delta inventory quantity and trigger calculate onHand",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.UpdateInventoryQuantity",
+          "props": {
+            "inventoryQuantityType": "DELTA"
+          }
+        },
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.Forward",
+          "props": {
+            "eventName": "CalculateOnHand"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "INVENTORY_POSITION",
+      "triggers": [
+        {
+          "status": "CREATED"
+        },
+        {
+          "status": "ACTIVE"
+        },
+        {
+          "status": "INACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "subtype": "DEFAULT",
+      "name": "CalculateOnHandForInventoryPosition",
+      "description": "Calculate the onHand quantity of the inventory position",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.CalculateOnHandForInventoryPosition",
+          "props": {
+            "condition": [],
+            "inventoryQuantityTypes": [
+              "LAST_ON_HAND",
+              "RESERVED",
+              "CORRECTION",
+              "DELTA",
+              "SALE"
+            ],
+            "eventName": "ForwardEventToAllVirtualCatalogues",
+            "storageArea": [],
+            "status": [
+              "CREATED",
+              "ACTIVE"
+            ]
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "INVENTORY_POSITION",
+      "triggers": [
+        {
+          "status": "CREATED"
+        },
+        {
+          "status": "ACTIVE"
+        },
+        {
+          "status": "INACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "subtype": "DEFAULT",
+      "name": "ForwardEventToAllVirtualCatalogues",
+      "description": "Forward Event to all Virtual Catalogues",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.ForwardEventToAllVirtualCatalogues",
+          "props": {
+            "virtualCatalogueRefList": [
+              "BASE:1",
+              "ATS:1"
+            ],
+            "eventName": "VirtualCatalogueEvent"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "INVENTORY_POSITION",
+      "triggers": [
+        {
+          "status": "CREATED"
+        },
+        {
+          "status": "ACTIVE"
+        },
+        {
+          "status": "INACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "subtype": "DEFAULT",
+      "name": "CheckProductStatus",
+      "description": "Calculate the onHand quantity of the inventory position",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.ForwardIfIncomingAttributeEquals",
+          "props": {
+            "attributeValue": "ACTIVE",
+            "eventName": "CheckLocationStatus",
+            "attributeKey": "productStatus"
+          }
+        },
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.ForwardIfIncomingAttributeEquals",
+          "props": {
+            "attributeValue": "INACTIVE",
+            "eventName": "DeactivateInventoryPosition",
+            "attributeKey": "productStatus"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "INVENTORY_POSITION",
+      "triggers": [
+        {
+          "status": "CREATED"
+        },
+        {
+          "status": "ACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "subtype": "DEFAULT",
+      "name": "CheckLocationStatus",
+      "description": "Calculate the onHand quantity of the inventory position",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.ForwardIfIncomingAttributeEquals",
+          "props": {
+            "attributeValue": "ACTIVE",
+            "eventName": "ActivateInventoryPosition",
+            "attributeKey": "locationStatus"
+          }
+        },
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.ForwardIfIncomingAttributeEquals",
+          "props": {
+            "attributeValue": "INACTIVE",
+            "eventName": "DeactivateInventoryPosition",
+            "attributeKey": "locationStatus"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "INVENTORY_POSITION",
+      "triggers": [
+        {
+          "status": "CREATED"
+        },
+        {
+          "status": "ACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "subtype": "DEFAULT",
+      "name": "CalculateOnHand",
+      "description": "Calculate the onHand quantity of the inventory position",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.UpdateOnHand",
+          "props": {
+            "filterConditions": [],
+            "filterExpectedWithin": 0,
+            "eventName": "CheckOnHandChanged",
+            "filterTypes": [
+              "LAST_ON_HAND",
+              "RESERVED",
+              "DELTA",
+              "SALE",
+              "CORRECTION"
+            ],
+            "filterStatuses": [
+              "CREATED",
+              "ACTIVE"
+            ]
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "INVENTORY_POSITION",
+      "triggers": [
+        {
+          "status": "ACTIVE"
+        },
+        {
+          "status": "INACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "subtype": "DEFAULT",
+      "name": "CheckOnHandChanged",
+      "description": "Calculate the onHand quantity of the inventory position",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.ForwardIfOnHandChanged",
+          "props": {
+            "eventName": "NotifyVirtualCatalogues"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "INVENTORY_POSITION",
+      "triggers": [
+        {
+          "status": "ACTIVE"
+        },
+        {
+          "status": "INACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "subtype": "DEFAULT",
+      "name": "VariantProductStatusChanged",
+      "description": "Updates the status of inventory position for SkuChanged event",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.ProducePositionEventsForProduct",
+          "props": {
+            "eventName": "VariantProductStatusChanged"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "INVENTORY_CATALOGUE",
+      "triggers": [
+        {
+          "status": "CREATED"
+        },
+        {
+          "status": "ACTIVE"
+        },
+        {
+          "status": "INACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "subtype": "DEFAULT",
+      "name": "VariantProductStatusChanged",
+      "description": "Updates the status of inventory position for SkuChanged event",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.ForwardIfProductStatusEquals",
+          "props": {
+            "productCatalogueRef": "{{fluent.product.catalogue.ref}}",
+            "eventName": "DeactivateInventoryPosition",
+            "status": "INACTIVE"
+          }
+        },
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.ForwardIfProductStatusEquals",
+          "props": {
+            "productCatalogueRef": "{{fluent.product.catalogue.ref}}",
+            "eventName": "VerifyLocationStatusOnProductStatusChange",
+            "status": "ACTIVE"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "INVENTORY_POSITION",
+      "triggers": [
+        {
+          "status": "CREATED"
+        },
+        {
+          "status": "ACTIVE"
+        },
+        {
+          "status": "INACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "subtype": "DEFAULT",
+      "name": "LocationStatusChanged",
+      "description": "Updates the status of inventory position for SkuChanged event",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.ProducePositionEventsForLocation",
+          "props": {
+            "eventName": "LocationStatusChanged"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "INVENTORY_CATALOGUE",
+      "triggers": [
+        {
+          "status": "CREATED"
+        },
+        {
+          "status": "ACTIVE"
+        },
+        {
+          "status": "INACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "subtype": "DEFAULT",
+      "name": "LocationStatusChanged",
+      "description": "Updates the status of inventory position",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.ForwardIfLocationStatusEquals",
+          "props": {
+            "productCatalogueRef": "{{fluent.product.catalogue.ref}}",
+            "eventName": "DeactivateInventoryPosition",
+            "status": "INACTIVE"
+          }
+        },
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.ForwardIfLocationStatusEquals",
+          "props": {
+            "productCatalogueRef": "{{fluent.product.catalogue.ref}}",
+            "eventName": "VerifyProductStatusOnLocationStatusChange",
+            "status": "ACTIVE"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "INVENTORY_POSITION",
+      "triggers": [
+        {
+          "status": "CREATED"
+        },
+        {
+          "status": "ACTIVE"
+        },
+        {
+          "status": "INACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "subtype": "DEFAULT",
+      "name": "ActivateInventoryPosition",
+      "description": "Updates the status of inventory position",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.v2.prefix}}.ChangeStateGQL",
+          "props": {
+            "status": "ACTIVE"
+          }
+        },
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.Forward",
+          "props": {
+            "eventName": "NotifyVirtualCatalogues"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "INVENTORY_POSITION",
+      "triggers": [
+        {
+          "status": "CREATED"
+        },
+        {
+          "status": "ACTIVE"
+        },
+        {
+          "status": "INACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "subtype": "DEFAULT",
+      "name": "DeactivateInventoryPosition",
+      "description": "Updates the status of inventory position",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.v2.prefix}}.ChangeStateGQL",
+          "props": {
+            "status": "INACTIVE"
+          }
+        },
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.Forward",
+          "props": {
+            "eventName": "NotifyVirtualCatalogues"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "INVENTORY_POSITION",
+      "triggers": [
+        {
+          "status": "CREATED"
+        },
+        {
+          "status": "ACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "subtype": "DEFAULT",
+      "name": "NotifyVirtualCatalogues",
+      "description": "Notify the Virtual Catalogues",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.NotifyVirtualCatalogueOnNetworkMatch",
+          "props": {
+            "virtualCatalogueRef": "{{fluent.base.virtual.catalogue.ref}}",
+            "eventName": "VirtualCatalogueEvent"
+          }
+        },
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.NotifyVirtualCatalogueOnNetworkMatch",
+          "props": {
+            "virtualCatalogueRef": "{{fluent.ats.virtual.catalogue.ref}}",
+            "eventName": "VirtualCatalogueEvent"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "INVENTORY_POSITION",
+      "triggers": [
+        {
+          "status": "CREATED"
+        },
+        {
+          "status": "ACTIVE"
+        },
+        {
+          "status": "INACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "subtype": "DEFAULT",
+      "name": "VerifyLocationStatusOnProductStatusChange",
+      "description": "Updates the status of inventory position for SkuChanged event",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.ForwardIfLocationStatusEquals",
+          "props": {
+            "productCatalogueRef": "{{fluent.product.catalogue.ref}}",
+            "eventName": "ActivateInventoryPosition",
+            "status": "ACTIVE"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "INVENTORY_POSITION",
+      "triggers": [
+        {
+          "status": "CREATED"
+        },
+        {
+          "status": "INACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "subtype": "DEFAULT",
+      "name": "VerifyProductStatusOnLocationStatusChange",
+      "description": "Updates the status of inventory position for SkuChanged event",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.ForwardIfProductStatusEquals",
+          "props": {
+            "productCatalogueRef": "{{fluent.product.catalogue.ref}}",
+            "eventName": "ActivateInventoryPosition",
+            "status": "ACTIVE"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "INVENTORY_POSITION",
+      "triggers": [
+        {
+          "status": "CREATED"
+        },
+        {
+          "status": "INACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "subtype": "DEFAULT",
+      "name": "UpdateInventoryQty",
+      "description": "Create / Update new inventory quantities",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.base.prefix}}.SendEventOnInventoryUpdate",
+          "props": {
+            "inventoryReserveEvent": "FulfilmentInventoryReserve",
+            "inventoryQuantityTypes": [
+              "RESERVED",
+              "SALE",
+              "CORRECTION"
+            ],
+            "inventoryCancelEvent": "FulfilmentInventoryCancel",
+            "inventoryConfirmationEvent": "FulfilmentInventoryConfirm"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "INVENTORY_CATALOGUE",
+      "triggers": []
+    },
+    {
+      "userActions": [],
+      "subtype": "DEFAULT",
+      "name": "FulfilmentInventoryReserve",
+      "description": "Reserve inventory for cancellation",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.CreateInventoryQuantity",
+          "props": {
+            "defaultStorageAreaRef": "",
+            "defaultCondition": "NEW",
+            "inventoryQuantityType": "RESERVED",
+            "defaultType": "DEFAULT"
+          }
+        },
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.Forward",
+          "props": {
+            "eventName": "CalculateOnHand"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "INVENTORY_POSITION",
+      "triggers": [
+        {
+          "status": "ACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "subtype": "DEFAULT",
+      "name": "FulfilmentInventoryCancel",
+      "description": "Unreserve inventory for cancellation",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.SendEventToAllInventoryQuantities",
+          "props": {
+            "inventoryQuantityTypes": [
+              "RESERVED"
+            ],
+            "eventName": "QuantityResetEvent"
+          }
+        },
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.Forward",
+          "props": {
+            "eventName": "CalculateOnHand"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "INVENTORY_POSITION",
+      "triggers": [
+        {
+          "status": "ACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "subtype": "DEFAULT",
+      "name": "FulfilmentInventoryConfirm",
+      "description": "Update inventory for confirmation",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.CreateInventoryQuantity",
+          "props": {
+            "defaultStorageAreaRef": "",
+            "defaultCondition": "NEW",
+            "inventoryQuantityType": "SALE",
+            "defaultType": "DEFAULT"
+          }
+        },
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.CreateInventoryQuantity",
+          "props": {
+            "defaultStorageAreaRef": "",
+            "defaultCondition": "NEW",
+            "inventoryQuantityType": "CORRECTION",
+            "defaultType": "DEFAULT"
+          }
+        },
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.SendEventToAllInventoryQuantities",
+          "props": {
+            "inventoryQuantityTypes": [
+              "RESERVED"
+            ],
+            "eventName": "QuantityResetEvent"
+          }
+        },
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.Forward",
+          "props": {
+            "eventName": "CalculateOnHand"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "INVENTORY_POSITION",
+      "triggers": [
+        {
+          "status": "ACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "name": "QuantityResetEvent",
+      "description": "Deactivate inventory quantity",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.v2.prefix}}.ChangeStateGQL",
+          "props": {
+            "status": "INACTIVE"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "INVENTORY_QUANTITY",
+      "triggers": [
+        {
+          "status": "ACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "subtype": "DEFAULT",
+      "name": "DeactivateIC",
+      "description": "Make IC Status Inactive",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.v2.prefix}}.ChangeStateGQL",
+          "props": {
+            "status": "INACTIVE"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "INVENTORY_CATALOGUE",
+      "triggers": [
+        {
+          "status": "ACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "subtype": "DEFAULT",
+      "name": "DeactivateIP",
+      "description": "Make IP Status Inactive",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.v2.prefix}}.ChangeStateGQL",
+          "props": {
+            "status": "INACTIVE"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "INVENTORY_POSITION",
+      "triggers": [
+        {
+          "status": "ACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "subtype": "DEFAULT",
+      "name": "DeactivateIQ",
+      "description": "Make IQ Status Inactive",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.v2.prefix}}.ChangeStateGQL",
+          "props": {
+            "status": "INACTIVE"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "INVENTORY_QUANTITY",
+      "triggers": [
+        {
+          "status": "ACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "name": "ActivateIQ",
+      "description": "Set status of IQ to Active",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.v2.prefix}}.ChangeStateGQL",
+          "props": {
+            "status": "ACTIVE"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "INVENTORY_QUANTITY",
+      "triggers": [
+        {
+          "status": "INACTIVE"
+        },
+        {
+          "status": "CREATED"
+        }
+      ]
+    }
+  ],
+  "entityType": "INVENTORY_CATALOGUE",
+  "entitySubtype": "DEFAULT",
+  "versionComment": "Version created / updated via Postman",
+  "description": "Default Inventory Catalogue DEFAULT Workflow",
+  "retailerId": "{{retailer_id}}",
+  "version": "1.18",
+  "createdOn": "2023-06-12T06:01:29.856+00:00",
+  "createdBy": "covetrus_na_rx_management ",
+  "name": "INVENTORY_CATALOGUE::DEFAULT",
+  "statuses": [
+    {
+      "entityType": "INVENTORY_CATALOGUE",
+      "name": "",
+      "category": "BOOKING"
+    },
+    {
+      "entityType": "INVENTORY_CATALOGUE",
+      "name": "CREATED",
+      "category": "BOOKING"
+    },
+    {
+      "entityType": "INVENTORY_CATALOGUE",
+      "name": "ACTIVE",
+      "category": "FULFILMENT"
+    },
+    {
+      "entityType": "INVENTORY_CATALOGUE",
+      "name": "INACTIVE",
+      "category": "DONE"
+    },
+    {
+      "entityType": "INVENTORY_POSITION",
+      "name": "CREATED",
+      "category": "BOOKING"
+    },
+    {
+      "entityType": "INVENTORY_POSITION",
+      "name": "ACTIVE",
+      "category": "FULFILMENT"
+    },
+    {
+      "entityType": "INVENTORY_POSITION",
+      "name": "INACTIVE",
+      "category": "DONE"
+    },
+    {
+      "entityType": "INVENTORY_QUANTITY",
+      "name": "CREATED",
+      "category": "BOOKING"
+    },
+    {
+      "entityType": "INVENTORY_QUANTITY",
+      "name": "ACTIVE",
+      "category": "FULFILMENT"
+    },
+    {
+      "entityType": "INVENTORY_QUANTITY",
+      "name": "INACTIVE",
+      "category": "DONE"
+    }
+  ],
+  "id": null
+}

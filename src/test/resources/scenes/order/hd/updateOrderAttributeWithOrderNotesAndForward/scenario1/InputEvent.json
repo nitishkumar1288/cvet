@@ -1,0 +1,14 @@
+{
+  "retailer_id": "1",
+  "account_id" : "0",
+  "entity_id": "290",
+  "entity_ref": "HDORDFC022",
+  "root_entity_id": "290",
+  "root_entity_ref": "HDORDFC022",
+  "attributes": {
+    "eventTypeCode": "ORDER_FRAUD_RISK_EVALUATED",
+    "eventSubTypeCodes": "SPECIALIST_REVIEWED",
+    "orderKey": "NK_07",
+    "fraudRiskResult": "A"
+  }
+}

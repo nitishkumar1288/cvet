@@ -1,0 +1,22 @@
+{
+  "otcOrderItemsAllocation": [
+    {
+      "defaultLocationSelected": false,
+      "orderItemId": "4848",
+      "productRef": "186126",
+      "requestedQuantity": 5,
+      "kitProduct": false,
+      "locationId" : 1,
+      "foundLocation" : "test"
+    },
+    {
+      "defaultLocationSelected": false,
+      "orderItemId": "4847",
+      "productRef": "186128",
+      "requestedQuantity": 5,
+      "kitProduct": false,
+      "locationId" : 1,
+      "foundLocation" : "test"
+    }
+  ]
+}

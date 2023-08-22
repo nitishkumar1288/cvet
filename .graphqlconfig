@@ -1,0 +1,17 @@
+{
+  "projects": {
+    "CVETDEV": {
+      "schemaPath": "src/main/graphql/schema.json",
+      "extensions": {
+        "endpoints": {
+          "sandbox": {
+            "url": "https://CVETDEV.sandbox.api.fluentretail.com/graphql",
+            "headers": {
+              "Authorization": "Bearer ${env:AUTH_TOKEN_ENV}"
+            }
+          }
+        }
+      }
+    }
+  }
+}

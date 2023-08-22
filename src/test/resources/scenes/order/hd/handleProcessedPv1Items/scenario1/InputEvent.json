@@ -1,0 +1,21 @@
+{
+  "retailer_id": "1",
+  "account_id" : "0",
+  "entity_id": "4172",
+  "entity_ref": "HD_T_23022301328",
+  "root_entity_id": "4172",
+  "root_entity_ref": "HD_T_23022301328",
+  "entityStatus": "CREATED",
+  "attributes":{
+    "ref": "HD_T_23022301328",
+    "items":[
+      {
+        "ref":"1",
+        "status":"VERIFIED",
+        "dispenseRequestId":"1",
+        "prescriptionId": "12",
+        "facilityId": "3"
+      }
+    ]
+  }
+}

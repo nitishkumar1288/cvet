@@ -1,0 +1,239 @@
+{
+  "data": {
+    "networks": {
+      "edges": [
+        {
+          "node": {
+            "id": "40",
+            "createdOn": "2022-08-17T06:20:36.904Z",
+            "updatedOn": "2022-08-25T16:34:11.668Z",
+            "ref": "COMPOUND_RX_HD",
+            "type": "HD",
+            "status": "ACTIVE",
+            "attributes": [
+              {
+                "name": "locationPriorityList",
+                "type": "JSON",
+                "value": [
+                  {
+                    "locationRef": "CPS_4803",
+                    "sortPosition": 1
+                  },
+                  {
+                    "locationRef": "PTL",
+                    "sortPosition": 2
+                  },
+                  {
+                    "locationRef": "PHOENIX",
+                    "sortPosition": 3
+                  },
+                  {
+                    "locationRef": "VPA_NORTH",
+                    "sortPosition": 4
+                  },
+                  {
+                    "locationRef": "VFC_WAREHOUSE",
+                    "sortPosition": 5
+                  }
+                ]
+              },
+              {
+                "name": "VPA_NORTH",
+                "type": "INTEGER",
+                "value": 4
+              },
+              {
+                "name": "CPS_4803",
+                "type": "INTEGER",
+                "value": 2
+              },
+              {
+                "name": "PHOENIX",
+                "type": "INTEGER",
+                "value": 3
+              },
+              {
+                "name": "PTL",
+                "type": "INTEGER",
+                "value": 1
+              },
+              {
+                "name": "VFC_WAREHOUSE",
+                "type": "INTEGER",
+                "value": 5
+              }
+            ],
+            "locations": {
+              "edges": [
+                {
+                  "node": {
+                    "id": "12",
+                    "ref": "CPS_4803",
+                    "type": "WAREHOUSE",
+                    "status": "ACTIVE"
+                  }
+                },
+                {
+                  "node": {
+                    "id": "10",
+                    "ref": "PTL",
+                    "type": "WAREHOUSE",
+                    "status": "ACTIVE"
+                  }
+                },
+                {
+                  "node": {
+                    "id": "8",
+                    "ref": "PHOENIX",
+                    "type": "WAREHOUSE",
+                    "status": "ACTIVE"
+                  }
+                },
+                {
+                  "node": {
+                    "id": "7",
+                    "ref": "VPA_NORTH",
+                    "type": "WAREHOUSE",
+                    "status": "ACTIVE"
+                  }
+                },
+                {
+                  "node": {
+                    "id": "3",
+                    "ref": "VFC_WAREHOUSE",
+                    "type": "WAREHOUSE",
+                    "status": "ACTIVE"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "39",
+            "createdOn": "2022-08-17T06:19:45.802Z",
+            "updatedOn": "2022-08-25T16:33:52.989Z",
+            "ref": "COMMERCIAL_RX_HD",
+            "type": "HD",
+            "status": "ACTIVE",
+            "attributes": [
+              {
+                "name": "locationPriorityList",
+                "type": "JSON",
+                "value": [
+                  {
+                    "locationRef": "CPS_4803",
+                    "sortPosition": 1
+                  },
+                  {
+                    "locationRef": "PTL",
+                    "sortPosition": 2
+                  },
+                  {
+                    "locationRef": "PHOENIX",
+                    "sortPosition": 3
+                  },
+                  {
+                    "locationRef": "VPA_NORTH",
+                    "sortPosition": 4
+                  },
+                  {
+                    "locationRef": "VFC_WAREHOUSE",
+                    "sortPosition": 5
+                  },
+                  {
+                    "locationRef": "CPS_2802",
+                    "sortPosition": 6
+                  }
+                ]
+              },
+              {
+                "name": "VPA_NORTH",
+                "type": "INTEGER",
+                "value": 2
+              },
+              {
+                "name": "CPS_2802",
+                "type": "INTEGER",
+                "value": 1
+              },
+              {
+                "name": "CPS_4803",
+                "type": "INTEGER",
+                "value": 3
+              },
+              {
+                "name": "PHOENIX",
+                "type": "INTEGER",
+                "value": 4
+              },
+              {
+                "name": "PTL",
+                "type": "INTEGER",
+                "value": 5
+              },
+              {
+                "name": "VFC_WAREHOUSE",
+                "type": "INTEGER",
+                "value": 6
+              }
+            ],
+            "locations": {
+              "edges": [
+                {
+                  "node": {
+                    "id": "14",
+                    "ref": "CPS_2802",
+                    "type": "WAREHOUSE",
+                    "status": "ACTIVE"
+                  }
+                },
+                {
+                  "node": {
+                    "id": "12",
+                    "ref": "CPS_4803",
+                    "type": "WAREHOUSE",
+                    "status": "ACTIVE"
+                  }
+                },
+                {
+                  "node": {
+                    "id": "10",
+                    "ref": "PTL",
+                    "type": "WAREHOUSE",
+                    "status": "ACTIVE"
+                  }
+                },
+                {
+                  "node": {
+                    "id": "8",
+                    "ref": "PHOENIX",
+                    "type": "WAREHOUSE",
+                    "status": "ACTIVE"
+                  }
+                },
+                {
+                  "node": {
+                    "id": "7",
+                    "ref": "VPA_NORTH",
+                    "type": "WAREHOUSE",
+                    "status": "ACTIVE"
+                  }
+                },
+                {
+                  "node": {
+                    "id": "3",
+                    "ref": "VFC_WAREHOUSE",
+                    "type": "WAREHOUSE",
+                    "status": "ACTIVE"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  }
+}

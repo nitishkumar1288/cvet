@@ -1,0 +1,273 @@
+{
+  "settings": {},
+  "rulesets": [
+    {
+      "userActions": [],
+      "name": "CREATE",
+      "description": "Initial Event on Virtual Catalogue Creation ",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.v2.prefix}}.ChangeStateGQL",
+          "props": {
+            "status": "ACTIVE"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "VIRTUAL_CATALOGUE",
+      "triggers": [
+        {
+          "status": "CREATED"
+        },
+        {
+          "status": "ACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "name": "VirtualCatalogueEvent",
+      "description": "Validate a VC event",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.LoadVirtualPositionAndDetails",
+          "props": {
+            "eventName": "CheckVirtualPositionExists",
+            "virtualPositionType": "BASE"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "VIRTUAL_CATALOGUE",
+      "triggers": [
+        {
+          "status": "ACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "name": "CheckVirtualPositionExists",
+      "description": "Validate a VC event",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.ForwardIfVirtualPositionNotExists",
+          "props": {
+            "eventName": "CreateBaseVirtualPosition"
+          }
+        },
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.DownToVirtualPositionIfExists",
+          "props": {
+            "eventName": "CheckVirtualPositionStatus"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "VIRTUAL_CATALOGUE",
+      "triggers": [
+        {
+          "status": "ACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "name": "CreateBaseVirtualPosition",
+      "description": "Create or update a virtual position",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.CreateBaseVirtualPosition",
+          "props": {
+            "eventName": "CREATE"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "VIRTUAL_CATALOGUE",
+      "triggers": [
+        {
+          "status": "ACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "name": "CREATE",
+      "description": "Initial Event on Virtual Catalogue Creation",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.v2.prefix}}.ChangeStateGQL",
+          "props": {
+            "status": "ACTIVE"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "VIRTUAL_POSITION",
+      "triggers": [
+        {
+          "status": "CREATED"
+        },
+        {
+          "status": "ACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "name": "CheckVirtualPositionStatus",
+      "description": "Set the status of base virtual position to that of the inventory position",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.ForwardIfInventoryPositionStatusEquals",
+          "props": {
+            "statuses": [
+              "ACTIVE"
+            ],
+            "eventName": "UpdateBaseVirtualPosition"
+          }
+        },
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.ForwardIfInventoryPositionStatusEquals",
+          "props": {
+            "statuses": [
+              "CREATED",
+              "INACTIVE"
+            ],
+            "eventName": "ResetBaseVirtualPosition"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "VIRTUAL_POSITION",
+      "triggers": [
+        {
+          "status": "CREATED"
+        },
+        {
+          "status": "ACTIVE"
+        },
+        {
+          "status": "INACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "name": "UpdateBaseVirtualPosition",
+      "description": "Create or update a virtual position",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.UpdateBaseVirtualPosition",
+          "props": null
+        },
+        {
+          "name": "{{fluent.account.plugin.v2.prefix}}.ChangeStateGQL",
+          "props": {
+            "status": "ACTIVE"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "VIRTUAL_POSITION",
+      "triggers": [
+        {
+          "status": "CREATED"
+        },
+        {
+          "status": "ACTIVE"
+        },
+        {
+          "status": "INACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "name": "ResetBaseVirtualPosition",
+      "description": "Create or update a virtual position",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.gi.prefix}}.ResetBaseVirtualPosition",
+          "props": null
+        },
+        {
+          "name": "{{fluent.account.plugin.v2.prefix}}.ChangeStateGQL",
+          "props": {
+            "status": "INACTIVE"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "VIRTUAL_POSITION",
+      "triggers": [
+        {
+          "status": "ACTIVE"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "name": "DeactivateVC",
+      "description": "Make VC Status Inactive",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.v2.prefix}}.ChangeStateGQL",
+          "props": {
+            "status": "INACTIVE"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "VIRTUAL_CATALOGUE",
+      "triggers": [
+        {
+          "status": "ACTIVE"
+        }
+      ]
+    }
+  ],
+  "entityType": "VIRTUAL_CATALOGUE",
+  "entitySubtype": "BASE",
+  "versionComment": null,
+  "description": "BASE Virtual Catalogue Workflow",
+  "retailerId": "{{retailer_id}}",
+  "version": "1.15",
+  "createdOn": "2023-03-29T11:05:05.336+00:00",
+  "createdBy": "covetrus_na_rx_management ",
+  "name": "VIRTUAL_CATALOGUE::BASE",
+  "statuses": [
+    {
+      "entityType": "VIRTUAL_CATALOGUE",
+      "name": "CREATED",
+      "category": "BOOKING"
+    },
+    {
+      "entityType": "VIRTUAL_CATALOGUE",
+      "name": "ACTIVE",
+      "category": "FULFILMENT"
+    },
+    {
+      "entityType": "VIRTUAL_CATALOGUE",
+      "name": "INACTIVE",
+      "category": "DONE"
+    },
+    {
+      "entityType": "VIRTUAL_POSITION",
+      "name": "CREATED",
+      "category": "BOOKING"
+    },
+    {
+      "entityType": "VIRTUAL_POSITION",
+      "name": "ACTIVE",
+      "category": "FULFILMENT"
+    },
+    {
+      "entityType": "VIRTUAL_POSITION",
+      "name": "INACTIVE",
+      "category": "DONE"
+    }
+  ],
+  "id": null
+}

@@ -1,0 +1,277 @@
+{
+  "settings": {},
+  "rulesets": [
+    {
+      "userActions": [],
+      "subtype": "DEFAULT",
+      "name": "CREATE",
+      "description": "Create ReturnOrder",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.retail.base.prefix}}.ChangeStateGQL",
+          "props": {
+            "status": "BOOKED"
+          }
+        },
+        {
+          "name": "{{fluent.account.plugin.retail.base.prefix}}.SendEventToReturns",
+          "props": {
+            "eventName": "FulfilReturn"
+          }
+        },
+        {
+          "name": "{{fluent.account.plugin.retail.base.prefix}}.SendEventToReturns",
+          "props": {
+            "eventName": "CheckBillingAccount"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "RETURN_ORDER",
+      "triggers": [
+        {
+          "status": "CREATED"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "subtype": "DEFAULT",
+      "name": "CREATE",
+      "description": "CREATE",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.retail.base.prefix}}.ChangeStateGQL",
+          "props": {
+            "status": "COMPLETE"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "RETURN_FULFILMENT",
+      "triggers": [
+        {
+          "status": "CREATED"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "name": "FulfilReturn",
+      "description": "Create FF for Return order",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.retail.base.prefix}}.CreateReturnFulfilment",
+          "props": null
+        },
+        {
+          "name": "{{fluent.account.plugin.retail.base.prefix}}.ChangeStateGQL",
+          "props": {
+            "status": "PENDING_REFUND"
+          }
+        },
+        {
+          "name": "{{fluent.account.plugin.retail.base.prefix}}.SendEventToUpdateOrderItemAttribute",
+          "props": {
+            "eventName": "UpdateReturnableQty"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "RETURN_ORDER",
+      "triggers": [
+        {
+          "status": "BOOKED"
+        },
+        {
+          "status": "CREATED"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "name": "CheckBillingAccount",
+      "description": "Verify the Billing account",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.retail.base.prefix}}.VerifyBillingAccount",
+          "props": {
+            "BillingAccountExistsEventName": "ProcessBillingAccount",
+            "NoBillingAccountExistsEventName": "NewBillingAccount"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "RETURN_ORDER",
+      "triggers": [
+        {
+          "status": "BOOKED"
+        },
+        {
+          "status": "PENDING_REFUND"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "name": "NewBillingAccount",
+      "description": "Create the billing account",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.retail.base.prefix}}.CreateBillingAccount",
+          "props": {
+            "eventName": "ProcessBillingAccount"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "RETURN_ORDER",
+      "triggers": []
+    },
+    {
+      "userActions": [],
+      "name": "ProcessBillingAccount",
+      "description": "Process the billing account",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.retail.base.prefix}}.SendEventForReturnToBillingAccount",
+          "props": {
+            "eventName": "ProcessCreditForReturn"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "RETURN_ORDER",
+      "triggers": [
+        {
+          "status": "PENDING_REFUND"
+        },
+        {
+          "status": "CREATED"
+        },
+        {
+          "status": "BOOKED"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "subtype": "DEFAULT",
+      "name": "RefundComplete",
+      "description": "Update the status to COMPLETE",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.retail.base.prefix}}.ChangeStateGQL",
+          "props": {
+            "status": "COMPLETE"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "RETURN_ORDER",
+      "triggers": [
+        {
+          "status": "PENDING_REFUND"
+        }
+      ]
+    },
+    {
+      "userActions": [],
+      "subtype": "DEFAULT",
+      "name": "RefundRejected",
+      "description": "Update the status to REFUND_FAILED",
+      "rules": [
+        {
+          "name": "{{fluent.account.plugin.retail.base.prefix}}.ChangeStateGQL",
+          "props": {
+            "status": "REFUND_FAILED"
+          }
+        }
+      ],
+      "eventType": "NORMAL",
+      "type": "RETURN_ORDER",
+      "triggers": [
+        {
+          "status": "PENDING_REFUND"
+        }
+      ]
+    }
+  ],
+  "entityType": "RETURN_ORDER",
+  "entitySubtype": "DEFAULT",
+  "versionComment": "Initial version",
+  "description": "Return Order default workflow",
+  "retailerId": "{{retailer_id}}",
+  "version": "1.7",
+  "createdOn": "2023-04-26T04:59:41.888+00:00",
+  "createdBy": "covetrus_na_rx_management ",
+  "name": "RETURN_ORDER::DEFAULT",
+  "statuses": [
+    {
+      "entityType": "RETURN_ORDER",
+      "name": "CREATED",
+      "category": "BOOKING"
+    },
+    {
+      "entityType": "RETURN_FULFILMENT",
+      "name": "COMPLETE",
+      "category": "DONE"
+    },
+    {
+      "entityType": "RETURN_ORDER",
+      "name": "BOOKED",
+      "category": "BOOKING"
+    },
+    {
+      "entityType": "RETURN_ORDER",
+      "name": "REFUND_FAILED",
+      "category": "DONE"
+    },
+    {
+      "entityType": "RETURN_ORDER",
+      "name": "COMPLETE",
+      "category": "DONE"
+    },
+    {
+      "entityType": "RETURN_FULFILMENT",
+      "name": "CREATED",
+      "category": "BOOKING"
+    },
+    {
+      "entityType": "RETURN_ORDER_FULFILMENT",
+      "name": "CREATED",
+      "category": "BOOKING"
+    },
+    {
+      "entityType": "RETURN_ORDER",
+      "name": "PENDING_REFUND",
+      "category": "DELIVERY"
+    },
+    {
+      "entityType": "ORDER",
+      "name": "CREATED",
+      "category": ""
+    },
+    {
+      "entityType": "ORDER",
+      "name": "BOOKED",
+      "category": ""
+    },
+    {
+      "entityType": "ORDER",
+      "name": "",
+      "category": ""
+    },
+    {
+      "entityType": "BILLING_ACCOUNT",
+      "name": "",
+      "category": "BOOKING"
+    },
+    {
+      "entityType": "RETURN_ORDER",
+      "name": "",
+      "category": "BOOKING"
+    }
+  ],
+  "id": null
+}

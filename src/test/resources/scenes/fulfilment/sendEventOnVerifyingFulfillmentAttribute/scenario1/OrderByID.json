@@ -1,0 +1,68 @@
+{
+  "data": {
+    "fulfilmentById": {
+      "id": "108",
+      "ref": "x68kqh",
+      "attributes": [
+        {
+          "name": "totalTax",
+          "value": 22
+        },
+        {
+          "name": "salesTaxResponseReceived",
+          "value": true
+        },
+        {
+          "name": "shippingTax",
+          "value": 44
+        },
+        {
+          "name": "handlingTax",
+          "value": 33
+        },
+        {
+          "name": "grandTotal",
+          "value": 37
+        },
+        {
+          "name": "initialFulfillmentStatus",
+          "value": "WAITING_FULFILMENT"
+        },
+        {
+          "name": "discount",
+          "value": 10
+        },
+        {
+          "name": "tax",
+          "value": 22
+        },
+        {
+          "name": "subTotal",
+          "value": 50
+        },
+        {
+          "name": "taxDate",
+          "value": "2022-10-19T15:07:05.955Z"
+        },
+        {
+          "name": "FulfilmentType",
+          "value": "HD_PFDC"
+        },
+        {
+          "name": "taxStatus",
+          "value": "tax status"
+        }
+      ],
+      "deliveryType": "STANDARD",
+      "order": {
+        "id": "2319",
+        "ref": "NKS_HD_ORD_37"
+      },
+      "fromAddress": {
+        "id": "24",
+        "type": "AGENT",
+        "name": null
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+mutation updateLocation($input : UpdateLocationInput){
+  updateLocation(input : $input){
+    id
+    ref
+    status
+  }
+}

@@ -1,0 +1,23 @@
+query GetVirtualPositions($catalogueRef: String!
+    $groupRef: [String]
+    $productRef: [String!]
+    $virtualPositionCount: Int
+    $virtualPositionCursor: String) {
+    virtualPositions(catalogue: {ref: $catalogueRef} groupRef: $groupRef productRef: $productRef first:$virtualPositionCount after:$virtualPositionCursor) {
+        virtualPositionEdge: edges {
+            virtualPosition:node {
+                id
+                ref
+                type
+                status
+                productRef
+                groupRef
+                quantity
+            }
+            cursor
+        }
+        pageInfo{
+            hasNextPage
+        }
+    }
+}

@@ -1,0 +1,25 @@
+{
+  "retailer_id": "1",
+  "account_id" : "0",
+  "entity_id": "285",
+  "entity_ref": "HDORDFC017",
+  "root_entity_id": "285",
+  "root_entity_ref": "HDORDFC017",
+  "entityStatus": "CREATED",
+  "attributes":{
+    "orderItemStatusPayload" : {
+      "items" : [ {
+        "lineStatus" : "FULFILMENT_REQUESTED",
+        "orderLineNo" : "1",
+        "prescriptionId" : ""
+      }, {
+        "lineStatus" : "FULFILMENT_REQUESTED",
+        "orderLineNo" : "2",
+        "prescriptionId" : ""
+      } ],
+      "orderId" : "2709",
+      "orderRef" : "NKS_HD_ORD_114",
+      "updateOn" : "2022-11-22T05:45:04.291Z"
+    }
+  }
+}

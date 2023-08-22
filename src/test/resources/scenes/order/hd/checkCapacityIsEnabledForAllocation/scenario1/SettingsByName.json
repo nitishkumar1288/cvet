@@ -1,0 +1,23 @@
+{
+  "data": {
+    "settings": {
+      "pageInfo": {
+        "hasNextPage": false
+      },
+      "edges": [
+        {
+          "cursor": "Y3Vyc29yOi0tLTk4Nw==",
+          "node": {
+            "id": "987",
+            "name": "IsCapacityEnabledForOtcItems",
+            "valueType": "BOOLEAN",
+            "value": "FALSE",
+            "context": "RETAILER",
+            "contextId": 1,
+            "lobValue": ""
+          }
+        }
+      ]
+    }
+  }
+}

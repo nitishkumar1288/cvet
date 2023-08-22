@@ -1,0 +1,21 @@
+{
+  "retailer_id": "1",
+  "account_id" : "0",
+  "entity_id": "989",
+  "entity_ref": "FF_4400",
+  "root_entity_id": "4400",
+  "root_entity_ref": "NKS_HD_ORD_342",
+  "attributes": {
+    "fulfillmentId": "4400",
+    "fulfilmentRef": "FF_4400",
+    "shipCancelledItemRefList": [
+      {
+        "ref": "1",
+        "locationRef": "VFC_WAREHOUSE",
+        "filledQuantity": 0,
+        "rejectedQuantity": 0,
+        "requestedQuantity": 5
+      }
+    ]
+  }
+}

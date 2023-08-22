@@ -1,0 +1,20 @@
+{
+  "retailer_id": "1",
+  "account_id" : "0",
+  "entity_id": "285",
+  "entity_ref": "HDORDFC017",
+  "root_entity_id": "285",
+  "root_entity_ref": "HDORDFC017",
+  "entityStatus": "CREATED",
+  "attributes": {
+    "shipCancelledItemRefList": [
+      {
+        "ref": "1",
+        "locationRef": "VPA_NORTH",
+        "filledQuantity": 0,
+        "rejectedQuantity": 0,
+        "requestedQuantity": 5
+      }
+    ]
+  }
+}

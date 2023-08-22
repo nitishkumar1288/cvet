@@ -1,0 +1,47 @@
+mutation createReturnOrder(
+$ref: String!
+$retailer: RetailerId!
+$type: String!
+$attributes: [AttributeInput]
+$customer: CustomerKey!
+$order: OrderLinkInput
+$returnVerifications: [CreateReturnVerificationWithReturnOrderInput]
+$returnAuthorisationKey: String
+$returnAuthorisationDisposition: SettingValueTypeInput
+$returnAuthorisationKeyExpiry: DateTime
+$pickupAddress: StreetAddressInput
+$lodgedLocation: LocationLinkInput
+$destinationLocation: LocationLinkInput
+$returnOrderItems: [CreateReturnOrderItemWithReturnOrderInput!]!
+$exchangeOrder: OrderLinkInput
+$creditMemo: CreditMemoKey
+$currency: CurrencyKey!
+$defaultTaxType: TaxTypeInput!
+$subTotalAmount: AmountTypeInput!
+$totalTax: AmountTypeInput!
+$totalAmount: AmountTypeInput!) {
+    createReturnOrder(input:{
+        ref: $ref
+        retailer: $retailer
+        type: $type
+        attributes: $attributes
+        customer: $customer
+        order: $order
+        returnVerifications: $returnVerifications
+        returnAuthorisationKey: $returnAuthorisationKey
+        returnAuthorisationDisposition: $returnAuthorisationDisposition
+        returnAuthorisationKeyExpiry: $returnAuthorisationKeyExpiry
+        pickupAddress: $pickupAddress
+        lodgedLocation: $lodgedLocation
+        destinationLocation: $destinationLocation
+        returnOrderItems: $returnOrderItems
+        exchangeOrder: $exchangeOrder
+        creditMemo: $creditMemo
+        currency: $currency
+        defaultTaxType: $defaultTaxType
+        subTotalAmount: $subTotalAmount
+        totalTax: $totalTax
+        totalAmount: $totalAmount}) {
+        id
+    }
+}

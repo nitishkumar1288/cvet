@@ -1,0 +1,18 @@
+{
+  "dropShipOrderItemsAllocation": [
+    {
+      "orderItemId": "5189",
+      "productRef": "186126",
+      "requestedQuantity": 1,
+      "locationId": 1,
+      "foundLocation": "VFC_WAREHOUSE"
+    },
+    {
+      "orderItemId": "5190",
+      "productRef": "186128",
+      "requestedQuantity": 1,
+      "locationId": 1,
+      "foundLocation": "VFC_WAREHOUSE"
+    }
+  ]
+}

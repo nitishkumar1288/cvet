@@ -1,0 +1,28 @@
+{
+  "data": {
+    "settings": {
+      "pageInfo": {
+        "hasNextPage": false
+      },
+      "edges": [
+        {
+          "cursor": "Y3Vyc29yOi0tLTIzOA==",
+          "node": {
+            "id": "238",
+            "name": "PHOENIX_WY",
+            "valueType": "JSON",
+            "value": "",
+            "context": "RETAILER",
+            "contextId": 1,
+            "lobValue": {
+              "isSterile": "Y",
+              "isCompound": "Y",
+              "isCommercial": "Y",
+              "isControlled": "Y"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

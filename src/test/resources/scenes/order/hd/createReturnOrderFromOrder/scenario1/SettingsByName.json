@@ -1,0 +1,39 @@
+{
+  "data": {
+    "settings": {
+      "pageInfo": {
+        "hasNextPage": true
+      },
+      "edges": [
+        {
+          "cursor": "Y3Vyc29yOi0tLTQ2",
+          "node": {
+            "id": "984",
+            "name": "DEFAULT_TAX_TYPE",
+            "valueType": "JSON",
+            "value": "",
+            "context": "RETAILER",
+            "contextId": 1,
+            "lobValue": {
+              "country": "USA",
+              "group": "STANDARD",
+              "tariff": "GST"
+            }
+          }
+        },
+        {
+          "cursor": "Y3Vyc29yOi0tLTQ3",
+          "node": {
+            "id": "983",
+            "name": "DEFAULT_RETURN_DESTINATION_LOCATION",
+            "valueType": "STRING",
+            "value": "RETURN_LOCATION",
+            "context": "RETAILER",
+            "contextId": 1,
+            "lobValue": {}
+          }
+        }
+      ]
+    }
+  }
+}

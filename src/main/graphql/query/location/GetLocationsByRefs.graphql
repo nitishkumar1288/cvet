@@ -1,0 +1,61 @@
+query GetLocationsByRefs($locationRef: [String]
+    $locationCount: Int
+    $locationCursor: String
+    $includeLocations: Boolean!) {
+    locations(ref: $locationRef,first: $locationCount, after: $locationCursor) @include(if: $includeLocations) {
+        pageInfo {
+            hasNextPage
+        }
+        edges {
+            cursor
+            node {
+                id
+                ref
+                type
+                status
+                name
+                primaryAddress {
+                    id
+                    ref
+                    type
+                    companyName
+                    name
+                    street
+                    city
+                    state
+                    postcode
+                    region
+                    country
+                    latitude
+                    longitude
+                    timeZone
+                }
+                attributes {
+                    type
+                    name
+                    value
+                }
+                openingSchedule {
+                    id
+                    createdOn
+                    updatedOn
+                    allHours
+                    monEnd
+                    monStart
+                    tueEnd
+                    tueStart
+                    wedEnd
+                    wedStart
+                    thuEnd
+                    thuStart
+                    friEnd
+                    friStart
+                    satEnd
+                    satStart
+                    sunEnd
+                    sunStart
+                }
+            }
+        }
+    }
+}

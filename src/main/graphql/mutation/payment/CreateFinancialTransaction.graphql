@@ -1,0 +1,5 @@
+mutation CreateFinancialTransaction($input: CreateFinancialTransactionInput){
+    createFinancialTransaction(input:$input) {
+        ref
+    }
+}

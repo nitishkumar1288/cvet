@@ -1,0 +1,14 @@
+{
+  "dropShipOrderItemsAllocation": [
+    {
+      "orderItemId": "5189",
+      "productRef": "186126",
+      "requestedQuantity": 1
+    },
+    {
+      "orderItemId": "5190",
+      "productRef": "186128",
+      "requestedQuantity": 1
+    }
+  ]
+}
