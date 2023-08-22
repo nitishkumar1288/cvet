@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+    <mirrors>
+        <mirror>
+            <id>maven-s3-release-repo</id>
+            <mirrorOf>maven-s3-release-repo</mirrorOf>
+            <name>Pseudo repository to mirror external repositories initially using HTTP.</name>
+            <url>http://mvnrepo.fluentretail.com.s3-website-ap-southeast-2.amazonaws.com/releases</url>
+        </mirror>
+    </mirrors>
+</settings>
