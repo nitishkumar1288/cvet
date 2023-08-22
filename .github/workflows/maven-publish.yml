@@ -37,4 +37,3 @@ jobs:
       env:
         API_HOST: ${{ secrets.DEV_API_HOST }}
         DEV_ACCOUNT: ${{ vars.DEV_ACCOUNT }}
-        GITHUB_TOKEN: ${{ github.token }}
