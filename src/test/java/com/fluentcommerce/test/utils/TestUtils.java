@@ -11,6 +11,8 @@ import java.util.stream.IntStream;
 public class TestUtils {
     // why not just inline?
     // because notEquals is much more readable than !
+
+
     public static boolean notEquals(String string1, String string2) {
         return !StringUtils.equals(string1, string2);
     }
