@@ -11,7 +11,7 @@ env:
   CLIENT_ID: CVETDEV
   CLIENT_SECRET: 9c3acda0-5623-4836-b738-5dc8264d8e32
   BRANCH: test
-  PLUGIN_VERSION: "1.${{ github.run_number }}.${{ github.run_attempt }}"
+  PLUGIN_VERSION: "1.0.1"
 
 jobs:
   build:
@@ -20,12 +20,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
-          ref: ${{env.BRANCH}}
+          ref: test
 
       - name: Run build plugin jar
         working-directory: covetrus project/cvet
         run: |
-          mvn versions:set -DnewVersion=${{env.PLUGIN_VERSION}} -f pom.xml --no-transfer-progress
+          mvn versions:set -DnewVersion=${{PLUGIN_VERSION}} -f pom.xml --no-transfer-progress
           mvn clean package -Drubix.osgi.symbolic.name=${{env.ACCOUNT_ID}}.nitish -DskipTests --no-transfer-progress
 
       - name: Deploy
