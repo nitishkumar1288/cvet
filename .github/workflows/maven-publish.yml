@@ -34,7 +34,7 @@ jobs:
       - name: Run the deploy
         working-directory: covetrus-project/cvet
         run: |
-          chmod +x  ./covetrus-project/cvet/deployment/retailer1/rubix-install.sh
+          chmod +x ./covetrus-project/cvet/deployment/retailer1/rubix-install.sh
           ./covetrus-project/cvet/deployment/retailer1/rubix-install.sh
         env:
           API_HOST: ${{ secrets.DEV_API_HOST }}
