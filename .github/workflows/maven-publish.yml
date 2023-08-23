@@ -11,7 +11,7 @@ env:
   CLIENT_ID: CVETDEV
   CLIENT_SECRET: 9c3acda0-5623-4836-b738-5dc8264d8e32
   BRANCH: test
-  PLUGIN_VERSION: "1.0.1"
+  PLUGIN_VERSION: "1.${{ github.run_number }}.${{ github.run_attempt }}"
 
 jobs:
   build:
@@ -34,13 +34,13 @@ jobs:
         run: |
           echo -e "\nDEPLOYING\n"
           VERSION="${{env.PLUGIN_VERSION}}"
-          cp $(find ./target -type f -name 'rubix-plugin-fran*.jar') ./rubix-plugin-fran-${VERSION}.jar
+          cp $(find ./target -type f -name 'rubix-plugin-cvet*.jar') ./rubix-plugin-cvet-${VERSION}.jar
           echo "VERSION: ${VERSION}"
           BEARER=$(curl -sX POST "https://cvetdev.sandbox.api.fluentretail.com/oauth/token?username=$ACCOUNT_USERNAME&password=$ACCOUNT_PASSWORD&client_id=$CLIENT_ID&client_secret=$CLIENT_SECRET&grant_type=password" | jq -r '.access_token')
           OUTPUT=$(curl -sX POST \
               -F "file=@./rubix-plugin-fran-${VERSION}.jar" \
               -H "Authorization: Bearer ${BEARER}" \
-              -H "fluent.account: FRANCESCASDEV" \
+              -H "fluent.account: CVETDEV" \
               -H "Content-Type: multipart/form-data" \
               "https://cvetdev.sandbox.api.fluentretail.com:443/orchestration/rest/v1/plugin/upload")
 
@@ -62,10 +62,10 @@ jobs:
           BEARER=$(curl -sX POST "https://cvetdev.sandbox.api.fluentretail.com/oauth/token?username=$ACCOUNT_USERNAME&password=$ACCOUNT_PASSWORD&client_id=$CLIENT_ID&client_secret=$CLIENT_SECRET&grant_type=password" | jq -r '.access_token')
           curl -sX POST \
               -H "Authorization: Bearer ${BEARER}" \
-              -H "fluent.account: FRANCESCASDEV" \
+              -H "fluent.account: CVETDEV" \
               -H "Content-Type: application/json" \
-              --data "{\"accountId\":\"FRANCESCASDEV\",\"bundleName\":\"FRANCESCASDEV.base::${VERSION}\"}" \
-              "https://francescasdev.sandbox.api.fluentretail.com:443/orchestration/rest/v1/plugin/install"
+              --data "{\"accountId\":\"CVETDEV\",\"bundleName\":\"CVETDEV.base::${VERSION}\"}" \
+              "https://CVETDEV.sandbox.api.fluentretail.com:443/orchestration/rest/v1/plugin/install"
 
       - name: Status
         working-directory: covetrus project/cvet
@@ -75,9 +75,9 @@ jobs:
           BEARER=$(curl -sX POST "https://cvetdev.sandbox.api.fluentretail.com/oauth/token?username=$ACCOUNT_USERNAME&password=$ACCOUNT_PASSWORD&client_id=$CLIENT_ID&client_secret=$CLIENT_SECRET&grant_type=password" | jq -r '.access_token')
           OUTPUT=$(curl -sX GET \
               -H "Authorization: Bearer ${BEARER}" \
-              -H "fluent.account: FRANCESCASDEV" \
+              -H "fluent.account: CVETDEV" \
               -H "Content-Type: application/json" \
-              "https://francescasdev.sandbox.api.fluentretail.com:443/orchestration/rest/v1/plugin/FRANCESCASDEV.base::${VERSION}/status")
+              "https://CVETDEV.sandbox.api.fluentretail.com:443/orchestration/rest/v1/plugin/CVETDEV.base::${VERSION}/status")
           STATUS=$(echo ${OUTPUT} | jq -r '.bundleStatus')
           if [[ ${STATUS} == "ACTIVE" ]]; then
               echo "Deploy successful"
