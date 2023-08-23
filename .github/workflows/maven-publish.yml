@@ -24,19 +24,66 @@ jobs:
 
       - name: Run build plugin jar
         working-directory: covetrus project/cvet
-        if: github.ref == 'refs/heads/main'  # Only deploy on pushes to main branch
         run: |
-           mvn -B clean install -DskipTests
-           mkdir -p ${GITHUB_WORKSPACE}/artifacts
-           cp target/*.jar ${GITHUB_WORKSPACE}/artifacts
-           ls -lah ${GITHUB_WORKSPACE}/artifacts
+          mvn versions:set -DnewVersion=${{env.PLUGIN_VERSION}} -f pom.xml --no-transfer-progress
+          mvn clean package -Drubix.osgi.symbolic.name=${{env.ACCOUNT_ID}}.nitish -DskipTests --no-transfer-progress
 
-      - name: Run the deploy
-        working-directory: covetrus project/cvet
-        if: github.ref == 'refs/heads/main'  # Only deploy on pushes to main branch
+      - name: Deploy
+        working-directory: "covetrus project/cvet"
+        shell: /bin/bash -xe {0}
         run: |
-          chmod +x  ./covetrus project/cvet/deployment/retailer1/rubix-install.sh
-          ./covetrus project/cvet/deployment/retailer1/rubix-install.sh
-           env:
-          API_HOST: ${{ secrets.DEV_API_HOST }}
-          DEV_ACCOUNT: ${{ vars.DEV_ACCOUNT }}
+          echo -e "\nDEPLOYING\n"
+          VERSION="${{env.PLUGIN_VERSION}}"
+          cp $(find ./target -type f -name 'rubix-plugin-cvet*.jar') ./rubix-plugin-cvet-${VERSION}.jar
+          echo "VERSION: ${VERSION}"
+          BEARER=$(curl -sX POST "https://cvetdev.sandbox.api.fluentretail.com/oauth/token?username=$ACCOUNT_USERNAME&password=$ACCOUNT_PASSWORD&client_id=$CLIENT_ID&client_secret=$CLIENT_SECRET&grant_type=password" | jq -r '.access_token')
+          OUTPUT=$(curl -sX POST \
+              -F "file=@./rubix-plugin-cvet-${VERSION}.jar" \
+              -H "Authorization: Bearer ${BEARER}" \
+              -H "fluent.account: CVETDEV" \
+              -H "Content-Type: multipart/form-data" \
+              "https://cvetdev.sandbox.api.fluentretail.com:443/orchestration/rest/v1/plugin/upload")
+
+          STATUS=$(echo ${OUTPUT} | jq -r '.status')
+          if [[ ${STATUS} == 200 ]]; then
+              echo "Deploy successful"
+              echo ${OUTPUT}
+          else
+              echo "Deploy failed"
+              echo ${OUTPUT}
+              exit 1
+          fi
+
+      - name: Install
+        working-directory: covetrus project/cvet
+        run: |
+          echo -e "\nINSTALLING\n"
+          VERSION="${{env.PLUGIN_VERSION}}"
+          BEARER=$(curl -sX POST "https://cvetdev.sandbox.api.fluentretail.com/oauth/token?username=$ACCOUNT_USERNAME&password=$ACCOUNT_PASSWORD&client_id=$CLIENT_ID&client_secret=$CLIENT_SECRET&grant_type=password" | jq -r '.access_token')
+          curl -sX POST \
+              -H "Authorization: Bearer ${BEARER}" \
+              -H "fluent.account: CVETDEV" \
+              -H "Content-Type: application/json" \
+              --data "{\"accountId\":\"CVETDEV\",\"bundleName\":\"CVETDEV.nitish::${VERSION}\"}" \
+              "https://CVETDEV.sandbox.api.fluentretail.com:443/orchestration/rest/v1/plugin/install"
+
+      - name: Status
+        working-directory: covetrus project/cvet
+        run: |
+          echo -e "\nSTATUS\n"
+          VERSION="${{env.PLUGIN_VERSION}}"
+          BEARER=$(curl -sX POST "https://cvetdev.sandbox.api.fluentretail.com/oauth/token?username=$ACCOUNT_USERNAME&password=$ACCOUNT_PASSWORD&client_id=$CLIENT_ID&client_secret=$CLIENT_SECRET&grant_type=password" | jq -r '.access_token')
+          OUTPUT=$(curl -sX GET \
+              -H "Authorization: Bearer ${BEARER}" \
+              -H "fluent.account: CVETDEV" \
+              -H "Content-Type: application/json" \
+              "https://CVETDEV.sandbox.api.fluentretail.com:443/orchestration/rest/v1/plugin/CVETDEV.nitish::${VERSION}/status")
+          STATUS=$(echo ${OUTPUT} | jq -r '.bundleStatus')
+          if [[ ${STATUS} == "ACTIVE" ]]; then
+              echo "Deploy successful"
+              echo ${OUTPUT}
+          else
+              echo "Deploy failed"
+              echo ${OUTPUT}
+              exit 1
+          fi
