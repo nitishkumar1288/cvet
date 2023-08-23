@@ -27,7 +27,6 @@ jobs:
         if: github.ref == 'refs/heads/test'  # Only deploy on pushes to main branch
         run: |
          - mvn -B clean install -DskipTests
-          - echo $CI_PROJECT_DIR
-          - mkdir -p $CI_PROJECT_DIR/artifacts
-          - cp target/*.jar $CI_PROJECT_DIR/artifacts
-          - ls -lah $CI_PROJECT_DIR/artifacts
+          - mkdir -p $GITHUB_WORKSPACE/artifacts
+          - cp target/*.jar $GITHUB_WORKSPACE/artifacts
+          - ls -lah $GITHUB_WORKSPACE/artifacts
