@@ -6,12 +6,12 @@ on:
 
 env:
   ACCOUNT_ID: CVETDEV
-  ACCOUNT_USERNAME: cvetdev_admin
-  ACCOUNT_PASSWORD: cvetdev_admin
+  ACCOUNT_USERNAME: covetrus_na_rx_management_admin
+  ACCOUNT_PASSWORD: dHk6sZ
   CLIENT_ID: CVETDEV
   CLIENT_SECRET: 9c3acda0-5623-4836-b738-5dc8264d8e32
   BRANCH: test
-  PLUGIN_VERSION: "1.0.5"
+  PLUGIN_VERSION: "1.0.6"
 
 jobs:
   build:
