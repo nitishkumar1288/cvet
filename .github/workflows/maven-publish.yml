@@ -35,8 +35,8 @@ jobs:
         working-directory: covetrus project/cvet
         if: github.ref == 'refs/heads/main'  # Only deploy on pushes to main branch
         run: |
-          chmod +x  ./deployment/retailer1/rubix-install.sh
-          ./deployment/retailer1/rubix-install.sh
+          chmod +x  ./covetrus project/cvet/deployment/retailer1/rubix-install.sh
+          ./covetrus project/cvet/deployment/retailer1/rubix-install.sh
            env:
           API_HOST: ${{ secrets.DEV_API_HOST }}
           DEV_ACCOUNT: ${{ vars.DEV_ACCOUNT }}
