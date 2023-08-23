@@ -36,6 +36,7 @@ jobs:
         run: |
           chmod +x ./covetrus-project/cvet/deployment/retailer1/rubix-install.sh
           ./covetrus-project/cvet/deployment/retailer1/rubix-install.sh
+        shell: bash
         env:
           API_HOST: ${{ secrets.DEV_API_HOST }}
           DEV_ACCOUNT: ${{ vars.DEV_ACCOUNT }}
