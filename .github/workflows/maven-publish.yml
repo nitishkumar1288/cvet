@@ -17,10 +17,7 @@ jobs:
       contents: read
       packages: write
 
-    steps:       
-    - name : setting
-      run: mvn -s settings.xml clean install
-      
+    steps:             
     - name: Build with Maven
       if: github.ref == 'refs/heads/main'  # Only deploy on pushes to main branch
       run: mvn -B package --file pom.xml
