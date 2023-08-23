@@ -1,4 +1,4 @@
-name: Deploy Dev
+name: Maven Package
 
 on:
   push:
@@ -16,6 +16,9 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -23,8 +26,6 @@ jobs:
           ref: test
 
       - name: Run build plugin jar
-        working-directory: covetrus-project/cvet
-        if: github.ref == 'refs/heads/main'  # Only deploy on pushes to main branch
         run: |
           mvn -B clean install -DskipTests
           mkdir -p ${GITHUB_WORKSPACE}/artifacts
@@ -32,11 +33,11 @@ jobs:
           ls -lah ${GITHUB_WORKSPACE}/artifacts
 
       - name: Run the deploy
-        working-directory: covetrus-project/cvet
         run: |
           chmod +x ./covetrus-project/cvet/deployment/retailer1/rubix-install.sh
           ./covetrus-project/cvet/deployment/retailer1/rubix-install.sh
-        shell: bash
+          
         env:
           API_HOST: ${{ secrets.DEV_API_HOST }}
           DEV_ACCOUNT: ${{ vars.DEV_ACCOUNT }}
+          GITHUB_TOKEN: ${{ github.token }}
