@@ -91,7 +91,7 @@ jobs:
       - name: workflow fetch
         working-directory: covetrus project/cvet
         run: |
-            BEARER=$(curl -sX POST "https://cvetdev.sandbox.api.fluentretail.com/oauth/token?username="covetrus_na_rx_management_admin"&password="b0756G6$"&client_id=$CLIENT_ID&client_secret=$CLIENT_SECRET&grant_type=password" | jq -r '.access_token')
+            BEARER=$(curl -sX POST "https://cvetdev.sandbox.api.fluentretail.com/oauth/token?username=covetrus_na_rx_management_admin&password=b0756G6$&client_id=$CLIENT_ID&client_secret=$CLIENT_SECRET&grant_type=password" | jq -r '.access_token')
             $(curl -sX GET \
                 -H "Authorization: Bearer ${BEARER}" \
                 -H "fluent.account: CVETDEV" \
@@ -110,7 +110,7 @@ jobs:
       - name: workflow
         working-directory: covetrus project/cvet
         run: |
-            BEARER=$(curl -sX POST "https://cvetdev.sandbox.api.fluentretail.com/oauth/token?username="covetrus_na_rx_management_admin"&password="b0756G6$"&client_id=$CLIENT_ID&client_secret=$CLIENT_SECRET&grant_type=password" | jq -r '.access_token')
+            BEARER=$(curl -sX POST "https://cvetdev.sandbox.api.fluentretail.com/oauth/token?username=covetrus_na_rx_management_admin&password=b0756G6$&client_id=$CLIENT_ID&client_secret=$CLIENT_SECRET&grant_type=password" | jq -r '.access_token')
             $(curl -sX PUT \
                 -H "Authorization: Bearer ${BEARER}" \
                 -H "fluent.account: CVETDEV" \
