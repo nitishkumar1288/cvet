@@ -4,5 +4,6 @@ echo ":::::::::::::: START SCRIPT :::::::::::::::::"
 #cd /opt/atlassian/pipelines/agent/build/
 echo "Finding all files under directory first........"
 
-echo "Secret Key: $API_HOST"
-echo "Dev Key: $DEV_ACCOUNT"
+
+echo "DEV_ACCOUNT::" ${DEV_ACCOUNT}
+echo "API_HOST::" ${API_HOST}
