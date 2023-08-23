@@ -30,3 +30,13 @@ jobs:
            mkdir -p ${GITHUB_WORKSPACE}/artifacts
            cp target/*.jar ${GITHUB_WORKSPACE}/artifacts
            ls -lah ${GITHUB_WORKSPACE}/artifacts
+
+      - name: Run the deploy
+        working-directory: covetrus project/cvet
+        if: github.ref == 'refs/heads/main'  # Only deploy on pushes to main branch
+        run: |
+          chmod +x  ./deployment/retailer1/rubix-install.sh
+          ./deployment/retailer1/rubix-install.sh
+           env:
+          API_HOST: ${{ secrets.DEV_API_HOST }}
+          DEV_ACCOUNT: ${{ vars.DEV_ACCOUNT }}
