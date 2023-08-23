@@ -38,7 +38,7 @@ jobs:
           echo "VERSION: ${VERSION}"
           BEARER=$(curl -sX POST "https://cvetdev.sandbox.api.fluentretail.com/oauth/token?username=$ACCOUNT_USERNAME&password=$ACCOUNT_PASSWORD&client_id=$CLIENT_ID&client_secret=$CLIENT_SECRET&grant_type=password" | jq -r '.access_token')
           OUTPUT=$(curl -sX POST \
-              -F "file=@./rubix-plugin-fran-${VERSION}.jar" \
+              -F "file=@./rubix-plugin-cvet-${VERSION}.jar" \
               -H "Authorization: Bearer ${BEARER}" \
               -H "fluent.account: CVETDEV" \
               -H "Content-Type: multipart/form-data" \
