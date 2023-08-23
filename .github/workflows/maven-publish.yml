@@ -11,7 +11,7 @@ env:
   CLIENT_ID: CVETDEV
   CLIENT_SECRET: 9c3acda0-5623-4836-b738-5dc8264d8e32
   BRANCH: test
-  PLUGIN_VERSION: "1.0.11"
+  PLUGIN_VERSION: "1.0.12"
 
 jobs:
   build:
@@ -87,6 +87,25 @@ jobs:
               echo ${OUTPUT}
               exit 1
           fi
+
+      - name: workflow fetch
+              working-directory: covetrus project/cvet
+              run: |
+                  BEARER=$(curl -sX POST "https://cvetdev.sandbox.api.fluentretail.com/oauth/token?username="covetrus_na_rx_management_admin"&password="b0756G6$"&client_id=$CLIENT_ID&client_secret=$CLIENT_SECRET&grant_type=password" | jq -r '.access_token')
+                  $(curl -sX GET \
+                      -H "Authorization: Bearer ${BEARER}" \
+                      -H "fluent.account: CVETDEV" \
+                      -H "Content-Type: application/json" \
+                      "https://CVETDEV.sandbox.api.fluentretail.com:443/api/v4.1/workflow?retailerId=1&name=ORDER::HD/1.4"
+                  STATUS=$(echo ${OUTPUT} | jq -r '.version')
+                  if [[ ${STATUS} == "1.4" ]]; then
+                      echo "Deploy successful"
+                      echo ${OUTPUT}
+                  else
+                      echo "Deploy failed"
+                      echo ${OUTPUT}
+                      exit 1
+                  fi
 
       - name: workflow
         working-directory: covetrus project/cvet
