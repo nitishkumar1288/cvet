@@ -5,7 +5,7 @@ on:
     branches: [test]
 
 env:
-  ACCOUNT_ID: CVETDEV.test
+  ACCOUNT_ID: CVETDEV
   ACCOUNT_USERNAME: cvetdev_admin
   ACCOUNT_PASSWORD: cvetdev_admin
   CLIENT_ID: CVETDEV
@@ -26,7 +26,7 @@ jobs:
         working-directory: covetrus project/cvet
         run: |
           mvn versions:set -DnewVersion=${{env.PLUGIN_VERSION}} -f pom.xml --no-transfer-progress
-          mvn clean package -Drubix.osgi.symbolic.name=${{env.ACCOUNT_ID}}.base -DskipTests --no-transfer-progress
+          mvn clean package -Drubix.osgi.symbolic.name=${{env.ACCOUNT_ID}}.nitish -DskipTests --no-transfer-progress
 
       - name: Deploy
         working-directory: "covetrus project/cvet"
@@ -64,7 +64,7 @@ jobs:
               -H "Authorization: Bearer ${BEARER}" \
               -H "fluent.account: CVETDEV" \
               -H "Content-Type: application/json" \
-              --data "{\"accountId\":\"CVETDEV\",\"bundleName\":\"CVETDEV.base::${VERSION}\"}" \
+              --data "{\"accountId\":\"CVETDEV\",\"bundleName\":\"CVETDEV.nitish::${VERSION}\"}" \
               "https://CVETDEV.sandbox.api.fluentretail.com:443/orchestration/rest/v1/plugin/install"
 
       - name: Status
@@ -77,7 +77,7 @@ jobs:
               -H "Authorization: Bearer ${BEARER}" \
               -H "fluent.account: CVETDEV" \
               -H "Content-Type: application/json" \
-              "https://CVETDEV.sandbox.api.fluentretail.com:443/orchestration/rest/v1/plugin/CVETDEV.base::${VERSION}/status")
+              "https://CVETDEV.sandbox.api.fluentretail.com:443/orchestration/rest/v1/plugin/CVETDEV.nitish::${VERSION}/status")
           STATUS=$(echo ${OUTPUT} | jq -r '.bundleStatus')
           if [[ ${STATUS} == "ACTIVE" ]]; then
               echo "Deploy successful"
