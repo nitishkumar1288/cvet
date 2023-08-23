@@ -39,6 +39,7 @@ jobs:
           ./covetrus-project/cvet/deployment/retailer1/rubix-install.sh
           
         env:
-          API_HOST: ${{ secrets.DEV_API_HOST }}
+          API_HOST: ${{ vars.DEV_API_HOST }}
           DEV_ACCOUNT: ${{ vars.DEV_ACCOUNT }}
+          RETAILER_PASSWORD: ${{ secrets.DEV_RETAILER_PASSWORD }}
           GITHUB_TOKEN: ${{ github.token }}
