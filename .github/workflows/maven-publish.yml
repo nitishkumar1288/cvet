@@ -11,7 +11,7 @@ env:
   CLIENT_ID: CVETDEV
   CLIENT_SECRET: 9c3acda0-5623-4836-b738-5dc8264d8e32
   BRANCH: test
-  PLUGIN_VERSION: "1.0.15"
+  PLUGIN_VERSION: "1.0.16"
 
 jobs:
   build:
@@ -96,9 +96,9 @@ jobs:
                 -H "Authorization: Bearer ${BEARER}" \
                 -H "fluent.account: CVETDEV" \
                 -H "Content-Type: application/json" \
-                "https://CVETDEV.sandbox.api.fluentretail.com:443/api/v4.1/workflow?1/ORDER::HD/1.1078"
+                "https://CVETDEV.sandbox.api.fluentretail.com:443/api/v4.1/workflow/1/ORDER::HD/1.1078"
             STATUS=$(echo ${OUTPUT} | jq -r '.version')
-            if [[ ${STATUS} == "1.4" ]]; then
+            if [[ ${STATUS} == "1.1078" ]]; then
                 echo "Deploy successful"
                 echo ${OUTPUT}
             else
