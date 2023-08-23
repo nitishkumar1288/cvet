@@ -25,7 +25,7 @@ jobs:
       - name: Run build plugin jar
         working-directory: covetrus project/cvet
         run: |
-          mvn versions:set -DnewVersion=${{PLUGIN_VERSION}} -f pom.xml --no-transfer-progress
+          mvn versions:set -DnewVersion=${{env.PLUGIN_VERSION}} -f pom.xml --no-transfer-progress
           mvn clean package -Drubix.osgi.symbolic.name=${{env.ACCOUNT_ID}}.nitish -DskipTests --no-transfer-progress
 
       - name: Deploy
