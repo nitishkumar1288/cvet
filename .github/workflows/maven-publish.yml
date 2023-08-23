@@ -26,7 +26,7 @@ jobs:
         distribution: 'temurin'
         server-id: maven-s3-release-repo # Value of the distributionManagement/repository/id field of the pom.xml
         settings-path: ${{ github.workspace }} # location for the settings.xml file
-        echo "GitHub SHA: $settings-path"
+        echo 'GitHub SHA: $settings-path'
      
 
     - name : setting
@@ -34,6 +34,7 @@ jobs:
       run: mvn -s settings.xml clean install
       
     - name: Build with Maven
+      if: github.ref == 'refs/heads/main'  # Only deploy on pushes to main branch
       run: mvn -B package --file pom.xml
 
     - name: Publish to GitHub Packages Apache Maven
