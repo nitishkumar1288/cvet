@@ -89,8 +89,8 @@ jobs:
           fi
 
       - name: workflow
-          working-directory: covetrus project/cvet
-          run: |
+        working-directory: covetrus project/cvet
+        run: |
             echo -e "\nSTATUS\n"
             VERSION="${{env.PLUGIN_VERSION}}"
             BEARER=$(curl -sX POST "https://cvetdev.sandbox.api.fluentretail.com/oauth/token?username=$ACCOUNT_USERNAME&password=$ACCOUNT_PASSWORD&client_id=$CLIENT_ID&client_secret=$CLIENT_SECRET&grant_type=password" | jq -r '.access_token')
