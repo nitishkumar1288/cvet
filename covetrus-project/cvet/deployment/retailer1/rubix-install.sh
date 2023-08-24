@@ -9,7 +9,7 @@ search_dir=${GITHUB_WORKSPACE}/artifacts
 do
   echo "$entry"
 done
-
+echo "current directory::" ${PWD}
 echo "DEV_ACCOUNT::" ${DEV_ACCOUNT}
 echo "API_HOST::" ${API_HOST}
 echo "RETAILER_PASSWORD::" ${RETAILER_PASSWORD}
