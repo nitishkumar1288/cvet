@@ -9,7 +9,7 @@ search_dir=${GITHUB_WORKSPACE}/artifacts
 do
   echo "$entry"
 done
-export PATH=${GITHUB_WORKSPACE}/artifacts
+
 echo "current directory::" ${PATH}
 echo "DEV_ACCOUNT::" ${DEV_ACCOUNT}
 echo "API_HOST::" ${API_HOST}
