@@ -11,7 +11,7 @@ do
 done
 
 cd ${GITHUB_WORKSPACE}/artifacts
-
+echo "GIT_DIRECTORY::" ${GIT_DIR}
 echo "DEV_ACCOUNT::" ${DEV_ACCOUNT}
 echo "API_HOST::" ${API_HOST}
 echo "RETAILER_PASSWORD::" ${RETAILER_PASSWORD}
