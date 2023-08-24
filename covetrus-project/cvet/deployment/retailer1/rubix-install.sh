@@ -29,7 +29,7 @@ function get_token () {
 token=$(\
   curl -s -XPOST \
   -H "Cache-Control: no-cache" \
-  -H "fluent.account: ${ACCOUNT}" \
+  -H "fluent.account: ${DEV_ACCOUNT}" \
   "${!API_HOST}/oauth/token?username=${!RETAILER_USERNAME}&password=${!RETAILER_PASSWORD}&scope=api&client_id=${!DEV_ACCOUNT}&client_secret=${!CLIENT_SECRET}&grant_type=password" \
       | jq ".access_token")
 token=$(sed -e 's/^"//' -e 's/"$//' <<<"$token")
@@ -44,3 +44,10 @@ token"
  exit 1
 fi
 }
+
+#check-service-running "${!apiHost}"/orchestration/rest/health
+
+echo "Getting token for account ${!accountId}"
+get_token
+echo "Got token for account ${!accountId}"
+#check-service-running "${!apiHost}"/api/metrics/healthcheck
