@@ -75,7 +75,7 @@ response=$( \
   -H "Connection: keep-alive" \
   -H 'Cache-Control: no-cache' \
   -H "fluent.account: ${DEV_ACCOUNT}" \
-  -F "file=@artifacts/${DEV_ACCOUNT}-1.0.15.jar"
+  -F "file=${GITHUB_WORKSPACE}/@artifacts/${DEV_ACCOUNT}-1.0.15.jar"
 )
 if [[ ${response} -ne 200 ]]
 then
