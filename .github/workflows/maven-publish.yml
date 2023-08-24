@@ -42,4 +42,9 @@ jobs:
           API_HOST: ${{ vars.DEV_API_HOST }}
           DEV_ACCOUNT: ${{ vars.DEV_ACCOUNT }}
           RETAILER_PASSWORD: ${{ secrets.DEV_RETAILER_PASSWORD }}
+          PLUGIN_NAME: ${{ vars.DEV_PLUGIN_NAMESPACE }}
+          RETAILER_USERNAME: ${{ vars.DEV_RETAILER_USERNAME }}
+          CLIENT_SECRET: ${{ secrets.DEV_CLIENT_SECRET }}
+          GIT_EMAIL: ${{ vars.GLOBAL_GIT_EMAIL_ID }}
+          GIT_USERNAME: ${{ vars.GLOBAL_GIT_USER_NAME }}
           GITHUB_TOKEN: ${{ github.token }}
