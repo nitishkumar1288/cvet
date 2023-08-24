@@ -1,0 +1,16 @@
+{
+  "returnItems": [
+    {
+      "orderItemRef": "1",
+      "unitQuantity": {
+        "quantity": 8
+      }
+    },
+    {
+      "orderItemRef": "2",
+      "unitQuantity": {
+        "quantity": 10
+      }
+    }
+  ]
+}

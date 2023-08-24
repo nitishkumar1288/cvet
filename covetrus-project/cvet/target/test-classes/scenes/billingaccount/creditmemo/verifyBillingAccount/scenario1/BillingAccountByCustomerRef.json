@@ -1,0 +1,15 @@
+{
+  "data": {
+    "billingAccounts": {
+      "edges": [
+        {
+          "node": {
+            "id": "ad036e47-47a8-4bec-9ca1-bfa64c841dd3",
+            "ref": "NahedaShabbirahmad:1_a6c8a",
+            "type": "CUSTOMER"
+          }
+        }
+      ]
+    }
+  }
+}

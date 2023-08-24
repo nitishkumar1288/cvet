@@ -1,0 +1,27 @@
+{
+  "retailer_id": "1",
+  "account_id" : "0",
+  "entity_id": "2320",
+  "entity_ref": "NKS_HD_ORD_38",
+  "root_entity_id": "285",
+  "root_entity_ref": "NKS_HD_ORD_38",
+  "attributes": {
+    "fulfilment": {
+      "ref": "x68kqfh",
+      "taxStatus": "tax status",
+      "taxDate": "2022-10-19T15:07:05.955Z",
+      "totalTax": "22",
+      "tax": "22",
+      "handlingTax": "33",
+      "shippingTax": "44",
+      "items": [
+        {
+          "ref": "1",
+          "totalTax": "22",
+          "handlingTax": "33",
+          "shippingTax": "44"
+        }
+      ]
+    }
+  }
+}

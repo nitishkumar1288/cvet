@@ -1,0 +1,20 @@
+query GetInventoryCatalogue($inventoryCatalogueRef: String!, $productRef: [String!], $locationRef: [String], $pageSize: Int, $nextPageCursor: String) {
+  inventoryCatalogue(ref: $inventoryCatalogueRef) {
+    ref
+    inventoryPositions(productRef: $productRef, locationRef: $locationRef, first: $pageSize, after: $nextPageCursor) {
+      edges {
+        node {
+          id
+          ref
+          type
+          status
+        }
+        cursor
+      }
+      pageInfo {
+        hasNextPage
+      }
+    }
+  }
+}
+

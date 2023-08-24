@@ -1,0 +1,23 @@
+{
+  "data": {
+    "inventoryCatalogue": {
+      "ref": "DEFAULT:1",
+      "inventoryPositions": {
+        "edges": [
+          {
+            "node": {
+              "id": "b9e762f2-f07b-485b-a6b7-0af17ffb6fdf",
+              "ref": "OTCCOV001:PHEONIX:DEFAULT",
+              "type": "DEFAULT",
+              "status": "ACTIVE"
+            },
+            "cursor": "Y3Vyc29yOi0tLWI5ZTc2MmYyLWYwN2ItNDg1Yi1hNmI3LTBhZjE3ZmZiNmZkZl9fMTY3NjQzOTIxMjk5OA=="
+          }
+        ],
+        "pageInfo": {
+          "hasNextPage": true
+        }
+      }
+    }
+  }
+}

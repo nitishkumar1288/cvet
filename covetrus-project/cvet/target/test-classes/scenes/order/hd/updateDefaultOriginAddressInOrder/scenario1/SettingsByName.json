@@ -1,0 +1,28 @@
+{
+  "data": {
+    "settings": {
+      "pageInfo": {
+        "hasNextPage": false
+      },
+      "edges": [
+        {
+          "node": {
+            "id": "1010",
+            "name": "DefaultOriginAddress",
+            "valueType": "JSON",
+            "lobValue": {
+              "postalCode": "04101-4185",
+              "country": "US",
+              "region": "ME",
+              "town": "Portland",
+              "addressLine1": "7 Custom House St"
+            },
+            "value": "",
+            "context": "RETAILER",
+            "contextId": 1
+          }
+        }
+      ]
+    }
+  }
+}

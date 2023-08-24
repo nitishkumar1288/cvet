@@ -1,0 +1,35 @@
+{
+  "retailer_id": "1",
+  "account_id" : "0",
+  "entity_id": "285",
+  "entity_ref": "HDORDFC017",
+  "root_entity_id": "285",
+  "root_entity_ref": "HDORDFC017",
+  "entityStatus": "CREATED",
+  "attributes":{
+    "orderRef": "HDORDFC017",
+    "paymentInfo": {
+      "cardType": {
+        "code": "abc"
+      },
+      "cardNumberLastFour": "",
+      "paymentSequence": "",
+      "accountHolderName": "",
+      "expiryYear": "",
+      "expiryMonth": "",
+      "paymentType": "",
+      "paymentToken": "",
+      "billingAddress": {
+        "town": "",
+        "region": "",
+        "country": "",
+        "firstName": "",
+        "lastName": "",
+        "addressLine1": "",
+        "addressLine2": "",
+        "postalCode": "",
+        "phone": ""
+      }
+    }
+  }
+}

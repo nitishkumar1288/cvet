@@ -1,0 +1,113 @@
+{
+  "data": {
+    "locations": {
+      "pageInfo": {
+        "hasNextPage": false
+      },
+      "edges": [
+        {
+          "cursor": "Y3Vyc29yOi0tLThfXzE2NTM1NTc2OTYyMzY=",
+          "node": {
+            "id": "8",
+            "ref": "PHOENIX",
+            "type": "WAREHOUSE",
+            "status": "ACTIVE",
+            "name": "Roadrunner Facility",
+            "primaryAddress": {
+              "ref": "PHOENIX",
+              "type": "AGENT",
+              "companyName": null,
+              "name": null,
+              "street": "711 E. Carefree Hwy. Suite 140",
+              "city": "Phoenix",
+              "state": "AZ",
+              "postcode": "85085",
+              "region": null,
+              "country": "US",
+              "latitude": 33.79786514,
+              "longitude": -112.064386,
+              "timeZone": "NST"
+            },
+            "attributes": [
+              {
+                "type": "STRING",
+                "name": "lastAllocatedDate",
+                "value": "2022-11-02T23:07:56.154Z"
+              },
+              {
+                "type": "STRING",
+                "name": "supportEmail",
+                "value": "n/a"
+              },
+              {
+                "type": "STRING",
+                "name": "locationContactPerson",
+                "value": "Lee Martin"
+              },
+              {
+                "type": "STRING",
+                "name": "locationType",
+                "value": "DC"
+              },
+              {
+                "type": "INTEGER",
+                "name": "maxCapacity",
+                "value": 50
+              },
+              {
+                "type": "INTEGER",
+                "name": "MAX_CAPACITY",
+                "value": 50
+              },
+              {
+                "type": "INTEGER",
+                "name": "activeCapacity",
+                "value": 3
+              },
+              {
+                "type": "INTEGER",
+                "name": "priority",
+                "value": 8
+              },
+              {
+                "type": "STRING",
+                "name": "LAST_FULFILMENT_DATE",
+                "value": "2022-10-28T19:24:59.636Z"
+              },
+              {
+                "type": "INTEGER",
+                "name": "FULFILMENT_COUNT",
+                "value": 11
+              },
+              {
+                "type": "INTEGER",
+                "name": "MAX_FULFILMENT_PER_DAY",
+                "value": 50
+              }
+            ],
+            "openingSchedule": {
+              "id": "8",
+              "createdOn": "2022-05-26T09:34:56.239Z",
+              "updatedOn": "2022-05-26T09:34:56.239Z",
+              "allHours": false,
+              "monEnd": 1800,
+              "monStart": 800,
+              "tueEnd": 1800,
+              "tueStart": 800,
+              "wedEnd": 1800,
+              "wedStart": 800,
+              "thuEnd": 1800,
+              "thuStart": 800,
+              "friEnd": 1800,
+              "friStart": 800,
+              "satEnd": 1200,
+              "satStart": 800,
+              "sunEnd": 0,
+              "sunStart": 0
+            }
+          }
+        }
+      ]
+    }
+  }
+}

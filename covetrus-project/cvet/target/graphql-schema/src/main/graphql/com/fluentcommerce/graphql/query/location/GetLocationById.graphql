@@ -1,0 +1,52 @@
+query GetLocationById($id:ID!,
+    $networkCount: Int
+    $networkCursor: String
+    $includeNetworks: Boolean!){
+    locationById(id:$id){
+        ref
+        type
+        status
+        createdOn
+        updatedOn
+        name
+        supportPhoneNumber
+        defaultCarrier
+        retailer{
+            id
+        }
+        defaultCarrier
+        defaultCarrierName
+        networks(first: $networkCount, after: $networkCursor) @include(if: $includeNetworks){
+            edges{
+                node{
+                    id
+                    ref
+                    type
+                    status
+                }
+            }
+        }
+        primaryAddress{
+            id
+            type
+            createdOn
+            updatedOn
+            companyName
+            name
+            street
+            city
+            state
+            postcode
+            region
+            country
+            latitude
+            latitude
+            timeZone
+        }
+        attributes{
+            name
+            type
+            value
+        }
+    }
+}

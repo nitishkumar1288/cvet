@@ -1,0 +1,6 @@
+mutation UpdateFulfilment($input: UpdateFulfilmentInput) {
+    updateFulfilment(input: $input) {
+        id
+        status
+    }
+}

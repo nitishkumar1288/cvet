@@ -1,0 +1,125 @@
+{
+  "data": {
+    "creditMemo": {
+      "ref": "efbb52f5-9c95-42ce-89ba-6ac01dee8e2e",
+      "id": "4ab0efc6-92ff-4620-a596-116ff088a059",
+      "attributes": [
+        {
+          "name": "requestedRefundAmount",
+          "value": 22,
+          "type": "FLOAT"
+        },
+        {
+          "name": "paymentInfo",
+          "value": {
+            "amount": "",
+            "cardType": {
+              "code": "VISA"
+            },
+            "expiryYear": "",
+            "expiryMonth": "",
+            "paymentType": "creditCard",
+            "paymentToken": "6hgg75k12",
+            "billingAddress": {
+              "town": "",
+              "region": "AL",
+              "country": "US",
+              "lastName": "",
+              "firstName": "nitish",
+              "postalCode": "",
+              "addressLine1": "",
+              "addressLine2": ""
+            },
+            "paymentSequence": "",
+            "accountHolderName": "",
+            "cardNumberLastFour": "4321"
+          },
+          "type": "JSON"
+        }
+      ],
+      "totalAmount": {
+        "amount": 55
+      },
+      "subTotalAmount": {
+        "amount": 50
+      },
+      "totalBalance": {
+        "amount": 55
+      },
+      "defaultTaxType": {
+        "tariff": "GST",
+        "group": "STANDARD",
+        "country": "USA"
+      },
+      "createdOn": "2023-02-06T13:39:57.548Z",
+      "status": "PENDING_REFUND",
+      "currency": {
+        "alphabeticCode": "USD"
+      },
+      "type": "RETURN",
+      "returnOrder": {
+        "ref": "NKS_HD_ORD_296-R133956",
+        "retailer": {
+          "id": "1"
+        }
+      },
+      "items": {
+        "edges": [
+          {
+            "node": {
+              "id": "fb6149a0-34e7-42ca-aeeb-c3bfe931b659",
+              "ref": "c7ac2afe-00b7-4295-88be-6ad395340960",
+              "type": "RETURN_ITEM",
+              "createdOn": "2023-02-06T13:39:57.549Z",
+              "amount": {
+                "amount": 50
+              },
+              "creditReasonCode": null,
+              "description": null,
+              "orderItem": {
+                "ref": "1",
+                "order": {
+                  "ref": "NKS_HD_ORD_296",
+                  "retailer": {
+                    "id": "1"
+                  }
+                }
+              },
+              "taxAmount": {
+                "amount": 1
+              },
+              "product": {
+                "ref": "COMPXX01",
+                "catalogue": {
+                  "ref": "PC:MASTER:1"
+                }
+              },
+              "unitAmount": {
+                "amount": 10
+              },
+              "unitCostAmount": null,
+              "unitQuantity": {
+                "quantity": 5
+              },
+              "unitTaxType": {
+                "country": "USA",
+                "group": "STANDARD",
+                "tariff": "GST"
+              }
+            }
+          }
+        ]
+      },
+      "order": {
+        "ref": "NKS_HD_ORD_296",
+        "retailer": {
+          "id": "1"
+        }
+      },
+      "billingAccount": {
+        "ref": "nitishkumarSri123:1_16877",
+        "id": "4d965977-3e00-4868-99a8-54959d5aeab4"
+      }
+    }
+  }
+}

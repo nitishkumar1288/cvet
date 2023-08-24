@@ -1,0 +1,5 @@
+mutation CreateFulfillment($input: CreateFulfilmentInput){
+    createFulfilment(input:$input) {
+        ref
+    }
+}

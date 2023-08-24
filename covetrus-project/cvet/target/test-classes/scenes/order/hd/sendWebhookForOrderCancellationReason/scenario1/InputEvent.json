@@ -1,0 +1,17 @@
+{
+  "retailer_id": "1",
+  "account_id" : "0",
+  "entity_id": "285",
+  "entity_ref": "HDORDFC017",
+  "root_entity_id": "285",
+  "root_entity_ref": "HDORDFC017",
+  "entityStatus": "CREATED",
+  "attributes":{
+    "orderCancelledReasonPayload": {
+      "status": "CANCELLED",
+      "orderRef": "T_HDONOTE015_23112201",
+      "updateOn": "2022-11-23T06:32:55.795Z",
+      "cancellationReasonText": "Fraud Rejected"
+    }
+  }
+}

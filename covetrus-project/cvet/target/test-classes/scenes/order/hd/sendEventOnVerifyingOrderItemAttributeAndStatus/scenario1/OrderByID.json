@@ -1,0 +1,1451 @@
+{
+  "data": {
+    "orderById": {
+      "id": "4157",
+      "ref": "HDORDSTSCNG53",
+      "type": "HD",
+      "status": "PARTIALLY_FULFILMENT_PROCESSING",
+      "createdOn": "2023-02-21T13:48:47.837Z",
+      "updatedOn": "2023-02-21T13:53:07.473Z",
+      "totalPrice": 381.75,
+      "totalTaxPrice": 21,
+      "orderItems": {
+        "orderItemEdge": [
+          {
+            "orderItemNode": {
+              "id": "8927",
+              "ref": "2",
+              "quantity": 5,
+              "paidPrice": 25,
+              "currency": "USD",
+              "price": 30,
+              "taxType": null,
+              "taxPrice": 3,
+              "totalPrice": 150,
+              "totalTaxPrice": 2,
+              "status": "CREATED",
+              "orderItemAttributes": [
+                {
+                  "name": "prescriptionId",
+                  "type": "STRING",
+                  "value": 8
+                },
+                {
+                  "name": "pharmacyFee",
+                  "type": "FLOAT",
+                  "value": 0
+                },
+                {
+                  "name": "handlingFee",
+                  "type": "FLOAT",
+                  "value": 3
+                },
+                {
+                  "name": "handlingFeeTax",
+                  "type": "FLOAT",
+                  "value": 2
+                },
+                {
+                  "name": "proratedOrderDiscount",
+                  "type": "FLOAT",
+                  "value": 4
+                },
+                {
+                  "name": "productKey",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "productName",
+                  "type": "STRING",
+                  "value": "Heartgard® Plus Dog Chews Brown 51-100 lbs 6pk EDIT"
+                },
+                {
+                  "name": "totalTax",
+                  "type": "FLOAT",
+                  "value": 1.8
+                },
+                {
+                  "name": "lineStatus",
+                  "type": "STRING",
+                  "value": "PV1_READY"
+                },
+                {
+                  "name": "autoshipNextDate",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "imageUrl",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "selectedDefaultLocation",
+                  "type": "STRING",
+                  "value": "VFC_WAREHOUSE"
+                },
+                {
+                  "name": "packageQuantity",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "isPrescriptionRequired",
+                  "type": "STRING",
+                  "value": false
+                },
+                {
+                  "name": "packageDosage",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "facilityId",
+                  "type": "STRING",
+                  "value": 3
+                },
+                {
+                  "name": "proratedDeliveryCost",
+                  "type": "FLOAT",
+                  "value": 4
+                },
+                {
+                  "name": "selectedNetwork",
+                  "type": "STRING",
+                  "value": "COMMERCIAL_RX_HD"
+                },
+                {
+                  "name": "autoshipFrequency",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "proratedDeliveryCostTax",
+                  "type": "FLOAT",
+                  "value": 3
+                },
+                {
+                  "name": "totalPaidPrice",
+                  "type": "FLOAT",
+                  "value": 125
+                },
+                {
+                  "name": "pharmacyFeeTax",
+                  "type": "FLOAT",
+                  "value": 0
+                },
+                {
+                  "name": "url",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "refillsRemaining",
+                  "type": "STRING",
+                  "value": 122
+                },
+                {
+                  "name": "prescriptionKey",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "packageFlavor",
+                  "type": "STRING",
+                  "value": "Chicken"
+                },
+                {
+                  "name": "oldLineStatus",
+                  "type": "STRING",
+                  "value": "PV1_READY"
+                },
+                {
+                  "name": "autoshipId",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "patientKey",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "totalProratedOrderDiscount",
+                  "type": "FLOAT",
+                  "value": 4.75
+                },
+                {
+                  "name": "returnableQty",
+                  "type": "FLOAT",
+                  "value": 0
+                }
+              ],
+              "product": {
+                "id": "b07f4388-1bec-4c2b-b8a0-6ec36d278f83",
+                "ref": "COMMXX02",
+                "type": "VARIANT",
+                "status": "ACTIVE",
+                "variantProductAttributes": [
+                  {
+                    "name": "tempSensitive",
+                    "type": "STRING",
+                    "value": "N"
+                  },
+                  {
+                    "name": "fulfilmentVendorShortName",
+                    "type": "STRING",
+                    "value": ""
+                  },
+                  {
+                    "name": "approvalType",
+                    "type": "STRING",
+                    "value": "Rx"
+                  },
+                  {
+                    "name": "isDeaProduct",
+                    "type": "STRING",
+                    "value": "Y"
+                  },
+                  {
+                    "name": "productPod",
+                    "type": "CUSTOM",
+                    "value": [
+                      {
+                        "name": 4,
+                        "facilityId": "123",
+                        "combineScriptproOrders": "Y"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "isCompound",
+                    "type": "STRING",
+                    "value": "N"
+                  },
+                  {
+                    "name": "productName",
+                    "type": "STRING",
+                    "value": ""
+                  },
+                  {
+                    "name": "isKit",
+                    "type": "STRING",
+                    "value": "N"
+                  },
+                  {
+                    "name": "isControlled",
+                    "type": "STRING",
+                    "value": "Y"
+                  },
+                  {
+                    "name": "productSummary",
+                    "type": "STRING",
+                    "value": ""
+                  },
+                  {
+                    "name": "dropShip",
+                    "type": "STRING",
+                    "value": "Y"
+                  },
+                  {
+                    "name": "isSterile",
+                    "type": "STRING",
+                    "value": "N"
+                  },
+                  {
+                    "name": "groundShipOnly",
+                    "type": "STRING",
+                    "value": "Y"
+                  },
+                  {
+                    "name": "isDiet",
+                    "type": "STRING",
+                    "value": "Y"
+                  }
+                ],
+                "gtin": "123",
+                "name": "COMMXX02",
+                "summary": "SAMPLE PRODUCT",
+                "prices": [],
+                "tax": null,
+                "catalogue": {
+                  "ref": "PC:MASTER:1"
+                }
+              }
+            },
+            "cursor": "Y3Vyc29yOi0tLTg5MjdfXzE2NzY5ODczMjc4Mzk="
+          },
+          {
+            "orderItemNode": {
+              "id": "8926",
+              "ref": "1",
+              "quantity": 5,
+              "paidPrice": 25,
+              "currency": "USD",
+              "price": 30,
+              "taxType": null,
+              "taxPrice": 3,
+              "totalPrice": 150,
+              "totalTaxPrice": 2,
+              "status": "CREATED",
+              "orderItemAttributes": [
+                {
+                  "name": "prescriptionId",
+                  "type": "STRING",
+                  "value": 8
+                },
+                {
+                  "name": "pharmacyFee",
+                  "type": "FLOAT",
+                  "value": 0
+                },
+                {
+                  "name": "handlingFee",
+                  "type": "FLOAT",
+                  "value": 3
+                },
+                {
+                  "name": "handlingFeeTax",
+                  "type": "FLOAT",
+                  "value": 2
+                },
+                {
+                  "name": "proratedOrderDiscount",
+                  "type": "FLOAT",
+                  "value": 4
+                },
+                {
+                  "name": "productKey",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "productName",
+                  "type": "STRING",
+                  "value": "Heartgard® Plus Dog Chews Brown 51-100 lbs 6pk EDIT"
+                },
+                {
+                  "name": "totalTax",
+                  "type": "FLOAT",
+                  "value": 1.8
+                },
+                {
+                  "name": "lineStatus",
+                  "type": "STRING",
+                  "value": "PV1_READY"
+                },
+                {
+                  "name": "autoshipNextDate",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "imageUrl",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "selectedDefaultLocation",
+                  "type": "STRING",
+                  "value": "VFC_WAREHOUSE"
+                },
+                {
+                  "name": "packageQuantity",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "isPrescriptionRequired",
+                  "type": "STRING",
+                  "value": false
+                },
+                {
+                  "name": "packageDosage",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "facilityId",
+                  "type": "STRING",
+                  "value": 3
+                },
+                {
+                  "name": "proratedDeliveryCost",
+                  "type": "FLOAT",
+                  "value": 4
+                },
+                {
+                  "name": "selectedNetwork",
+                  "type": "STRING",
+                  "value": "COMMERCIAL_RX_HD"
+                },
+                {
+                  "name": "autoshipFrequency",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "proratedDeliveryCostTax",
+                  "type": "FLOAT",
+                  "value": 3
+                },
+                {
+                  "name": "totalPaidPrice",
+                  "type": "FLOAT",
+                  "value": 125
+                },
+                {
+                  "name": "pharmacyFeeTax",
+                  "type": "FLOAT",
+                  "value": 0
+                },
+                {
+                  "name": "url",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "refillsRemaining",
+                  "type": "STRING",
+                  "value": 122
+                },
+                {
+                  "name": "prescriptionKey",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "packageFlavor",
+                  "type": "STRING",
+                  "value": "Chicken"
+                },
+                {
+                  "name": "oldLineStatus",
+                  "type": "STRING",
+                  "value": "PV1_READY"
+                },
+                {
+                  "name": "autoshipId",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "patientKey",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "totalProratedOrderDiscount",
+                  "type": "FLOAT",
+                  "value": 4.75
+                },
+                {
+                  "name": "returnableQty",
+                  "type": "FLOAT",
+                  "value": 0
+                }
+              ],
+              "product": {
+                "id": "73b504bc-acfe-4aec-91f8-f95e0ab974f5",
+                "ref": "COMMXX01",
+                "type": "VARIANT",
+                "status": "ACTIVE",
+                "variantProductAttributes": [
+                  {
+                    "name": "tempSensitive",
+                    "type": "STRING",
+                    "value": "N"
+                  },
+                  {
+                    "name": "fulfilmentVendorShortName",
+                    "type": "STRING",
+                    "value": ""
+                  },
+                  {
+                    "name": "approvalType",
+                    "type": "STRING",
+                    "value": "Rx"
+                  },
+                  {
+                    "name": "isDeaProduct",
+                    "type": "STRING",
+                    "value": "Y"
+                  },
+                  {
+                    "name": "productPod",
+                    "type": "CUSTOM",
+                    "value": [
+                      {
+                        "name": 4,
+                        "facilityId": "123",
+                        "combineScriptproOrders": "Y"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "isCompound",
+                    "type": "STRING",
+                    "value": "N"
+                  },
+                  {
+                    "name": "productName",
+                    "type": "STRING",
+                    "value": ""
+                  },
+                  {
+                    "name": "isKit",
+                    "type": "STRING",
+                    "value": "N"
+                  },
+                  {
+                    "name": "isControlled",
+                    "type": "STRING",
+                    "value": "N"
+                  },
+                  {
+                    "name": "productSummary",
+                    "type": "STRING",
+                    "value": ""
+                  },
+                  {
+                    "name": "dropShip",
+                    "type": "STRING",
+                    "value": "Y"
+                  },
+                  {
+                    "name": "isSterile",
+                    "type": "STRING",
+                    "value": "N"
+                  },
+                  {
+                    "name": "groundShipOnly",
+                    "type": "STRING",
+                    "value": "Y"
+                  },
+                  {
+                    "name": "isDiet",
+                    "type": "STRING",
+                    "value": "Y"
+                  }
+                ],
+                "gtin": "123",
+                "name": "COMMXX01",
+                "summary": "SAMPLE PRODUCT",
+                "prices": [],
+                "tax": null,
+                "catalogue": {
+                  "ref": "PC:MASTER:1"
+                }
+              }
+            },
+            "cursor": "Y3Vyc29yOi0tLTg5MjZfXzE2NzY5ODczMjc4Mzk="
+          },
+          {
+            "orderItemNode": {
+              "id": "8925",
+              "ref": "3",
+              "quantity": 0,
+              "paidPrice": 25,
+              "currency": "USD",
+              "price": 30,
+              "taxType": null,
+              "taxPrice": 3,
+              "totalPrice": 150,
+              "totalTaxPrice": 2,
+              "status": "CREATED",
+              "orderItemAttributes": [
+                {
+                  "name": "prescriptionId",
+                  "type": "STRING",
+                  "value": 1
+                },
+                {
+                  "name": "pharmacyFee",
+                  "type": "FLOAT",
+                  "value": 0
+                },
+                {
+                  "name": "handlingFee",
+                  "type": "FLOAT",
+                  "value": 3
+                },
+                {
+                  "name": "handlingFeeTax",
+                  "type": "FLOAT",
+                  "value": 2
+                },
+                {
+                  "name": "isPV1RequestedAndVerified",
+                  "type": "STRING",
+                  "value": true
+                },
+                {
+                  "name": "proratedOrderDiscount",
+                  "type": "FLOAT",
+                  "value": 4
+                },
+                {
+                  "name": "productKey",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "productName",
+                  "type": "STRING",
+                  "value": "Heartgard® Plus Dog Chews Brown 51-100 lbs 6pk EDIT"
+                },
+                {
+                  "name": "totalTax",
+                  "type": "FLOAT",
+                  "value": 1.8
+                },
+                {
+                  "name": "lineStatus",
+                  "type": "STRING",
+                  "value": "CANCELLED"
+                },
+                {
+                  "name": "autoshipNextDate",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "imageUrl",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "packageQuantity",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "isPrescriptionRequired",
+                  "type": "STRING",
+                  "value": false
+                },
+                {
+                  "name": "packageDosage",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "facilityId",
+                  "type": "STRING",
+                  "value": 7
+                },
+                {
+                  "name": "proratedDeliveryCost",
+                  "type": "FLOAT",
+                  "value": 4
+                },
+                {
+                  "name": "selectedNetwork",
+                  "type": "STRING",
+                  "value": "COMPOUND_RX_HD"
+                },
+                {
+                  "name": "autoshipFrequency",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "proratedDeliveryCostTax",
+                  "type": "FLOAT",
+                  "value": 3
+                },
+                {
+                  "name": "reasonForCancellation",
+                  "type": "STRING",
+                  "value": "abc reason at pick pack"
+                },
+                {
+                  "name": "totalPaidPrice",
+                  "type": "FLOAT",
+                  "value": 125
+                },
+                {
+                  "name": "pharmacyFeeTax",
+                  "type": "FLOAT",
+                  "value": 0
+                },
+                {
+                  "name": "url",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "refillsRemaining",
+                  "type": "STRING",
+                  "value": 122
+                },
+                {
+                  "name": "prescriptionKey",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "packageFlavor",
+                  "type": "STRING",
+                  "value": "Chicken"
+                },
+                {
+                  "name": "oldLineStatus",
+                  "type": "STRING",
+                  "value": "CANCELLED"
+                },
+                {
+                  "name": "autoshipId",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "patientKey",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "selectedLocation",
+                  "type": "STRING",
+                  "value": "VPA_NORTH"
+                },
+                {
+                  "name": "totalProratedOrderDiscount",
+                  "type": "FLOAT",
+                  "value": 4.75
+                },
+                {
+                  "name": "returnableQty",
+                  "type": "FLOAT",
+                  "value": 0
+                },
+                {
+                  "name": "dispenseRequestId",
+                  "type": "STRING",
+                  "value": 4
+                }
+              ],
+              "product": {
+                "id": "2acca6ba-3926-4063-9f37-5e80449c4baa",
+                "ref": "KITPRODUCT5",
+                "type": "VARIANT",
+                "status": "ACTIVE",
+                "variantProductAttributes": [
+                  {
+                    "name": "tempSensitive",
+                    "type": "STRING",
+                    "value": "N"
+                  },
+                  {
+                    "name": "fulfilmentVendorShortName",
+                    "type": "STRING",
+                    "value": ""
+                  },
+                  {
+                    "name": "approvalType",
+                    "type": "STRING",
+                    "value": "Rx"
+                  },
+                  {
+                    "name": "isDeaProduct",
+                    "type": "STRING",
+                    "value": "Y"
+                  },
+                  {
+                    "name": "productPod",
+                    "type": "CUSTOM",
+                    "value": [
+                      {
+                        "name": 4,
+                        "facilityId": "123",
+                        "combineScriptproOrders": "Y"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "isCompound",
+                    "type": "STRING",
+                    "value": "Y"
+                  },
+                  {
+                    "name": "kitProduct",
+                    "type": "CUSTOM",
+                    "value": [
+                      {
+                        "sku": "COMMXX08",
+                        "productQty": 2
+                      },
+                      {
+                        "sku": "COMMXX09",
+                        "productQty": 10
+                      }
+                    ]
+                  },
+                  {
+                    "name": "productName",
+                    "type": "STRING",
+                    "value": ""
+                  },
+                  {
+                    "name": "isKit",
+                    "type": "STRING",
+                    "value": "Y"
+                  },
+                  {
+                    "name": "isControlled",
+                    "type": "STRING",
+                    "value": "N"
+                  },
+                  {
+                    "name": "productSummary",
+                    "type": "STRING",
+                    "value": ""
+                  },
+                  {
+                    "name": "dropShip",
+                    "type": "STRING",
+                    "value": "N"
+                  },
+                  {
+                    "name": "isSterile",
+                    "type": "STRING",
+                    "value": "N"
+                  },
+                  {
+                    "name": "groundShipOnly",
+                    "type": "STRING",
+                    "value": "Y"
+                  },
+                  {
+                    "name": "isDiet",
+                    "type": "STRING",
+                    "value": "Y"
+                  }
+                ],
+                "gtin": "KITPRODUCT5",
+                "name": "KITPRODUCT5",
+                "summary": "DROP SHIP PRODUCT",
+                "prices": [],
+                "tax": null,
+                "catalogue": {
+                  "ref": "PC:MASTER:1"
+                }
+              }
+            },
+            "cursor": "Y3Vyc29yOi0tLTg5MjVfXzE2NzY5ODczMjc4Mzk="
+          },
+          {
+            "orderItemNode": {
+              "id": "8928",
+              "ref": "4",
+              "quantity": 5,
+              "paidPrice": 25,
+              "currency": "USD",
+              "price": 30,
+              "taxType": null,
+              "taxPrice": 3,
+              "totalPrice": 150,
+              "totalTaxPrice": 2,
+              "status": "CREATED",
+              "orderItemAttributes": [
+                {
+                  "name": "prescriptionId",
+                  "type": "STRING",
+                  "value": 11
+                },
+                {
+                  "name": "pharmacyFee",
+                  "type": "FLOAT",
+                  "value": 0
+                },
+                {
+                  "name": "handlingFee",
+                  "type": "FLOAT",
+                  "value": 3
+                },
+                {
+                  "name": "handlingFeeTax",
+                  "type": "FLOAT",
+                  "value": 2
+                },
+                {
+                  "name": "isPV1RequestedAndVerified",
+                  "type": "STRING",
+                  "value": true
+                },
+                {
+                  "name": "proratedOrderDiscount",
+                  "type": "FLOAT",
+                  "value": 4
+                },
+                {
+                  "name": "productKey",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "productName",
+                  "type": "STRING",
+                  "value": "Heartgard® Plus Dog Chews Brown 51-100 lbs 6pk EDIT"
+                },
+                {
+                  "name": "totalTax",
+                  "type": "FLOAT",
+                  "value": 1.8
+                },
+                {
+                  "name": "lineStatus",
+                  "type": "STRING",
+                  "value": "FULFILMENT_REQUESTED"
+                },
+                {
+                  "name": "autoshipNextDate",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "imageUrl",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "packageQuantity",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "isPrescriptionRequired",
+                  "type": "STRING",
+                  "value": false
+                },
+                {
+                  "name": "packageDosage",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "facilityId",
+                  "type": "STRING",
+                  "value": 3
+                },
+                {
+                  "name": "proratedDeliveryCost",
+                  "type": "FLOAT",
+                  "value": 4
+                },
+                {
+                  "name": "autoshipFrequency",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "proratedDeliveryCostTax",
+                  "type": "FLOAT",
+                  "value": 3
+                },
+                {
+                  "name": "totalPaidPrice",
+                  "type": "FLOAT",
+                  "value": 125
+                },
+                {
+                  "name": "pharmacyFeeTax",
+                  "type": "FLOAT",
+                  "value": 0
+                },
+                {
+                  "name": "url",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "refillsRemaining",
+                  "type": "STRING",
+                  "value": 122
+                },
+                {
+                  "name": "prescriptionKey",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "packageFlavor",
+                  "type": "STRING",
+                  "value": "Chicken"
+                },
+                {
+                  "name": "oldLineStatus",
+                  "type": "STRING",
+                  "value": "ALLOCATED"
+                },
+                {
+                  "name": "autoshipId",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "patientKey",
+                  "type": "STRING",
+                  "value": ""
+                },
+                {
+                  "name": "selectedLocation",
+                  "type": "STRING",
+                  "value": "VFC_WAREHOUSE"
+                },
+                {
+                  "name": "totalProratedOrderDiscount",
+                  "type": "FLOAT",
+                  "value": 4.75
+                },
+                {
+                  "name": "returnableQty",
+                  "type": "FLOAT",
+                  "value": 0
+                }
+              ],
+              "product": {
+                "id": "6cd434e8-00ad-4cc6-9b3d-f57671a32bc9",
+                "ref": "DRPSHP001",
+                "type": "VARIANT",
+                "status": "ACTIVE",
+                "variantProductAttributes": [
+                  {
+                    "name": "tempSensitive",
+                    "type": "STRING",
+                    "value": "N"
+                  },
+                  {
+                    "name": "fulfilmentVendorShortName",
+                    "type": "STRING",
+                    "value": "ROYAL_CANIN"
+                  },
+                  {
+                    "name": "approvalType",
+                    "type": "STRING",
+                    "value": ""
+                  },
+                  {
+                    "name": "isDeaProduct",
+                    "type": "STRING",
+                    "value": "Y"
+                  },
+                  {
+                    "name": "productPod",
+                    "type": "CUSTOM",
+                    "value": [
+                      {
+                        "name": 4,
+                        "facilityId": "123",
+                        "combineScriptproOrders": "Y"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "isCompound",
+                    "type": "STRING",
+                    "value": "N"
+                  },
+                  {
+                    "name": "productName",
+                    "type": "STRING",
+                    "value": ""
+                  },
+                  {
+                    "name": "isKit",
+                    "type": "STRING",
+                    "value": "N"
+                  },
+                  {
+                    "name": "isControlled",
+                    "type": "STRING",
+                    "value": "N"
+                  },
+                  {
+                    "name": "productSummary",
+                    "type": "STRING",
+                    "value": ""
+                  },
+                  {
+                    "name": "dropShip",
+                    "type": "STRING",
+                    "value": "Y"
+                  },
+                  {
+                    "name": "isSterile",
+                    "type": "STRING",
+                    "value": "N"
+                  },
+                  {
+                    "name": "groundShipOnly",
+                    "type": "STRING",
+                    "value": "Y"
+                  },
+                  {
+                    "name": "isDiet",
+                    "type": "STRING",
+                    "value": "Y"
+                  }
+                ],
+                "gtin": "DRPSHP001",
+                "name": "DRPSHP001",
+                "summary": "DROP SHIP PRODUCT",
+                "prices": [],
+                "tax": null,
+                "catalogue": {
+                  "ref": "PC:MASTER:1"
+                }
+              }
+            },
+            "cursor": "Y3Vyc29yOi0tLTg5MjhfXzE2NzY5ODczMjc4Mzg="
+          }
+        ],
+        "pageInfo": {
+          "hasNextPage": false
+        }
+      },
+      "fulfilments": {
+        "fulfilmentsEdges": [
+          {
+            "fulfilmentsNode": {
+              "id": "941",
+              "ref": "3_HDORDSTSCNG53",
+              "type": "HD_PFDC",
+              "status": "REJECTED",
+              "createdOn": "2023-02-21T13:52:12.752Z",
+              "updatedOn": "2023-02-21T13:53:06.693Z",
+              "fulfilmentAttributes": [
+                {
+                  "name": "exceptionResolutionType",
+                  "value": "ABCD",
+                  "type": "STRING"
+                },
+                {
+                  "name": "IsException",
+                  "value": "NONE",
+                  "type": "STRING"
+                },
+                {
+                  "name": "exceptionResolutionCode",
+                  "value": "ERTY",
+                  "type": "STRING"
+                },
+                {
+                  "name": "initialFulfillmentStatus",
+                  "value": "EXCEPTION",
+                  "type": "STRING"
+                },
+                {
+                  "name": "exceptionReason",
+                  "value": "abc Reason at fulfilment creation",
+                  "type": "STRING"
+                },
+                {
+                  "name": "FulfilmentType",
+                  "value": "HD_PFDC",
+                  "type": "STRING"
+                }
+              ],
+              "deliveryType": "air",
+              "fromLocation": {
+                "ref": "VFC_WAREHOUSE"
+              },
+              "fromAddress": {
+                "ref": "VFC_WAREHOUSE",
+                "id": "19",
+                "name": "null"
+              },
+              "toAddress": {
+                "ref": "",
+                "id": "4163"
+              }
+            },
+            "cursor": "Y3Vyc29yOi0tLTk0MV9fMTY3Njk4NzUzMjc1Mg=="
+          }
+        ],
+        "pageInfo": {
+          "hasNextPage": false
+        }
+      },
+      "customer": {
+        "id": "22",
+        "ref": "Naheeda",
+        "title": null,
+        "country": null,
+        "firstName": "Nahida",
+        "lastName": "S",
+        "username": "Naheeda",
+        "primaryEmail": "Naheeda@gmail.com",
+        "primaryPhone": "1111111111"
+      },
+      "attributes": [
+        {
+          "name": "appliedProductPromotions",
+          "value": "",
+          "type": "STRING"
+        },
+        {
+          "name": "isReship",
+          "value": "",
+          "type": "STRING"
+        },
+        {
+          "name": "pharmacyFee",
+          "value": 0,
+          "type": "FLOAT"
+        },
+        {
+          "name": "handlingFee",
+          "value": 9,
+          "type": "FLOAT"
+        },
+        {
+          "name": "isSalesTaxResponseHandled",
+          "value": true,
+          "type": "STRING"
+        },
+        {
+          "name": "handlingFeeTax",
+          "value": 6,
+          "type": "FLOAT"
+        },
+        {
+          "name": "totalDiscounts",
+          "value": 0,
+          "type": "FLOAT"
+        },
+        {
+          "name": "deliveryDiscountWaived",
+          "value": "",
+          "type": "BOOLEAN"
+        },
+        {
+          "name": "subTotal",
+          "value": 375,
+          "type": "FLOAT"
+        },
+        {
+          "name": "paymentType",
+          "value": "creditCard",
+          "type": "String"
+        },
+        {
+          "name": "paymentToken",
+          "value": "e387djkj",
+          "type": "String"
+        },
+        {
+          "name": "deliveryCostTax",
+          "value": 9,
+          "type": "FLOAT"
+        },
+        {
+          "name": "orderMethodType",
+          "value": "Web",
+          "type": "STRING"
+        },
+        {
+          "name": "appliedVouchers",
+          "value": "",
+          "type": "STRING"
+        },
+        {
+          "name": "deliveryAddress",
+          "value": {
+            "ref": "",
+            "town": "",
+            "phone1": "",
+            "region": "",
+            "country": "US",
+            "lastName": "",
+            "firstName": "",
+            "postalCode": "",
+            "companyName": "",
+            "addressLine1": "",
+            "addressLine2": ""
+          },
+          "type": "JSON"
+        },
+        {
+          "name": "subtype",
+          "value": "KOUNT_REVIEWED",
+          "type": "STRING"
+        },
+        {
+          "name": "cosmeticOrderSubtotal",
+          "value": 450,
+          "type": "FLOAT"
+        },
+        {
+          "name": "paymentTransaction",
+          "value": [
+            {
+              "amount": 60.15,
+              "status": "AUTHORIZED",
+              "cardType": "VISA",
+              "errorCode": "",
+              "authNumber": "H124531",
+              "createdDate": "2021-06-15T20:20:39Z",
+              "processorId": "Z912141241249432",
+              "paymentToken": "K912345678",
+              "paymentMethod": "CREDIT_CARD",
+              "transactionKey": "da73592f-7104-44ac-b281-2a0f6f77a59a",
+              "transactionType": "AUTH"
+            }
+          ],
+          "type": "JSON"
+        },
+        {
+          "name": "orderKey",
+          "value": 12345,
+          "type": "String"
+        },
+        {
+          "name": "animalCareBusiness",
+          "value": "ACB",
+          "type": "STRING"
+        },
+        {
+          "name": "productDiscounts",
+          "value": 75,
+          "type": "FLOAT"
+        },
+        {
+          "name": "appliedOrderPromotions",
+          "value": "",
+          "type": "STRING"
+        },
+        {
+          "name": "orderOriginType",
+          "value": "Pet Owner",
+          "type": "STRING"
+        },
+        {
+          "name": "originalOrderCode",
+          "value": "",
+          "type": "STRING"
+        },
+        {
+          "name": "kountTransactionId",
+          "value": "",
+          "type": "STRING"
+        },
+        {
+          "name": "orderDiscounts",
+          "value": 14.25,
+          "type": "FLOAT"
+        },
+        {
+          "name": "orderStatusActivity",
+          "value": [
+            {
+              "status": "FRAUD_REVIEW",
+              "message": "Order status moved from CREATED to FRAUD_REVIEW .",
+              "updatedTime": "2023-02-21T13:48:48.832Z"
+            },
+            {
+              "status": "Rx_MATCH_REQUESTED",
+              "message": "Order status moved from FRAUD_REVIEW to Rx_MATCH_REQUESTED .",
+              "updatedTime": "2023-02-21T13:48:52.654Z"
+            },
+            {
+              "status": "Rx_MATCH_COMPLETED",
+              "message": "Order status moved from Rx_MATCH_REQUESTED to Rx_MATCH_COMPLETED .",
+              "updatedTime": "2023-02-21T13:49:10.780Z"
+            },
+            {
+              "status": "PHARMACY_ALLOCATED",
+              "message": "Order status moved from Rx_MATCH_COMPLETED to PHARMACY_ALLOCATED .",
+              "updatedTime": "2023-02-21T13:49:17.070Z"
+            },
+            {
+              "status": "PV1_REQUESTED",
+              "message": "Order status moved from PHARMACY_ALLOCATED to PV1_REQUESTED .",
+              "updatedTime": "2023-02-21T13:49:18.738Z"
+            },
+            {
+              "status": "PARTIALLY_PV1_VERIFIED",
+              "message": "Order status moved from PV1_REQUESTED to PARTIALLY_PV1_VERIFIED .",
+              "updatedTime": "2023-02-21T13:49:39.049Z"
+            },
+            {
+              "status": "PAYMENT_AUTH_REQUESTED",
+              "message": "Order status moved from PARTIALLY_PV1_VERIFIED to PAYMENT_AUTH_REQUESTED .",
+              "updatedTime": "2023-02-21T13:49:40.393Z"
+            },
+            {
+              "status": "PARTIALLY_FULFILMENT_PROCESSING",
+              "message": "Order status moved from PAYMENT_AUTH_REQUESTED to PARTIALLY_FULFILMENT_PROCESSING .",
+              "updatedTime": "2023-02-21T13:50:14.523Z"
+            }
+          ],
+          "type": "JSON"
+        },
+        {
+          "name": "deliveryDiscount",
+          "value": 0,
+          "type": "FLOAT"
+        },
+        {
+          "name": "isOrderPaymentAuthCompleted",
+          "value": true,
+          "type": "STRING"
+        },
+        {
+          "name": "pv1SchedulerWindow",
+          "value": {
+            "to": "2023-02-21T13:54:19.189Z",
+            "from": "2023-02-21T13:49:19.189Z"
+          },
+          "type": "JSON"
+        },
+        {
+          "name": "orderNotes",
+          "value": [
+            {
+              "note": "abc reason at pick pack",
+              "noteKey": "2a901326-8582-412d-8729-5a75c153c2be",
+              "createdDate": "2023-02-21T13:53:07.348Z",
+              "noteContext": "NONE",
+              "noteUserKey": "12345"
+            }
+          ],
+          "type": "JSON"
+        },
+        {
+          "name": "paymentInfo",
+          "value": {
+            "amount": "",
+            "cardType": {
+              "code": "VISA"
+            },
+            "expiryYear": "",
+            "expiryMonth": "",
+            "paymentType": "Credit Card",
+            "paymentToken": "6hgg75k12",
+            "billingAddress": {
+              "town": "Portland",
+              "region": "Maine",
+              "country": "US",
+              "lastName": "test04",
+              "firstName": "cvetdev",
+              "postalCode": "",
+              "addressLine1": "",
+              "addressLine2": ""
+            },
+            "paymentSequence": "",
+            "accountHolderName": "cvetdevtest04",
+            "cardNumberLastFour": "4321"
+          },
+          "type": "JSON"
+        },
+        {
+          "name": "deliveryCost",
+          "value": 12,
+          "type": "FLOAT"
+        }
+      ]
+    }
+  }
+}

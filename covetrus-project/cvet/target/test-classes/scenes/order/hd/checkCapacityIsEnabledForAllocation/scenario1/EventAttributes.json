@@ -1,0 +1,60 @@
+{
+  "locations": {
+    "VPA_NORTH": {
+      "ref": "VPA_NORTH",
+      "distance": 6837791.2142678965,
+      "latitude": 29.93863551,
+      "id": "7",
+      "type": "WAREHOUSE",
+      "longitude": -95.49620548
+    },
+    "RAYNE_300": {
+      "ref": "RAYNE_300",
+      "distance": 6246707.3116855845,
+      "latitude": 39.16957975,
+      "id": "13",
+      "type": "WAREHOUSE",
+      "longitude": -94.63682322
+    },
+    "CPS_2802": {
+      "ref": "CPS_2802",
+      "distance": 6516643.142898156,
+      "latitude": 32.83319189,
+      "id": "14",
+      "type": "WAREHOUSE",
+      "longitude": -97.04532992
+    },
+    "CPS_4803": {
+      "ref": "CPS_4803",
+      "distance": 5361237.2580957925,
+      "latitude": 33.63376948,
+      "id": "12",
+      "type": "WAREHOUSE",
+      "longitude": -112.1094059
+    },
+    "CONA_145": {
+      "ref": "CONA_145",
+      "distance": 6957491.850779585,
+      "latitude": 39.97885557,
+      "id": "11",
+      "type": "WAREHOUSE",
+      "longitude": -83.10581207
+    },
+    "PHOENIX": {
+      "ref": "PHOENIX",
+      "distance": 5353631.280831075,
+      "latitude": 33.79786514,
+      "id": "8",
+      "type": "WAREHOUSE",
+      "longitude": -112.064386
+    },
+    "PTL": {
+      "ref": "PTL",
+      "distance": 7458317.497854585,
+      "latitude": 43.66215835,
+      "id": "10",
+      "type": "WAREHOUSE",
+      "longitude": -70.24791669
+    }
+  }
+}

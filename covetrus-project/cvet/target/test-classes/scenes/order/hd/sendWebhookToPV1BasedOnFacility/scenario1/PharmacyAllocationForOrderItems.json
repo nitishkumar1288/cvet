@@ -1,0 +1,25 @@
+[
+  {
+    "orderItemDtoList": [
+      {
+        "prescriptionId": "1",
+        "productRef": "COMPXX01",
+        "requestedQuantity": 1,
+        "kitProduct": false,
+        "id": "4765",
+        "orderItemRef": "2"
+      },
+      {
+        "prescriptionId": "1",
+        "productRef": "COMPXX03",
+        "requestedQuantity": 1,
+        "kitProduct": false,
+        "id": "4764",
+        "orderItemRef": "1"
+      }
+    ],
+    "defaultLocationSelected": false,
+    "assignedFacilityId": "8",
+    "assignedFacilityRef": "PHOENIX"
+  }
+]

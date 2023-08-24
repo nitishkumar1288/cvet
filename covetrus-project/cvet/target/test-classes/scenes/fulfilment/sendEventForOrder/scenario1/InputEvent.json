@@ -1,0 +1,13 @@
+{
+  "retailer_id": "1",
+  "account_id" : "0",
+  "entity_id": "2320",
+  "entity_ref": "NKS_HD_ORD_38",
+  "root_entity_id": "285",
+  "root_entity_ref": "NKS_HD_ORD_38",
+  "attributes": {
+    "ref": "NKS_HD_ORD_38",
+    "fulfillmentId": "108",
+    "fulfilmentRef": "x68kqfh"
+  }
+}

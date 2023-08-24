@@ -1,0 +1,29 @@
+{
+  "retailer_id": "1",
+  "account_id" : "0",
+  "entity_id": "285",
+  "entity_ref": "HDORDFC017",
+  "root_entity_id": "285",
+  "root_entity_ref": "HDORDFC017",
+  "entityStatus": "CREATED",
+  "attributes":{
+    "orderItemCancellationReasonPayload": {
+      "items": [
+        {
+          "orderLineNo": "1",
+          "lineStatus": "CANCELLED",
+          "cancellationReasonCode": "abc",
+          "cancellationReasonText": "xyz"
+        },
+        {
+          "orderLineNo": "2",
+          "lineStatus": "CANCELLED",
+          "cancellationReasonCode": "abc",
+          "cancellationReasonText": "xyz"
+        }
+      ],
+      "orderRef": "HDORDFC017",
+      "updateOn": "2022-11-22T05:44:47.630Z"
+    }
+  }
+}

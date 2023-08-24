@@ -1,0 +1,34 @@
+{
+  "data": {
+    "settings": {
+      "edges": [
+        {
+          "node": {
+            "id": "998",
+            "name": "GST",
+            "value": "0.0",
+            "valueType": "STRING",
+            "lobValue": "",
+            "context": "RETAILER",
+            "contextId": 1
+          }
+        },
+        {
+          "node": {
+            "id": "984",
+            "name": "DEFAULT_TAX_TYPE",
+            "value": "",
+            "valueType": "JSON",
+            "lobValue": {
+              "country": "USA",
+              "group": "STANDARD",
+              "tariff": "GST"
+            },
+            "context": "RETAILER",
+            "contextId": 1
+          }
+        }
+      ]
+    }
+  }
+}

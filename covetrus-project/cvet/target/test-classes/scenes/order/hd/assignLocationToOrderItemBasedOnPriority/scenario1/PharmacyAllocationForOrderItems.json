@@ -1,0 +1,34 @@
+[
+  {
+    "orderItemDtoList": [
+      {
+        "productRef": "186126",
+        "requestedQuantity": 1,
+        "kitProduct": false,
+        "id": "2425",
+        "itemTypeMap": {
+          "isControlled": "N",
+          "isCommercial": "Y",
+          "isCompound": "N"
+        }
+      },
+      {
+        "productRef": "186128",
+        "requestedQuantity": 1,
+        "kitProduct": false,
+        "id": "2424",
+        "itemTypeMap": {
+          "isControlled": "N",
+          "isCommercial": "Y",
+          "isCompound": "N"
+        }
+      }
+    ],
+    "locationRefList" : [
+      "PHOENIX"
+    ],
+    "networkRef" : "COMPOUND_RX_HD",
+    "defaultLocationSelected": false,
+    "prescriptionId": "12"
+  }
+]

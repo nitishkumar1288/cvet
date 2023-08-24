@@ -1,0 +1,179 @@
+query GetFulfilmentById($id: ID!, $includeAttributes: Boolean!, $includeItems: Boolean!, $includeArticles: Boolean!, $includefromAddress: Boolean!, $includeOrder: Boolean!, $includeToAddress: Boolean!, $fulfilmentItemsCount: Int, $fulfilmentItemsCursor: String, $articleCursor: String, $articleCount: Int, $articleItemCount: Int, $withArticleItems: Boolean!, $withOrderItem: Boolean!) {
+    fulfilmentById(id: $id) {
+        id
+        ref
+        status
+        type
+        deliveryType
+        createdOn
+        updatedOn
+        eta
+        expiryTime
+        order @include(if: $includeOrder) {
+            id
+            ref
+            type
+            status
+            attributes {
+                name
+                type
+                value
+            }
+        }
+        user {
+            __typename
+            firstName
+            lastName
+            username
+            primaryEmail
+            primaryPhone
+            title
+            ref
+        }
+        attributes @include(if: $includeAttributes) {
+            name
+            type
+            value
+        }
+        items(first: $fulfilmentItemsCount, after: $fulfilmentItemsCursor) @include(if: $includeItems) {
+            edges {
+                item: node {
+                    id
+                    ref
+                    status
+                    requestedQuantity
+                    filledQuantity
+                    rejectedQuantity
+                    orderItem @include(if: $withOrderItem) {
+                        __typename
+                        id
+                        createdOn
+                        updatedOn
+                        ref
+                        quantity
+                        paidPrice
+                        currency
+                        totalPrice
+                        totalTaxPrice
+                        price
+                        taxPrice
+                        attributes {
+                            name
+                            type
+                            value
+                        }
+                        product{
+                            name
+                            ... on VariantProduct{
+                                ref
+                              attributes{
+                                name
+                                type
+                                value
+                              }
+                            }
+
+                        }
+                    }
+                }
+                cursor
+            }
+            pageInfo {
+                hasNextPage
+            }
+        }
+        articles(first: $articleCount,  after: $articleCursor) @include(if: $includeArticles) {
+            edges {
+                node {
+                    id
+                    ref
+                    name
+                    type
+                    status
+                    height
+                    weight
+                    width
+                    length
+                    quantity
+                    items(first: $articleItemCount) @include(if: $withArticleItems) {
+                        pageInfo {
+                            __typename
+                            hasNextPage
+                        }
+                        __typename
+                        edges {
+                            __typename
+                            node {
+                                __typename
+                                id
+                                quantity
+                                barcode
+                            }
+                        }
+                    }
+                    consignmentArticles {
+                        edges {
+                            node {
+                                consignment {
+                                    id
+                                    ref
+                                    status
+                                    consignmentReference
+                                    orderSummaryUrl
+                                    carrier {
+                                        __typename
+                                        id
+                                        name
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                cursor
+            }
+            pageInfo {
+                hasNextPage
+            }
+        }
+        fromLocation {
+            ref
+        }
+        fromAddress @include(if: $includefromAddress) {
+            id
+            ref
+            type
+            companyName
+            name
+            street
+            city
+            country
+            state
+            postcode
+            region
+            latitude
+            longitude
+            timeZone
+            createdOn
+            updatedOn
+        }
+        toAddress @include(if: $includeToAddress) {
+            id
+            ref
+            type
+            companyName
+            name
+            street
+            city
+            country
+            state
+            postcode
+            region
+            latitude
+            longitude
+            timeZone
+            createdOn
+            updatedOn
+        }
+    }
+}

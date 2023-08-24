@@ -1,0 +1,23 @@
+{
+  "data": {
+    "settings": {
+      "pageInfo": {
+        "hasNextPage": true
+      },
+      "edges": [
+        {
+          "cursor": "Y3Vyc29yOi0tLTQ1",
+          "node": {
+            "id": "45",
+            "name": "RxMatchResponseAllocationWaitingTime",
+            "valueType": "STRING",
+            "value": "150",
+            "context": "RETAILER",
+            "contextId": 1,
+            "lobValue": {}
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "data": {
+    "settings": {
+      "pageInfo": {
+        "hasNextPage": false
+      },
+      "edges": [
+        {
+          "cursor": "Y3Vyc29yOi0tLTk1Nw==",
+          "node": {
+            "id": "957",
+            "name": "orderItemCancellationReasonWebhookSettingName",
+            "valueType": "STRING",
+            "value": "https://orderitemcancellation.free.beeceptor.com",
+            "context": "RETAILER",
+            "contextId": 1,
+            "lobValue": ""
+          }
+        }
+      ]
+    }
+  }
+}

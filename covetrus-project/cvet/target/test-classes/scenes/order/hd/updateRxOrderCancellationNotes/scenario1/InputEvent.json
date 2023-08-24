@@ -1,0 +1,24 @@
+{
+  "retailer_id": "1",
+  "account_id" : "0",
+  "entity_id": "469",
+  "entity_ref": "Ord_NK16",
+  "root_entity_id": "469",
+  "root_entity_ref": "Ord_NK16",
+  "attributes": {
+    "items":[
+      {
+        "productKey":"1",
+        "productRef":"695",
+        "lineNumber":"1",
+        "prescriptionId":"1234",
+        "facilityId":"432",
+        "status":"DECLINED",
+        "isPrescriptionRequired":"false",
+        "refillsRemaining":"122",
+        "declinedReasonCode": "declinedReasonCode2",
+        "rxStatus": "na"
+      }
+    ]
+  }
+}

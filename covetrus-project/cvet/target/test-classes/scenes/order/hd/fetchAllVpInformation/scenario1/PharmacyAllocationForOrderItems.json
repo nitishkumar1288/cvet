@@ -1,0 +1,39 @@
+[
+  {
+    "orderItemDtoList": [
+      {
+        "productRef": "186126",
+        "requestedQuantity": 1,
+        "kitProduct": true,
+        "id": "2425",
+        "itemTypeMap": {
+          "isControlled": "N",
+          "isCommercial": "Y",
+          "isCompound": "N"
+        },
+        "kitItemList" : [
+          {
+            "sku" : "186126",
+            "productQty" : 10
+          }
+        ]
+      },
+      {
+        "productRef": "186128",
+        "requestedQuantity": 1,
+        "kitProduct": false,
+        "id": "2424",
+        "itemTypeMap": {
+          "isControlled": "N",
+          "isCommercial": "Y",
+          "isCompound": "N"
+        }
+      }
+    ],
+    "locationRefList" : [
+      "PHOENIX"
+    ],
+    "defaultLocationSelected": false,
+    "prescriptionId": "12"
+  }
+]

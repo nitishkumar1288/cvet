@@ -1,0 +1,40 @@
+{
+  "allVpInformation": [
+    {
+      "ref": "186128:PTL:BASE",
+      "groupRef": "PTL",
+      "quantity": 121,
+      "productRef": "186128"
+    },
+    {
+      "ref": "186126:CPS_4803:BASE",
+      "groupRef": "CPS_4803",
+      "quantity": 857,
+      "productRef": "186126"
+    },
+    {
+      "ref": "186126:PHOENIX:BASE",
+      "groupRef": "PHOENIX",
+      "quantity": 2000,
+      "productRef": "186126"
+    },
+    {
+      "ref": "186128:PHOENIX:BASE",
+      "groupRef": "PHOENIX",
+      "quantity": 2000,
+      "productRef": "186128"
+    },
+    {
+      "ref": "186128:VFC_WAREHOUSE:BASE",
+      "groupRef": "VFC_WAREHOUSE",
+      "quantity": 9609,
+      "productRef": "186128"
+    },
+    {
+      "ref": "186126:VFC_WAREHOUSE:BASE",
+      "groupRef": "VFC_WAREHOUSE",
+      "quantity": 9585,
+      "productRef": "186126"
+    }
+  ]
+}

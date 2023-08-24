@@ -1,0 +1,22 @@
+{
+  "retailer_id": "1",
+  "account_id" : "0",
+  "entity_id": "285",
+  "entity_ref": "HDORDFC017",
+  "root_entity_id": "285",
+  "root_entity_ref": "HDORDFC017",
+  "entityStatus": "CREATED",
+  "attributes":{
+    "ref": "HDORDFC017",
+    "items":[
+
+      {
+        "ref":"1",
+        "status":"VERIFIED",
+        "dispenseRequestId":"1",
+        "prescriptionId": "12",
+        "facilityId": "3"
+      }
+    ]
+  }
+}

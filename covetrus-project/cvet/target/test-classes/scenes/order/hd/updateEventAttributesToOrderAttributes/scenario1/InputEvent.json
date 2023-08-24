@@ -1,0 +1,12 @@
+{
+  "retailer_id": "1",
+  "account_id" : "0",
+  "entity_id": "285",
+  "entity_ref": "HDORDFC017",
+  "root_entity_id": "285",
+  "root_entity_ref": "HDORDFC017",
+  "attributes": {
+    "cancelReason" : "cancelled upon user request",
+    "cancelledBy" : "sfsc_user"
+  }
+}

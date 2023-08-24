@@ -1,0 +1,422 @@
+{
+  "data": {
+    "fulfilments": {
+      "edges": [
+        {
+          "node": {
+            "id": "986",
+            "ref": "1_HDWBHKORD0020",
+            "status": "FULFILLED",
+            "createdOn": "2023-03-07T09:40:24.657Z",
+            "updatedOn": "2023-03-07T09:49:00.492Z",
+            "deliveryType": "air",
+            "type": "HD_PFDC",
+            "eta": null,
+            "expiryTime": null,
+            "order": {
+              "id": "4337",
+              "ref": "HDWBHKORD0020",
+              "type": "HD",
+              "status": "COMPLETED"
+            },
+            "user": {
+              "__typename": "Customer",
+              "firstName": "Nahida",
+              "lastName": "S",
+              "username": "Naheeda",
+              "primaryEmail": "Naheeda@gmail.com",
+              "primaryPhone": "1111111111",
+              "title": null,
+              "ref": "Naheeda"
+            },
+            "attributes": [
+              {
+                "name": "platformAccountKey",
+                "type": "STRING",
+                "value": "fa64e2b2-7a49-4b91-97b8-8a709749162d"
+              },
+              {
+                "name": "productDiscounts",
+                "type": "FLOAT",
+                "value": 25
+              },
+              {
+                "name": "handlingFee",
+                "type": "FLOAT",
+                "value": 3
+              },
+              {
+                "name": "trackingURL",
+                "type": "STRING",
+                "value": "www.url.com"
+              },
+              {
+                "name": "totalPrice",
+                "type": "FLOAT",
+                "value": 124.75
+              },
+              {
+                "name": "handlingFeeTax",
+                "type": "FLOAT",
+                "value": 1
+              },
+              {
+                "name": "shippingMethod",
+                "type": "STRING",
+                "value": "air"
+              },
+              {
+                "name": "totalDiscounts",
+                "type": "FLOAT",
+                "value": 29.75
+              },
+              {
+                "name": "subTotal",
+                "type": "FLOAT",
+                "value": 150
+              },
+              {
+                "name": "orderDiscounts",
+                "type": "FLOAT",
+                "value": 4.75
+              },
+              {
+                "name": "FulfilmentType",
+                "type": "STRING",
+                "value": "HD_PFDC"
+              },
+              {
+                "name": "taxStatus",
+                "type": "STRING",
+                "value": "tax status"
+              },
+              {
+                "name": "totalTax",
+                "type": "FLOAT",
+                "value": 4.5
+              },
+              {
+                "name": "deliveryCostTax",
+                "type": "FLOAT",
+                "value": 1.5
+              },
+              {
+                "name": "initialFulfillmentStatus",
+                "type": "STRING",
+                "value": "WAITING_FULFILMENT"
+              },
+              {
+                "name": "carrierCode",
+                "type": "STRING",
+                "value": "carrier data"
+              },
+              {
+                "name": "paymentTransaction",
+                "type": "JSON",
+                "value": [
+                  {
+                    "amount": 98.15,
+                    "status": "SETTLED",
+                    "cardType": "VISA",
+                    "errorCode": "",
+                    "authNumber": "H124531",
+                    "createdDate": "2021-06-15T20:20:39Z",
+                    "processorId": "Z912141241249432",
+                    "paymentToken": "K912345678",
+                    "paymentMethod": "CREDIT_CARD",
+                    "transactionKey": "da73592f-7104-44ac-b281-2a0f6f77a59a",
+                    "transactionType": "CAPTURE"
+                  }
+                ]
+              },
+              {
+                "name": "trackingNumber",
+                "type": "STRING",
+                "value": 53478569574
+              },
+              {
+                "name": "shippedDate",
+                "type": "STRING",
+                "value": "2022-10-19T15:07:05.955Z"
+              },
+              {
+                "name": "deliveryCost",
+                "type": "FLOAT",
+                "value": 4
+              }
+            ],
+            "fromAddress": {
+              "id": "24",
+              "type": "AGENT",
+              "createdOn": "2022-05-26T09:34:56.245Z",
+              "name": null,
+              "street": "711 E. Carefree Hwy. Suite 140",
+              "city": "Phoenix",
+              "state": "AZ",
+              "postcode": "85085",
+              "region": null,
+              "country": "US",
+              "latitude": 33.79786514,
+              "longitude": -112.064386
+            },
+            "toAddress": {
+              "id": "4343",
+              "type": "ORDER",
+              "createdOn": "2023-03-07T09:13:32.833Z",
+              "companyName": "",
+              "name": "Naheda",
+              "street": "400 Claremont",
+              "city": "Portland",
+              "state": "NY",
+              "postcode": "0011122",
+              "region": "Maine",
+              "country": "US",
+              "latitude": 32.801541,
+              "longitude": -97.006337,
+              "ref": ""
+            },
+            "items": {
+              "edges": [
+                {
+                  "item": {
+                    "id": "1535",
+                    "ref": "1",
+                    "status": "CREATED",
+                    "requestedQuantity": 5,
+                    "filledQuantity": 5,
+                    "rejectedQuantity": 0,
+                    "orderItem": {
+                      "__typename": "OrderItem",
+                      "id": "9244",
+                      "createdOn": "2023-03-07T09:13:32.830Z",
+                      "updatedOn": "2023-03-08T07:20:48.005Z",
+                      "ref": "1",
+                      "quantity": 5,
+                      "paidPrice": 25,
+                      "currency": "USD",
+                      "totalPrice": 150,
+                      "totalTaxPrice": 2,
+                      "price": 30,
+                      "taxPrice": 3,
+                      "attributes": [
+                        {
+                          "name": "prescriptionId",
+                          "type": "STRING",
+                          "value": 10
+                        },
+                        {
+                          "name": "pharmacyFee",
+                          "type": "FLOAT",
+                          "value": 0
+                        },
+                        {
+                          "name": "handlingFee",
+                          "type": "FLOAT",
+                          "value": 3
+                        },
+                        {
+                          "name": "handlingFeeTax",
+                          "type": "FLOAT",
+                          "value": 1
+                        },
+                        {
+                          "name": "isPV1RequestedAndVerified",
+                          "type": "STRING",
+                          "value": true
+                        },
+                        {
+                          "name": "defaultPracticeCost",
+                          "type": "STRING",
+                          "value": 10
+                        },
+                        {
+                          "name": "proratedOrderDiscount",
+                          "type": "FLOAT",
+                          "value": 4
+                        },
+                        {
+                          "name": "productKey",
+                          "type": "STRING",
+                          "value": ""
+                        },
+                        {
+                          "name": "productName",
+                          "type": "STRING",
+                          "value": "Heartgard® Plus Dog Chews Brown 51-100 lbs 6pk EDIT"
+                        },
+                        {
+                          "name": "totalTax",
+                          "type": "FLOAT",
+                          "value": 1.8
+                        },
+                        {
+                          "name": "lineStatus",
+                          "type": "STRING",
+                          "value": "SHIPPED"
+                        },
+                        {
+                          "name": "autoshipNextDate",
+                          "type": "STRING",
+                          "value": ""
+                        },
+                        {
+                          "name": "imageUrl",
+                          "type": "STRING",
+                          "value": ""
+                        },
+                        {
+                          "name": "practiceCost",
+                          "type": "STRING",
+                          "value": 17
+                        },
+                        {
+                          "name": "packageQuantity",
+                          "type": "STRING",
+                          "value": ""
+                        },
+                        {
+                          "name": "isPrescriptionRequired",
+                          "type": "STRING",
+                          "value": false
+                        },
+                        {
+                          "name": "transactionFeePercentage",
+                          "type": "STRING",
+                          "value": 2.9
+                        },
+                        {
+                          "name": "packageDosage",
+                          "type": "STRING",
+                          "value": ""
+                        },
+                        {
+                          "name": "facilityId",
+                          "type": "STRING",
+                          "value": 8
+                        },
+                        {
+                          "name": "proratedDeliveryCost",
+                          "type": "FLOAT",
+                          "value": 4
+                        },
+                        {
+                          "name": "selectedNetwork",
+                          "type": "STRING",
+                          "value": "COMPOUND_RX_HD"
+                        },
+                        {
+                          "name": "autoshipFrequency",
+                          "type": "STRING",
+                          "value": ""
+                        },
+                        {
+                          "name": "proratedDeliveryCostTax",
+                          "type": "FLOAT",
+                          "value": 1.5
+                        },
+                        {
+                          "name": "totalPaidPrice",
+                          "type": "FLOAT",
+                          "value": 125
+                        },
+                        {
+                          "name": "pharmacyFeeTax",
+                          "type": "FLOAT",
+                          "value": 0
+                        },
+                        {
+                          "name": "url",
+                          "type": "STRING",
+                          "value": ""
+                        },
+                        {
+                          "name": "refillsRemaining",
+                          "type": "STRING",
+                          "value": 122
+                        },
+                        {
+                          "name": "prescriptionKey",
+                          "type": "STRING",
+                          "value": ""
+                        },
+                        {
+                          "name": "packageFlavor",
+                          "type": "STRING",
+                          "value": "Chicken"
+                        },
+                        {
+                          "name": "isPaymentSettlementCompleted",
+                          "type": "STRING",
+                          "value": true
+                        },
+                        {
+                          "name": "oldLineStatus",
+                          "type": "STRING",
+                          "value": "SHIPPED"
+                        },
+                        {
+                          "name": "itemNonRetailTax",
+                          "type": "STRING",
+                          "value": 16
+                        },
+                        {
+                          "name": "autoshipId",
+                          "type": "STRING",
+                          "value": 123
+                        },
+                        {
+                          "name": "patientKey",
+                          "type": "STRING",
+                          "value": ""
+                        },
+                        {
+                          "name": "selectedLocation",
+                          "type": "STRING",
+                          "value": "PHOENIX"
+                        },
+                        {
+                          "name": "totalProratedOrderDiscount",
+                          "type": "FLOAT",
+                          "value": 4.75
+                        },
+                        {
+                          "name": "priceListCode",
+                          "type": "STRING",
+                          "value": 7866
+                        },
+                        {
+                          "name": "returnableQty",
+                          "type": "INTEGER",
+                          "value": 0
+                        },
+                        {
+                          "name": "dispenseRequestId",
+                          "type": "STRING",
+                          "value": 4
+                        }
+                      ],
+                      "product": {
+                        "name": "COMPXX01",
+                        "ref": "COMPXX01"
+                      }
+                    }
+                  },
+                  "cursor": "Y3Vyc29yOi0tLTE1MzU="
+                }
+              ],
+              "pageInfo": {
+                "hasNextPage": false
+              }
+            },
+            "articles": {
+              "edges": [],
+              "pageInfo": {
+                "hasNextPage": false
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

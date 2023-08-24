@@ -1,0 +1,125 @@
+{
+  "data": {
+    "fulfilmentById": {
+      "id": "109",
+      "ref": "x68kqfh",
+      "status": "ASSIGNED",
+      "type": "HD_PFDC",
+      "deliveryType": "STANDARD",
+      "createdOn": "2022-10-27T09:06:26.203Z",
+      "updatedOn": "2022-10-27T09:22:30.635Z",
+      "eta": null,
+      "expiryTime": null,
+      "order": {
+        "id": "2320",
+        "ref": "NKS_HD_ORD_38",
+        "type": "HD",
+        "status": "FULFILMENT_PROCESSING"
+      },
+      "user": {
+        "__typename": "Customer",
+        "firstName": "Nitish",
+        "lastName": null,
+        "username": "nitishkumarSri123",
+        "primaryEmail": "nikumar123@update.com",
+        "primaryPhone": null,
+        "title": null,
+        "ref": "nitishkumarSri123"
+      },
+      "attributes": [
+        {
+          "name": "totalTax",
+          "type": "float",
+          "value": 22
+        },
+        {
+          "name": "salesTaxResponseReceived",
+          "type": "STRING",
+          "value": true
+        },
+        {
+          "name": "shippingTax",
+          "type": "float",
+          "value": 44
+        },
+        {
+          "name": "handlingTax",
+          "type": "float",
+          "value": 33
+        },
+        {
+          "name": "grandTotal",
+          "type": "float",
+          "value": 47
+        },
+        {
+          "name": "initialFulfillmentStatus",
+          "type": "STRING",
+          "value": "WAITING_FULFILMENT"
+        },
+        {
+          "name": "discount",
+          "type": "float",
+          "value": 25
+        },
+        {
+          "name": "tax",
+          "type": "float",
+          "value": 22
+        },
+        {
+          "name": "subTotal",
+          "type": "float",
+          "value": 125
+        },
+        {
+          "name": "taxDate",
+          "type": "STRING",
+          "value": "2022-10-19T15:07:05.955Z"
+        },
+        {
+          "name": "FulfilmentType",
+          "type": "STRING",
+          "value": "HD_PFDC"
+        },
+        {
+          "name": "taxStatus",
+          "type": "STRING",
+          "value": "tax status"
+        }
+      ],
+      "items": {
+        "edges": [
+          {
+            "item": {
+              "id": "192",
+              "ref": "2",
+              "status": "CREATED",
+              "requestedQuantity": 5,
+              "filledQuantity": 0,
+              "rejectedQuantity": 0
+            },
+            "cursor": "Y3Vyc29yOi0tLTE5Mg=="
+          },
+          {
+            "item": {
+              "id": "191",
+              "ref": "1",
+              "status": "CREATED",
+              "requestedQuantity": 5,
+              "filledQuantity": 0,
+              "rejectedQuantity": 0
+            },
+            "cursor": "Y3Vyc29yOi0tLTE5MQ=="
+          }
+        ],
+        "pageInfo": {
+          "hasNextPage": false
+        }
+      },
+      "fromLocation": {
+        "ref": "PHOENIX"
+      }
+    }
+  }
+}

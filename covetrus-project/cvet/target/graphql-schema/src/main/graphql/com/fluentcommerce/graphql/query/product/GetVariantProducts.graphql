@@ -1,0 +1,30 @@
+query GetVariantProducts($refs: [String!],$productCatalogueRef: String!,$productNames:[String!],$variantProductCursor:String,$productCount:Int,$productStatus:[String],$productType:[String!]){
+    variantProducts(catalogue: {ref: $productCatalogueRef}, name: $productNames, ref: $refs, after: $variantProductCursor, first: $productCount, status: $productStatus, type:$productType) {
+        edges {
+            cursor
+            node {
+                ref
+                attributes {
+                    name
+                    type
+                    value
+                }
+                id
+                name
+                status
+                type
+                product{
+                    ref
+                    name
+                    status
+                }
+                catalogue{
+                    ref
+                }
+            }
+        }
+        pageInfo {
+            hasNextPage
+        }
+    }
+}

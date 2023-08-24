@@ -1,0 +1,11 @@
+{
+  "items":[
+    {
+      "ref":"1",
+      "status":"VERIFIED",
+      "dispenseRequestId":"1",
+      "prescriptionId": "12",
+      "facilityId": "3"
+    }
+  ]
+}

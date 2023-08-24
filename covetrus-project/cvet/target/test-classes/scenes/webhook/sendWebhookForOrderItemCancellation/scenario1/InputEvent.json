@@ -1,0 +1,20 @@
+{
+  "retailer_id": "1",
+  "account_id" : "0",
+  "entity_id": "108",
+  "entity_ref": "x68kqfh",
+  "root_entity_id": "285",
+  "root_entity_ref": "NKS_HD_ORD_38",
+  "attributes": {
+    "orderItemCancellationReasonPayload": {
+      "orderRef": "",
+      "updateOn": "2021-06-15T20:20:39Z",
+      "items": [{
+        "orderItemKey": "1",
+        "lineStatus": "CREATED",
+        "cancellationReasonText": "abc",
+        "cancellationReasonCode": "123"
+      }]
+    }
+  }
+}

@@ -1,0 +1,188 @@
+{
+  "data": {
+    "returnOrder": {
+      "ref": "HD_T_06022301248-R92758",
+      "id": "265ad103-f919-4e69-9240-afa56224c128",
+      "type": "DEFAULT",
+      "status": "PENDING_REFUND",
+      "createdOn": "2023-02-08T09:27:58.373Z",
+      "updatedOn": "2023-02-08T09:28:00.355Z",
+      "order": {
+        "ref": "HD_T_06022301248"
+      },
+      "returnOrderFulfilments": {
+        "edges": [
+          {
+            "node": {
+              "id": "ee13c382-552b-4586-bb7d-18ae4d95f6fd",
+              "ref": "da8724d3-1031-42dc-97da-e27191e2a9ce",
+              "status": "COMPLETE",
+              "attributes": [
+                {
+                  "name": "returnOrderCreatedUserId",
+                  "type": "STRING",
+                  "value": 72
+                },
+                {
+                  "name": "returnReason",
+                  "type": "STRING",
+                  "value": "Change Of Mind"
+                }
+              ],
+              "returnFulfilmentItems": {
+                "edges": [
+                  {
+                    "node": {
+                      "id": "cfff2090-fabb-49d9-b157-099f3ca8bef2",
+                      "ref": "2988e32e-2562-4cfb-87ea-58c46d205a21",
+                      "returnOrderItem": {
+                        "ref": "6"
+                      },
+                      "unitQuantity": {
+                        "quantity": 5
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "lodgedLocation": {
+        "ref": "RETURN_LOCATION"
+      },
+      "destinationLocation": {
+        "ref": "RETURN_LOCATION"
+      },
+      "retailer": {
+        "id": "1"
+      },
+      "workflow": {
+        "ref": "RETURN_ORDER::DEFAULT",
+        "version": 1
+      },
+      "customer": {
+        "ref": "Tanya"
+      },
+      "currency": {
+        "alphabeticCode": "USD"
+      },
+      "defaultTaxType": {
+        "country": "USA",
+        "group": "STANDARD",
+        "tariff": "GST"
+      },
+      "subTotalAmount": {
+        "amount": 150,
+        "scale": 1,
+        "unscaledValue": 1500
+      },
+      "totalTax": {
+        "amount": 15,
+        "scale": 1,
+        "unscaledValue": 150
+      },
+      "totalAmount": {
+        "amount": 165,
+        "scale": 1,
+        "unscaledValue": 1650
+      },
+      "attributes": [
+        {
+          "name": "returnOrderCreatedUserId",
+          "type": "STRING",
+          "value": 72
+        },
+        {
+          "name": "returnReason",
+          "type": "STRING",
+          "value": "Change Of Mind"
+        },
+        {
+          "name": "paymentInfo",
+          "type": "JSON",
+          "value": {
+            "amount": "",
+            "cardType": {
+              "code": "VISA"
+            },
+            "expiryYear": "",
+            "expiryMonth": "",
+            "paymentType": "Credit Card",
+            "paymentToken": "6hgg75k12",
+            "billingAddress": {
+              "town": "Portland",
+              "region": "Maine",
+              "country": "US",
+              "lastName": "test04",
+              "firstName": "cvetdev",
+              "postalCode": "",
+              "addressLine1": "",
+              "addressLine2": ""
+            },
+            "paymentSequence": "",
+            "accountHolderName": "cvetdevtest04",
+            "cardNumberLastFour": "1234"
+          }
+        }
+      ],
+      "returnOrderItems": {
+        "edges": [
+          {
+            "node": {
+              "id": "a5210b55-331c-4fd9-8903-ce7b9b71a5e1",
+              "ref": "6",
+              "attributes": null,
+              "returnReason": null,
+              "returnReasonComment": null,
+              "returnConditionComment": null,
+              "returnCondition": null,
+              "product": {
+                "ref": "OTCCOV001",
+                "catalogue": {
+                  "ref": "PC:MASTER:1"
+                }
+              },
+              "unitQuantity": {
+                "quantity": 5,
+                "unit": null
+              },
+              "orderItem": {
+                "ref": "6",
+                "order": {
+                  "ref": "HD_T_06022301248"
+                }
+              },
+              "unitTaxType": {
+                "country": "USA",
+                "group": "STANDARD",
+                "tariff": "GST"
+              },
+              "unitAmount": {
+                "amount": 30,
+                "scale": 1,
+                "unscaledValue": 300
+              },
+              "itemAmount": {
+                "amount": 150,
+                "scale": 1,
+                "unscaledValue": 1500
+              },
+              "itemTaxAmount": {
+                "amount": 3,
+                "scale": 1,
+                "unscaledValue": 30
+              }
+            },
+            "cursor": "Y3Vyc29yOi0tLWE1MjEwYjU1LTMzMWMtNGZkOS04OTAzLWNlN2I5YjcxYTVlMV9fMTY3NTg0ODQ3ODM3NQ=="
+          }
+        ],
+        "pageInfo": {
+          "hasPreviousPage": false,
+          "hasNextPage": false
+        }
+      }
+    }
+  }
+}
