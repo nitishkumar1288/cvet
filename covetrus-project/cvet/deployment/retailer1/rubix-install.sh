@@ -10,6 +10,7 @@ do
   echo "$entry"
 done
 
+echo "search_dir::" ${search_dir}
 echo "DEV_ACCOUNT::" ${DEV_ACCOUNT}
 echo "API_HOST::" ${API_HOST}
 echo "RETAILER_PASSWORD::" ${RETAILER_PASSWORD}
@@ -68,7 +69,7 @@ response=$( \
   -H "Connection: keep-alive" \
   -H 'Cache-Control: no-cache' \
   -H "fluent.account: ${DEV_ACCOUNT}" \
-  -F "file=@artifacts/${GITHUB_WORKSPACE}/artifacts/${DEV_ACCOUNT}-1.0.15.jar"
+  -F "file=@./${GITHUB_WORKSPACE}/artifacts/${DEV_ACCOUNT}-1.0.15.jar"
 )
 if [[ ${response} -ne 200 ]]
 then
