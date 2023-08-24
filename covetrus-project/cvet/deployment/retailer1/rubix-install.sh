@@ -4,7 +4,7 @@ echo ":::::::::::::: START SCRIPT :::::::::::::::::"
 #cd /opt/atlassian/pipelines/agent/build/
 echo "Finding all files under directory first........"
 
-search_dir=${GITHUB_WORKSPACE}
+search_dir=${CI_PROJECT_DIR}/artifacts
   for entry in "$search_dir"/*
 do
   echo "$entry"
@@ -60,11 +60,6 @@ echo "Got token for account ${DEV_ACCOUNT}"
 # Retrieve project version and name
 echo "Getting version and project name for account ${DEV_ACCOUNT}"
 
-version=$(mvn -q -Dexec.executable='echo' -Dexec.args='${project.version}' --non-recursive exec:exec)
-projectName=$(mvn -q -Dexec.executable='echo' -Dexec.args='${project.artifactId}' --non-recursive exec:exec)
-# Upload plugin
-# Upload plugin
-echo "Uploading plugin ${projectName}-${version}.jar to account ${DEV_ACCOUNT} with namespace ${PLUGIN_NAME}"
 
 response=$( \
   curl -s -o /dev/null -w "%{http_code}" -XPOST "${API_HOST}/orchestration/rest/v1/plugin/upload" \

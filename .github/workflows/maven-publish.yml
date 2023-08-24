@@ -20,8 +20,9 @@ jobs:
         working-directory: covetrus-project/cvet
         run: |
           mvn -B clean install -DskipTests
-          cp target/*.jar ${GITHUB_WORKSPACE}
-          ls -lah ${GITHUB_WORKSPACE}
+          mkdir -p ${CI_PROJECT_DIR}/artifacts
+          cp target/*.jar ${CI_PROJECT_DIR}/artifacts
+          ls -lah ${CI_PROJECT_DIR}/artifacts
 
       - name: Run the deploy
         if: ${{ github.ref == 'refs/heads/test' }}
