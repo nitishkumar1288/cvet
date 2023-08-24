@@ -61,7 +61,7 @@ echo "Got token for account ${DEV_ACCOUNT}"
 # Retrieve project version and name
 echo "Getting version and project name for account ${DEV_ACCOUNT}"
 
-
+echo "file=@artifacts"
 response=$( \
   curl -s -o /dev/null -w "%{http_code}" -XPOST "${API_HOST}/orchestration/rest/v1/plugin/upload" \
   -H "content-type: multipart/form-data" \
