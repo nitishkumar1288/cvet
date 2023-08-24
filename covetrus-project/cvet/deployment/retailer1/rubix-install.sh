@@ -51,3 +51,10 @@ echo "Getting token for account ${DEV_ACCOUNT}"
 get_token
 echo "Got token for account ${DEV_ACCOUNT}"
 #check-service-running "${!apiHost}"/api/metrics/healthcheck
+
+# Retrieve project version and name
+echo "Getting version and project name for account ${DEV_ACCOUNT}"
+version=$(mvn -q -Dexec.executable='echo' -Dexec.args='${project.version}' --non-recursive exec:exec)
+projectName=$(mvn -q -Dexec.executable='echo' -Dexec.args='${project.artifactId}' --non-recursive exec:exec)
+
+echo "Updating manifest file for ${projectName}-${version}.jar"
