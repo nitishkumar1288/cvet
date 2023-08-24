@@ -10,6 +10,8 @@ do
   echo "$entry"
 done
 
+cd ${GITHUB_WORKSPACE}/artifacts
+
 echo "DEV_ACCOUNT::" ${DEV_ACCOUNT}
 echo "API_HOST::" ${API_HOST}
 echo "RETAILER_PASSWORD::" ${RETAILER_PASSWORD}
