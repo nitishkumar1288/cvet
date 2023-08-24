@@ -4,6 +4,11 @@ echo ":::::::::::::: START SCRIPT :::::::::::::::::"
 #cd /opt/atlassian/pipelines/agent/build/
 echo "Finding all files under directory first........"
 
+search_dir=$CI_PROJECT_DIR/artifacts
+  for entry in "$search_dir"/*
+do
+  echo "$entry"
+done
 
 echo "DEV_ACCOUNT::" ${DEV_ACCOUNT}
 echo "API_HOST::" ${API_HOST}
