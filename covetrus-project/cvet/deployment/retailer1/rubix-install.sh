@@ -4,7 +4,7 @@ echo ":::::::::::::: START SCRIPT :::::::::::::::::"
 #cd /opt/atlassian/pipelines/agent/build/
 echo "Finding all files under directory first........"
 
-search_dir=${CI_PROJECT_DIR}/artifacts
+search_dir=${GITHUB_WORKSPACE}/artifacts
   for entry in "$search_dir"/*
 do
   echo "$entry"
