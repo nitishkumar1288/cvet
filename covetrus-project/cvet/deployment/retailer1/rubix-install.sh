@@ -62,11 +62,11 @@ echo "Getting version and project name for account ${DEV_ACCOUNT}"
 
 
 
-echo "Updating manifest file for ${projectName}-${version}.jar"
+
 
 
 # Upload plugin
-echo "Uploading plugin ${projectName}-${version}.jar to account ${!accountId} with namespace ${!pluginNameSpace}"
+
 
 response=$( \
   curl -s -o /dev/null -w "%{http_code}" -XPOST "${API_HOST}/orchestration/rest/v1/plugin/upload" \
@@ -86,7 +86,7 @@ fi
 # Step 5) Installing the plugin
 # ######################
 
-echo "Installing plugin ${projectName}-${version} to account ${DEV_ACCOUNT} with namespace ${PLUGIN_NAME}"
+echo "Installing plugin  to account ${DEV_ACCOUNT} with namespace ${PLUGIN_NAME}"
 response=$( \
  curl -s -o /dev/null -w "%{http_code}" -XPOST "${API_HOST}/orchestration/rest/v1/plugin/install" \
  -H "Content-Type: application/json" \
