@@ -30,7 +30,7 @@ token=$(\
   curl -s -XPOST \
   -H "Cache-Control: no-cache" \
   -H "fluent.account: ${DEV_ACCOUNT}" \
-  "${!API_HOST}/oauth/token?username=${RETAILER_USERNAME}&password=${RETAILER_PASSWORD}&scope=api&client_id=${DEV_ACCOUNT}&client_secret=${CLIENT_SECRET}&grant_type=password" \
+  "${API_HOST}/oauth/token?username=${RETAILER_USERNAME}&password=${RETAILER_PASSWORD}&scope=api&client_id=${DEV_ACCOUNT}&client_secret=${CLIENT_SECRET}&grant_type=password" \
       | jq ".access_token")
 token=$(sed -e 's/^"//' -e 's/"$//' <<<"$token")
 case $token in null)
