@@ -59,7 +59,78 @@ echo "Got token for account ${DEV_ACCOUNT}"
 
 # Retrieve project version and name
 echo "Getting version and project name for account ${DEV_ACCOUNT}"
-version=$(mvn -q -Dexec.executable='echo' -Dexec.args='${project.version}' --non-recursive exec:exec)
-projectName=$(mvn -q -Dexec.executable='echo' -Dexec.args='${project.artifactId}' --non-recursive exec:exec)
+
+
 
 echo "Updating manifest file for ${projectName}-${version}.jar"
+
+
+# Upload plugin
+echo "Uploading plugin ${projectName}-${version}.jar to account ${!accountId} with namespace ${!pluginNameSpace}"
+
+response=$( \
+  curl -s -o /dev/null -w "%{http_code}" -XPOST "${API_HOST}/orchestration/rest/v1/plugin/upload" \
+  -H "content-type: multipart/form-data" \
+  -H "Authorization: bearer ${token}" \
+  -H "Connection: keep-alive" \
+  -H 'Cache-Control: no-cache' \
+  -H "fluent.account: ${DEV_ACCOUNT}" \
+  -F "file=@artifacts/${DEV_ACCOUNT}-1.0.15.jar"
+)
+if [[ ${response} -ne 200 ]]
+then
+ abort_on_failure "Plugin Jar upload failed"
+fi
+
+# ######################
+# Step 5) Installing the plugin
+# ######################
+
+echo "Installing plugin ${projectName}-${version} to account ${DEV_ACCOUNT} with namespace ${PLUGIN_NAME}"
+response=$( \
+ curl -s -o /dev/null -w "%{http_code}" -XPOST "${API_HOST}/orchestration/rest/v1/plugin/install" \
+ -H "Content-Type: application/json" \
+ -H "Authorization: Bearer ${token}" \
+ -H "Cache-Control: no-cache" \
+ -H "fluent.account: ${DEV_ACCOUNT}" \
+ -d "{\"accountId\":\"${DEV_ACCOUNT}\",\"bundleName\" :\"${DEV_ACCOUNT}.${PLUGIN_NAME}::1.0.15\"}"
+)
+echo "${response}"
+if [[ ${response} -ne 200 ]]
+then
+ abort_on_failure "Plugin Jar install failed"
+fi
+echo "Plugin Install is Success With Code :: $response"
+
+echo "Sleeping for 10 seconds.........."
+sleep 10
+
+# ######################
+# Step 6) Verify plugin status
+# ######################
+
+resp=$( \
+ curl -s -XGET \
+ "${API_HOST}/orchestration/rest/v1/plugin/${DEV_ACCOUNT}.${PLUGIN_NAME}::1.0.15/status" \
+ -H "Authorization: Bearer ${token}" \
+ -H "Cache-Control: no-cache" \
+ | jq ".bundleVersion"
+)
+echo "Bundle Version :> $resp"
+
+stat=$( \
+ curl -s -XGET \
+ "${API_HOST}/orchestration/rest/v1/plugin/${DEV_ACCOUNT}.${PLUGIN_NAME}::1.0.15/status" \
+ -H "Authorization: Bearer ${token}" \
+ -H "Cache-Control: no-cache" \
+ | jq ".bundleStatus"
+)
+echo "Bundle Status :> $stat"
+desiredstatus="ACTIVE"
+echo "Desired status :> $desiredstatus"
+if [[ "${stat}" == "$desiredstatus" ]]
+then
+  abort_on_failure "Current Version Not ACTIVE"
+fi
+
+echo "Deployment Success"

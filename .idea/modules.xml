@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/nitish.iml" filepath="$PROJECT_DIR$/.idea/nitish.iml" />
+      <module fileurl="file://$PROJECT_DIR$/covetrus-project/cvet/rubix-plugin-cvet.iml" filepath="$PROJECT_DIR$/covetrus-project/cvet/rubix-plugin-cvet.iml" />
     </modules>
   </component>
 </project>
