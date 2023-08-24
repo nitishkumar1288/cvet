@@ -47,4 +47,5 @@ jobs:
           CLIENT_SECRET: ${{ secrets.DEV_CLIENT_SECRET }}
           GIT_EMAIL: ${{ vars.GLOBAL_GIT_EMAIL_ID }}
           GIT_USERNAME: ${{ vars.GLOBAL_GIT_USER_NAME }}
+          GIT_ACCESS_TOKEN: ${{ secrets.DEV_GLOBAL_GIT_ACCESS_TOKEN }}
           GITHUB_TOKEN: ${{ github.token }}
