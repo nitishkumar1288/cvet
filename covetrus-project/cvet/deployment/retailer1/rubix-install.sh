@@ -25,12 +25,12 @@ function abort_on_failure () {
 exit 1
 }
 function get_token () {
- echo "${!API_HOST}/oauth/token?username=${!RETAILER_USERNAME}&password=${!RETAILER_PASSWORD}&scope=api&client_id=${!DEV_ACCOUNT}&client_secret=${!CLIENT_SECRET}&grant_type=password"
+ echo "${API_HOST}/oauth/token?username=${RETAILER_USERNAME}&password=${RETAILER_PASSWORD}&scope=api&client_id=${DEV_ACCOUNT}&client_secret=${CLIENT_SECRET}&grant_type=password"
 token=$(\
   curl -s -XPOST \
   -H "Cache-Control: no-cache" \
   -H "fluent.account: ${DEV_ACCOUNT}" \
-  "${!API_HOST}/oauth/token?username=${!RETAILER_USERNAME}&password=${!RETAILER_PASSWORD}&scope=api&client_id=${!DEV_ACCOUNT}&client_secret=${!CLIENT_SECRET}&grant_type=password" \
+  "${!API_HOST}/oauth/token?username=${RETAILER_USERNAME}&password=${RETAILER_PASSWORD}&scope=api&client_id=${DEV_ACCOUNT}&client_secret=${CLIENT_SECRET}&grant_type=password" \
       | jq ".access_token")
 token=$(sed -e 's/^"//' -e 's/"$//' <<<"$token")
 case $token in null)
@@ -47,7 +47,7 @@ fi
 
 #check-service-running "${!apiHost}"/orchestration/rest/health
 
-echo "Getting token for account ${!accountId}"
+echo "Getting token for account ${DEV_ACCOUNT}"
 get_token
-echo "Got token for account ${!accountId}"
+echo "Got token for account ${DEV_ACCOUNT}"
 #check-service-running "${!apiHost}"/api/metrics/healthcheck
