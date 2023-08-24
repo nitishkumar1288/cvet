@@ -4,7 +4,7 @@ echo ":::::::::::::: START SCRIPT :::::::::::::::::"
 #cd /opt/atlassian/pipelines/agent/build/
 echo "Finding all files under directory first........"
 
-search_dir=${GITHUB_WORKSPACE}/artifacts
+search_dir=${GITHUB_WORKSPACE}
   for entry in "$search_dir"/*
 do
   echo "$entry"
@@ -63,8 +63,6 @@ echo "Getting version and project name for account ${DEV_ACCOUNT}"
 
 
 
-
-
 # Upload plugin
 
 
@@ -75,7 +73,7 @@ response=$( \
   -H "Connection: keep-alive" \
   -H 'Cache-Control: no-cache' \
   -H "fluent.account: ${DEV_ACCOUNT}" \
-  -F "file=${GITHUB_WORKSPACE}/@artifacts/${DEV_ACCOUNT}-1.0.15.jar"
+  -F "file=@artifacts/${DEV_ACCOUNT}-1.0.15.jar"
 )
 if [[ ${response} -ne 200 ]]
 then
