@@ -2,7 +2,7 @@ name: Maven Package
 
 on:
   push:
-    branches: [test]
+    branches: [test,main]
 
 env:
   ACCOUNT_ID: CVETDEV
@@ -34,6 +34,7 @@ jobs:
           ls -lah ${GITHUB_WORKSPACE}/artifacts
 
       - name: Run the deploy
+        if: ${{ github.ref == 'refs/heads/test' }}
         run: |
           chmod +x ./covetrus-project/cvet/deployment/retailer1/rubix-install.sh
           ./covetrus-project/cvet/deployment/retailer1/rubix-install.sh
